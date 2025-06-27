@@ -1,0 +1,99 @@
+---
+description: 
+globs: 
+alwaysApply: true
+---
+# Product Context: Naqsh Holding Company Website
+
+## The 'Why' - Problem Statement
+Naqsh Holding Company, as an investment leader with 5 diverse subsidiaries across technology, business incubation, marketing, real estate, and aviation sectors, lacks a comprehensive digital presence that effectively communicates its portfolio diversity, achievements, and capabilities to stakeholders. The current digital landscape requires a modern, professional website that can serve multiple audiences while maintaining brand consistency and generating business opportunities.
+
+## The 'What' - Solution Overview
+A sophisticated corporate website that serves as the primary digital touchpoint for Naqsh Holding Company, featuring:
+- **Dynamic Portfolio Showcase** - Interactive display of all 5 subsidiary companies
+- **Comprehensive Content Hub** - News, projects, and company information
+- **Advanced User Experience** - Scroll-triggered theme system and smooth animations
+- **Lead Generation Platform** - Integrated contact forms and business inquiry pathways
+- **Brand Credibility Builder** - Showcase of 42 major client and partner relationships
+
+## The 'How' - User Experience Strategy
+
+### Target Audience Analysis
+
+#### Primary Audiences:
+1. **Potential Investors and Partners**
+   - **Needs**: Clear understanding of portfolio diversity, financial stability, growth potential
+   - **Journey**: Hero section → Companies portfolio → Projects showcase → Contact
+   - **Success Metrics**: Time spent on portfolio pages, contact form submissions
+
+2. **Industry Professionals and Clients**
+   - **Needs**: Detailed service offerings, project examples, company expertise
+   - **Journey**: Services section → Project details → Company-specific information
+   - **Success Metrics**: Project page engagement, service inquiry submissions
+
+3. **Media and Press Representatives**
+   - **Needs**: Latest company news, press releases, company background
+   - **Journey**: News section → About Us → CEO Message → Company information
+   - **Success Metrics**: News article reads, information download requests
+
+#### Secondary Audiences:
+4. **Job Seekers and Talent**
+   - **Needs**: Company culture, career opportunities, work environment
+   - **Journey**: About Us → Companies portfolio → News (culture-related)
+   - **Success Metrics**: Career page visits, application inquiries
+
+5. **General Public**
+   - **Needs**: Company transparency, social responsibility, community impact
+   - **Journey**: About Us → News → Projects → Contact
+   - **Success Metrics**: Overall engagement, return visits
+
+### User Stories
+
+#### High-Priority User Stories:
+- **As an investor**, I want to quickly understand Naqsh's portfolio diversity so I can assess investment opportunities
+- **As a potential client**, I want to see detailed project examples so I can evaluate Naqsh's capabilities
+- **As a journalist**, I want to access the latest company news so I can write accurate articles
+- **As a business partner**, I want to understand Naqsh's services so I can explore collaboration opportunities
+
+#### Medium-Priority User Stories:
+- **As a job seeker**, I want to learn about company culture so I can decide if it's a good fit
+- **As a student**, I want to understand Naqsh's impact so I can learn about the industry
+- **As a competitor**, I want to research Naqsh's activities so I can understand market positioning
+
+### Critical Success Factors (User Perspective)
+
+#### Usability Success Factors:
+- **Fast Loading Times** - Users expect sub-3 second page loads
+- **Intuitive Navigation** - Clear information hierarchy and logical flow
+- **Mobile Responsiveness** - Seamless experience across all devices
+- **Accessibility** - WCAG compliance for inclusive user experience
+
+#### Content Success Factors:
+- **Comprehensive Information** - All key company details easily accessible
+- **Visual Appeal** - Professional design that reflects company stature
+- **Engaging Interactions** - Smooth animations that enhance rather than distract
+- **Clear Call-to-Actions** - Obvious pathways for user engagement
+
+#### Technical Success Factors:
+- **Reliable Performance** - Consistent loading and functionality
+- **SEO Optimization** - High search engine visibility
+- **Security** - Safe browsing experience with proper data protection
+- **Cross-Browser Compatibility** - Consistent experience across browsers
+
+### Product Vision Statement
+"To create a digital platform that embodies Naqsh's tagline 'To Leave a Trace' by delivering an impactful, memorable user experience that showcases the company's diverse capabilities and establishes lasting connections with stakeholders across all sectors."
+
+### User Experience Principles
+1. **Professional Excellence** - Every interaction reflects Naqsh's high standards
+2. **Portfolio Clarity** - Clear presentation of diverse business units
+3. **Engagement Focus** - Interactive elements that encourage exploration
+4. **Accessibility First** - Inclusive design for all users
+5. **Performance Priority** - Fast, reliable experience across all devices
+6. **Brand Consistency** - Unified visual identity across all touchpoints
+
+### Success Metrics and KPIs
+- **Engagement Metrics**: Time on site, pages per session, bounce rate
+- **Conversion Metrics**: Contact form submissions, newsletter signups
+- **Technical Metrics**: Page load speed, Core Web Vitals, mobile performance
+- **SEO Metrics**: Search rankings, organic traffic, keyword performance
+- **User Satisfaction**: Heatmap analysis, user feedback, usability testing scores

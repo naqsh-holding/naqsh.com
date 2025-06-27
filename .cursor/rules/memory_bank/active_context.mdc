@@ -1,0 +1,97 @@
+---
+description: 
+globs: 
+alwaysApply: true
+---
+# Active Context: Naqsh Holding Company Website
+
+## Current Work Focus
+**Status**: Project Documentation and Memory Bank Establishment
+**Date**: December 2024
+**Phase**: Post-Development Documentation and Project Intelligence Setup
+
+## Recent Significant Changes
+- **Project Description Update**: Updated `.cursor/rules/project_description.mdc` to accurately reflect the current implementation
+- **Memory Bank Creation**: Establishing comprehensive project documentation structure
+- **Technical Review Completed**: Comprehensive analysis of codebase, dependencies, and features
+
+## Current Tasks
+1. **Memory Bank Setup** - Creating all required Memory Bank files
+2. **Project Intelligence Documentation** - Capturing implementation patterns and technical decisions
+3. **Progress Tracking** - Documenting completed features and current status
+
+## Immediate Next Steps
+1. Complete Memory Bank file creation (system_patterns.mdc, tech_context.mdc, progress.mdc)
+2. Review and validate all documentation against actual codebase
+3. Identify any gaps in project documentation
+4. Establish ongoing documentation maintenance procedures
+
+## Active Decisions and Considerations
+
+### Technical Decisions Made:
+- **Theme System**: Scroll-triggered dark/light theme using GSAP
+- **Animation Strategy**: GSAP ScrollTrigger for section animations
+- **Content Management**: Static data with TypeScript interfaces
+- **Image Optimization**: Next.js Image component with unoptimized setting
+- **Form Integration**: Pipedrive for contact form handling
+
+### Current Technical State:
+- **Framework**: Next.js 14.2.16 with App Router
+- **Styling**: Tailwind CSS with custom design system
+- **Animations**: GSAP with ScrollTrigger plugin
+- **Components**: Radix UI primitives with custom implementations
+- **Content**: 5 news articles, 5 featured projects, 42 brand logos
+
+### Pending Questions for User:
+- Are there any specific performance targets or benchmarks to document?
+- Should we establish specific SEO keyword strategies?
+- Are there any planned future features or integrations to document?
+- What is the preferred deployment strategy and hosting environment?
+
+## Critical Context for Immediate Tasks
+
+### Codebase Structure:
+```
+app/
+├── components/
+│   ├── sections/     # Main page sections
+│   ├── layout/       # Navigation and layout components
+│   └── ui/           # Reusable UI components
+├── lib/
+│   ├── data/         # Static content data
+│   ├── hooks/        # Custom React hooks
+│   └── utils/        # Utility functions
+├── news/             # Dynamic news pages
+├── projects/         # Dynamic project pages
+└── types/            # TypeScript type definitions
+```
+
+### Key Implementation Patterns:
+- **Section-based Architecture**: Each major section is a separate component
+- **Theme-aware Components**: Components adapt to light/dark theme
+- **GSAP Integration**: Scroll-triggered animations throughout
+- **TypeScript Interfaces**: Strong typing for all data structures
+- **Responsive Design**: Mobile-first approach with Tailwind breakpoints
+
+### Current Known Issues:
+- None identified during recent review
+- All major features appear to be functioning as intended
+- Documentation gaps being addressed through Memory Bank creation
+
+## Temporary State and Focus
+- **Primary Focus**: Establishing comprehensive project documentation
+- **Secondary Focus**: Validating technical implementation against requirements
+- **Documentation Priority**: Ensuring all Memory Bank files are complete and accurate
+
+## Recent Findings and Insights
+- **Theme System Complexity**: The scroll-triggered theme system is more sophisticated than initially documented
+- **Content Structure**: Well-organized static data with proper TypeScript interfaces
+- **Animation Strategy**: Comprehensive GSAP implementation with ScrollTrigger
+- **Brand Showcase**: Sophisticated infinite scroll animation for 42 brand logos
+- **Performance Considerations**: Proper image optimization and loading strategies
+
+## Critical Considerations for Next Actions
+1. **Documentation Accuracy**: Ensure all Memory Bank files reflect actual implementation
+2. **Technical Debt**: Identify any areas needing refactoring or optimization
+3. **Future Scalability**: Document patterns for easy feature additions
+4. **Maintenance Procedures**: Establish clear documentation update processes

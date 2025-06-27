@@ -1,0 +1,515 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Remove CSS transitions since GSAP handles them */
+html {
+  /* Remove CSS transitions - GSAP handles all theme transitions */
+}
+
+/* Light theme (default) - simplified since GSAP handles colors */
+html.light-theme {
+  /* GSAP will handle background and color changes */
+}
+
+html.light-theme body {
+  /* GSAP will handle background and color changes */
+}
+
+html.light-theme main {
+  /* GSAP will handle background and color changes */
+}
+
+html.light-theme .theme-text {
+  /* GSAP will handle color changes */
+}
+
+html.light-theme section {
+  /* GSAP will handle background changes */
+}
+
+/* Logo switching for light theme - GSAP handles opacity */
+html.light-theme .logo-dark {
+  /* GSAP handles display and opacity */
+}
+
+html.light-theme .logo-white {
+  /* GSAP handles display and opacity */
+}
+
+/* Dark theme - simplified since GSAP handles colors */
+html.dark-theme {
+  /* GSAP will handle background and color changes */
+}
+
+html.dark-theme body {
+  /* GSAP will handle background and color changes */
+}
+
+html.dark-theme main {
+  /* GSAP will handle background and color changes */
+}
+
+html.dark-theme .theme-text {
+  /* GSAP will handle color changes */
+}
+
+html.dark-theme section {
+  /* GSAP will handle background changes */
+}
+
+html.dark-theme .ceo-message-section,
+html.dark-theme .services-section,
+html.dark-theme .news-section,
+html.dark-theme .projects-section,
+html.dark-theme .brands-section,
+html.dark-theme .footer-section {
+  /* GSAP will handle background and color changes */
+}
+
+/* Logo switching for dark theme - GSAP handles opacity */
+html.dark-theme .logo-dark {
+  /* GSAP handles display and opacity */
+}
+
+html.dark-theme .logo-white {
+  /* GSAP handles display and opacity */
+}
+
+/* Remove CSS transitions - GSAP handles all transitions */
+.logo-dark,
+.logo-white {
+  /* GSAP handles opacity transitions */
+}
+
+.nav-circle {
+  /* GSAP handles background color transitions */
+}
+
+.nav-arrow {
+  /* GSAP handles color transitions */
+}
+
+/* Remove CSS transitions for theme-aware elements */
+body,
+main,
+.theme-text,
+section {
+  /* GSAP handles all color and background transitions */
+}
+
+/* Remove theme-aware CTA CSS since GSAP handles it */
+html.light-theme .theme-cta-bg {
+  /* GSAP handles background color */
+}
+
+html.light-theme .theme-cta-text {
+  /* GSAP handles color */
+}
+
+html.dark-theme .theme-cta-bg {
+  /* GSAP handles background color */
+}
+
+html.dark-theme .theme-cta-text {
+  /* GSAP handles color */
+}
+
+/* Remove CSS transitions for CTA elements */
+.theme-cta-bg {
+  /* GSAP handles background color transitions */
+}
+
+.theme-cta-text {
+  /* GSAP handles color transitions */
+}
+
+/* Responsive typography and spacing */
+@media (max-width: 640px) {
+  .container {
+    padding-left: 1rem;
+    padding-right: 1rem;
+  }
+}
+
+@media (min-width: 641px) and (max-width: 1024px) {
+  .container {
+    padding-left: 2rem;
+    padding-right: 2rem;
+  }
+}
+
+/* Responsive section padding */
+@media (max-width: 767px) {
+  section {
+    padding-top: 4rem;
+    padding-bottom: 4rem;
+  }
+}
+
+@media (min-width: 768px) and (max-width: 1023px) {
+  section {
+    padding-top: 6rem;
+    padding-bottom: 6rem;
+  }
+}
+
+@media (min-width: 1024px) {
+  section {
+    padding-top: 8rem;
+    padding-bottom: 8rem;
+  }
+}
+
+@layer base {
+  :root {
+    /* Neutral palette as fallback */
+    --background: 0 0% 100%;
+    --foreground: 0 0% 3.9%;
+    --card: 0 0% 100%;
+    --card-foreground: 0 0% 3.9%;
+    --popover: 0 0% 100%;
+    --popover-foreground: 0 0% 3.9%;
+    --primary: 0 0% 9%;
+    --primary-foreground: 0 0% 98%;
+    --secondary: 0 0% 96.1%;
+    --secondary-foreground: 0 0% 9%;
+    --muted: 0 0% 96.1%;
+    --muted-foreground: 0 0% 45.1%;
+    --accent: 0 0% 96.1%;
+    --accent-foreground: 0 0% 9%;
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 0 0% 98%;
+    --border: 0 0% 89.8%;
+    --input: 0 0% 89.8%;
+    --ring: 0 0% 3.9%;
+    --chart-1: 12 76% 61%;
+    --chart-2: 173 58% 39%;
+    --chart-3: 197 37% 24%;
+    --chart-4: 43 74% 66%;
+    --chart-5: 27 87% 67%;
+    --radius: 0.5rem;
+    --sidebar-background: 0 0% 98%;
+    --sidebar-foreground: 240 5.3% 26.1%;
+    --sidebar-primary: 240 5.9% 10%;
+    --sidebar-primary-foreground: 0 0% 98%;
+    --sidebar-accent: 240 4.8% 95.9%;
+    --sidebar-accent-foreground: 240 5.9% 10%;
+    --sidebar-border: 220 13% 91%;
+    --sidebar-ring: 217.2 91.2% 59.8%;
+  }
+
+  .dark {
+    --background: 0 0% 3.9%;
+    --foreground: 0 0% 98%;
+    --card: 0 0% 3.9%;
+    --card-foreground: 0 0% 98%;
+    --popover: 0 0% 3.9%;
+    --popover-foreground: 0 0% 98%;
+    --primary: 0 0% 98%;
+    --primary-foreground: 0 0% 9%;
+    --secondary: 0 0% 14.9%;
+    --secondary-foreground: 0 0% 98%;
+    --muted: 0 0% 14.9%;
+    --muted-foreground: 0 0% 63.9%;
+    --accent: 0 0% 14.9%;
+    --accent-foreground: 0 0% 98%;
+    --destructive: 0 62.8% 30.6%;
+    --destructive-foreground: 0 0% 98%;
+    --border: 0 0% 14.9%;
+    --input: 0 0% 14.9%;
+    --ring: 0 0% 83.1%;
+    --chart-1: 220 70% 50%;
+    --chart-2: 160 60% 45%;
+    --chart-3: 30 80% 55%;
+    --chart-4: 280 65% 60%;
+    --chart-5: 340 75% 55%;
+    --sidebar-background: 240 5.9% 10%;
+    --sidebar-foreground: 240 4.8% 95.9%;
+    --sidebar-primary: 224.3 76.3% 48%;
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 240 3.7% 15.9%;
+    --sidebar-accent-foreground: 240 4.8% 95.9%;
+    --sidebar-border: 240 3.7% 15.9%;
+    --sidebar-ring: 217.2 91.2% 59.8%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-background text-foreground;
+  }
+}
+
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
+}
+
+:root {
+  --foreground-rgb: 0, 0, 0;
+  --background-rgb: 255, 255, 255;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  color: rgb(var(--foreground-rgb));
+  background: rgb(var(--background-rgb));
+}
+
+.font-monument {
+  font-family: var(--font-monument), system-ui, sans-serif;
+}
+
+/* Add styles for link hover effect */
+.nav-link {
+  position: relative;
+}
+
+.nav-link::after {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 2px;
+  bottom: -4px;
+  left: 0;
+  background-color: currentColor;
+  transform: scaleX(0);
+  transform-origin: bottom right;
+  transition: transform 0.3s ease;
+}
+
+.nav-link:hover::after {
+  transform: scaleX(1);
+  transform-origin: bottom left;
+}
+
+/* Custom scrollbar for the content area */
+.overflow-y-auto::-webkit-scrollbar {
+  width: 4px;
+}
+
+.overflow-y-auto::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.overflow-y-auto::-webkit-scrollbar-thumb {
+  background: #d1d5db;
+  border-radius: 2px;
+}
+
+.overflow-y-auto::-webkit-scrollbar-thumb:hover {
+  background: #9ca3af;
+}
+
+/* For Firefox */
+.overflow-y-auto {
+  scrollbar-width: thin;
+  scrollbar-color: #d1d5db transparent;
+}
+
+/* Responsive utilities */
+@media (max-width: 767px) {
+  .mobile-hidden {
+    display: none;
+  }
+}
+
+@media (min-width: 768px) {
+  .mobile-only {
+    display: none;
+  }
+}
+
+/* Touch-friendly interactions on mobile */
+@media (hover: none) and (pointer: coarse) {
+  button,
+  .interactive {
+    min-height: 44px;
+    min-width: 44px;
+  }
+}
+
+/* Typography Hierarchy - Following UX Laws */
+.text-display {
+  font-size: clamp(3rem, 8vw, 8rem);
+  line-height: 0.9;
+  font-weight: 300;
+  letter-spacing: -0.02em;
+}
+
+.text-h1 {
+  font-size: clamp(2.5rem, 6vw, 6rem);
+  line-height: 1.1;
+  font-weight: 400;
+  letter-spacing: -0.01em;
+}
+
+.text-h2 {
+  font-size: clamp(2rem, 4vw, 4rem);
+  line-height: 1.2;
+  font-weight: 500;
+  letter-spacing: -0.005em;
+}
+
+.text-h3 {
+  font-size: clamp(1.5rem, 3vw, 2.5rem);
+  line-height: 1.3;
+  font-weight: 500;
+  letter-spacing: -0.002em;
+}
+
+.text-h4 {
+  font-size: clamp(1.25rem, 2.5vw, 2rem);
+  line-height: 1.4;
+  font-weight: 500;
+  letter-spacing: 0;
+}
+
+.text-body-large {
+  font-size: clamp(1.125rem, 2vw, 1.5rem);
+  line-height: 1.5;
+  font-weight: 400;
+  letter-spacing: 0.001em;
+}
+
+.text-body {
+  font-size: clamp(1rem, 1.5vw, 1.25rem);
+  line-height: 1.6;
+  font-weight: 400;
+  letter-spacing: 0.002em;
+}
+
+.text-body-small {
+  font-size: clamp(0.875rem, 1.25vw, 1rem);
+  line-height: 1.6;
+  font-weight: 400;
+  letter-spacing: 0.003em;
+}
+
+.text-caption {
+  font-size: clamp(0.75rem, 1vw, 0.875rem);
+  line-height: 1.5;
+  font-weight: 400;
+  letter-spacing: 0.004em;
+  text-transform: uppercase;
+}
+
+.text-label {
+  font-size: clamp(0.75rem, 1vw, 0.875rem);
+  line-height: 1.4;
+  font-weight: 500;
+  letter-spacing: 0.005em;
+  text-transform: uppercase;
+}
+
+.text-button {
+  font-size: clamp(0.875rem, 1.25vw, 1rem);
+  line-height: 1.4;
+  font-weight: 500;
+  letter-spacing: 0.003em;
+  text-transform: uppercase;
+}
+
+.text-button-large {
+  font-size: clamp(1rem, 1.5vw, 1.25rem);
+  line-height: 1.3;
+  font-weight: 500;
+  letter-spacing: 0.002em;
+  text-transform: uppercase;
+}
+
+/* Mobile-first responsive adjustments */
+@media (max-width: 640px) {
+  .text-display {
+    font-size: clamp(2.5rem, 10vw, 4rem);
+  }
+
+  .text-h1 {
+    font-size: clamp(2rem, 8vw, 3rem);
+  }
+
+  .text-body,
+  .text-body-large {
+    font-size: clamp(0.875rem, 3vw, 1rem);
+  }
+}
+
+/* News page specific styling - always dark */
+main[class*="bg-black"] {
+  background-color: black !important;
+  color: white !important;
+}
+
+main[class*="bg-black"] * {
+  color: inherit;
+}
+
+/* Ensure news page sections are always dark */
+main[class*="bg-black"] section {
+  background-color: black !important;
+  color: white !important;
+}
+
+/* News page data attribute targeting */
+main[data-page="news"] {
+  background-color: black !important;
+  color: white !important;
+}
+
+main[data-page="news"] section {
+  background-color: black !important;
+  color: white !important;
+}
+
+main[data-page="news"] * {
+  color: inherit;
+}
+
+/* Projects page data attribute targeting */
+main[data-page="projects"] {
+  background-color: black !important;
+  color: white !important;
+}
+
+main[data-page="projects"] section {
+  background-color: black !important;
+  color: white !important;
+}
+
+main[data-page="projects"] * {
+  color: inherit;
+}
+
+/* Force white text on projects page */
+main[data-page="projects"] h1,
+main[data-page="projects"] h2,
+main[data-page="projects"] h3,
+main[data-page="projects"] h4,
+main[data-page="projects"] h5,
+main[data-page="projects"] h6,
+main[data-page="projects"] p,
+main[data-page="projects"] span,
+main[data-page="projects"] div {
+  color: white !important;
+}
+
+/* Specific targeting for project titles and categories */
+main[data-page="projects"] .project-card h3 {
+  color: white !important;
+}
+
+main[data-page="projects"] .project-card p {
+  color: rgba(255, 255, 255, 0.5) !important;
+}
+
+main[data-page="projects"] .project-card p:hover {
+  color: rgba(255, 255, 255, 0.7) !important;
+}

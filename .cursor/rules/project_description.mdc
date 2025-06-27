@@ -1,0 +1,156 @@
+---
+description: 
+globs: 
+alwaysApply: true
+---
+# Project Title: Naqsh Holding Company Website
+
+## Project Overview
+A modern, responsive corporate website for Naqsh Holding Company that showcases the company's diverse portfolio of subsidiaries, latest news, achievements, and projects. The website serves as a comprehensive digital presence for the holding company and its various business units.
+
+## Company Profile
+Naqsh Holding Company is an investment leader that owns and operates 5 diverse companies across multiple sectors:
+
+### Subsidiary Companies:
+1. **6 Degrees Technologies** - Technology & Smart Solutions
+2. **Efficiency Center Business Inc.** - Business Incubation & Co-working
+3. **Promotion Efficiency for Advertising** - Marketing & Creative Production
+4. **Burooj** - Real Estate Development & Construction
+5. **Burooj Air** - Aviation Services & Solutions
+
+## Website Features
+
+### Core Sections:
+- **Hero Section** - Dynamic landing with company tagline "To Leave a Trace" and architectural background
+- **About Us** - Company overview and mission
+- **Companies Portfolio** - Interactive horizontal scroll showcase of subsidiary companies with hover effects
+- **CEO Message** - Leadership communication with portrait
+- **Our Services** - Service offerings across all subsidiaries
+- **News Section** - Latest company updates and industry news (5 featured articles)
+- **Projects Showcase** - Featured projects across all business units with Swiper integration
+- **Our Brands** - Client and partner logos (42 major brands in 3 animated rows)
+- **Contact Us** - Contact information and inquiry forms with Pipedrive integration
+- **Footer** - Comprehensive site navigation and company information
+
+### Dynamic Content:
+- **News Articles** - Individual news pages with detailed content and categories
+- **Project Details** - Dedicated project showcase pages with galleries and statistics
+- **Privacy Policy & Terms of Service** - Legal pages
+
+## Technical Stack
+
+### Framework & Core Technologies:
+- **Next.js 14.2.16** - React framework with App Router
+- **React 18** - Frontend library
+- **TypeScript** - Type-safe development
+- **Tailwind CSS** - Utility-first CSS framework
+
+### UI Components & Libraries:
+- **Radix UI** - Accessible component primitives (comprehensive set including accordion, dialog, dropdown, etc.)
+- **Lucide React** - Icon library
+- **GSAP** - Advanced animations and transitions with ScrollTrigger
+- **Swiper** - Touch slider for projects
+- **Embla Carousel** - Additional carousel functionality
+- **React Hook Form** - Form handling with Zod validation
+- **Sonner** - Toast notifications
+- **Date-fns** - Date formatting utilities
+
+### Development Tools:
+- **PostCSS** - CSS processing
+- **Autoprefixer** - CSS vendor prefixing
+- **ESLint** - Code linting (configured to ignore during builds)
+- **pnpm** - Package manager
+
+## Key Features Implemented:
+
+### Advanced Theme System:
+- **Scroll-triggered Dark/Light Theme** - Dynamic theme switching based on scroll position
+- **GSAP-powered Transitions** - Smooth color and background transitions
+- **Logo Switching** - Automatic logo color changes based on theme
+- **Navigation Adaptation** - Theme-aware navigation elements
+
+### Interactive Elements:
+- **Custom Cursor** - Interactive cursor effects with hover states
+- **Loading Screen** - Initial loading experience with GSAP animations
+- **Scroll-triggered Animations** - GSAP ScrollTrigger for section animations
+- **Hover Effects** - Micro-interactions on cards, buttons, and images
+
+### Content Management:
+- **Static Data Structure** - TypeScript interfaces for news, projects, and companies
+- **Dynamic Routing** - Next.js App Router for news and project pages
+- **Image Optimization** - Next.js Image component with unoptimized setting for custom handling
+- **Category System** - Tagged content for news and projects
+
+### Performance & SEO:
+- **SEO Optimized** - Comprehensive meta tags, Open Graph, and Twitter cards
+- **Security Headers** - Content Security Policy implementation
+- **Responsive Design** - Mobile-first approach with breakpoint optimization
+- **Accessibility** - WCAG compliant components and navigation
+
+## Design System
+
+### Typography Scale:
+- **Display** - Large hero text (responsive sizing)
+- **H1-H4** - Heading hierarchy with responsive scaling
+- **Body variants** - Large, regular, small text sizes
+- **Caption and label** - Supporting text styles
+- **Button text** - Interactive element typography
+
+### Color System:
+- **Theme-aware variables** - CSS custom properties for light/dark themes
+- **Dynamic backgrounds** - GSAP-controlled color transitions
+- **Brand consistency** - Maintained across all components
+
+### Animation System:
+- **GSAP-powered transitions** - Smooth theme switching and scroll animations
+- **Scroll-triggered effects** - Section-based animation triggers
+- **Hover micro-interactions** - Interactive feedback on user actions
+- **Continuous animations** - Infinite scroll for brand logos
+
+## Content Structure
+
+### News System:
+- **5 Featured Articles** - Homepage showcase with categories
+- **Individual Pages** - Dynamic routing with detailed content
+- **Category Tags** - Business, Technology, Workspace, Innovation, etc.
+- **Author Information** - Attribution and read time estimates
+
+### Project Portfolio:
+- **5 Featured Projects** - Cross-company showcase
+- **Detailed Pages** - Individual project galleries and descriptions
+- **Statistics Display** - Project metrics (area, duration, equipment)
+- **Client Information** - Project attribution and context
+
+### Brand Showcase:
+- **42 Major Brands** - Organized in 3 animated rows
+- **Continuous Scrolling** - Infinite loop animations
+- **Hover Interactions** - Logo color transitions
+- **Industry Diversity** - Government, corporate, and international clients
+
+## Deployment & Configuration
+
+### Next.js Configuration:
+- **Image Optimization** - Unoptimized setting for custom handling
+- **Security Headers** - Content Security Policy with Pipedrive integration
+- **Build Optimization** - ESLint and TypeScript errors ignored during builds
+- **Performance Settings** - Optimized for production deployment
+
+### External Integrations:
+- **Pipedrive Forms** - Contact form integration
+- **Google Fonts** - Inter font family
+- **Favicon System** - Multiple icon sizes and formats
+
+## Target Audience
+- Potential investors and partners
+- Industry professionals and clients
+- Media and press representatives
+- Job seekers and talent
+- General public interested in the company
+
+## Business Objectives
+- Establish strong digital presence
+- Showcase diverse portfolio and capabilities
+- Generate leads and partnerships
+- Build trust and credibility
+- Provide comprehensive company information
+- Highlight achievements and news 

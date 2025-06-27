@@ -1,0 +1,294 @@
+---
+description: 
+globs: 
+alwaysApply: false
+---
+# Tech Context: Naqsh Holding Company Website
+
+## Technology Stack Overview
+
+### Core Framework & Runtime
+- **Next.js**: 14.2.16 (React framework with App Router)
+- **React**: 18.x (Frontend library)
+- **TypeScript**: 5.x (Type-safe development)
+- **Node.js**: Latest LTS (Runtime environment)
+
+### Styling & Design System
+- **Tailwind CSS**: 3.4.17 (Utility-first CSS framework)
+- **PostCSS**: 8.5 (CSS processing)
+- **Autoprefixer**: 10.4.20 (CSS vendor prefixing)
+- **tailwindcss-animate**: 1.0.7 (Animation utilities)
+
+### Animation & Interaction Libraries
+- **GSAP**: Latest (GreenSock Animation Platform)
+- **GSAP ScrollTrigger**: Plugin for scroll-based animations
+- **Swiper**: Latest (Touch slider for projects)
+- **Embla Carousel**: Latest (Additional carousel functionality)
+
+### UI Component Libraries
+- **Radix UI**: Latest (Comprehensive set of accessible primitives)
+  - Accordion, Alert Dialog, Aspect Ratio, Avatar
+  - Checkbox, Collapsible, Context Menu, Dialog
+  - Dropdown Menu, Hover Card, Label, Menubar
+  - Navigation Menu, Popover, Progress, Radio Group
+  - Scroll Area, Select, Separator, Slider
+  - Slot, Switch, Tabs, Toast, Toggle, Toggle Group, Tooltip
+
+### Form Handling & Validation
+- **React Hook Form**: Latest (Form state management)
+- **@hookform/resolvers**: 3.9.1 (Form validation resolvers)
+- **Zod**: 3.24.1 (Schema validation)
+
+### Utility Libraries
+- **Lucide React**: 0.454.0 (Icon library)
+- **clsx**: 2.1.1 (Conditional className utility)
+- **tailwind-merge**: 2.5.5 (Tailwind class merging)
+- **class-variance-authority**: 0.7.1 (Component variant management)
+- **date-fns**: 4.1.0 (Date formatting utilities)
+- **sonner**: Latest (Toast notifications)
+
+### Development Tools
+- **ESLint**: Code linting (configured to ignore during builds)
+- **pnpm**: Package manager
+- **TypeScript**: Static type checking
+
+## Development Environment Setup
+
+### Prerequisites
+- Node.js (Latest LTS version)
+- pnpm package manager
+- Git for version control
+
+### Installation Commands
+```bash
+# Install dependencies
+pnpm install
+
+# Development server
+pnpm dev
+
+# Build for production
+pnpm build
+
+# Start production server
+pnpm start
+
+# Lint code
+pnpm lint
+```
+
+### Environment Configuration
+- **Next.js Configuration**: `next.config.js` with image optimization and security headers
+- **TypeScript Configuration**: `tsconfig.json` with strict type checking
+- **Tailwind Configuration**: `tailwind.config.ts` with custom design system
+- **PostCSS Configuration**: `postcss.config.mjs` for CSS processing
+
+## Technical Constraints & Requirements
+
+### Performance Requirements
+- **Page Load Time**: Sub-3 seconds for initial page load
+- **Core Web Vitals**: Optimize for LCP, FID, and CLS
+- **Image Optimization**: Use Next.js Image component with unoptimized setting
+- **Bundle Size**: Minimize JavaScript bundle size
+- **Animation Performance**: 60fps animations using GSAP
+
+### Security Requirements
+- **Content Security Policy**: Implemented in Next.js headers
+- **HTTPS Only**: Enforce secure connections
+- **XSS Protection**: Sanitize user inputs
+- **CSRF Protection**: Implement proper form protection
+
+### Accessibility Requirements
+- **WCAG 2.1 AA Compliance**: Meet accessibility standards
+- **Keyboard Navigation**: Full keyboard accessibility
+- **Screen Reader Support**: Proper ARIA labels and semantic HTML
+- **Color Contrast**: Meet minimum contrast ratios
+- **Focus Management**: Proper focus indicators and management
+
+### Browser Support
+- **Modern Browsers**: Chrome, Firefox, Safari, Edge (latest 2 versions)
+- **Mobile Browsers**: iOS Safari, Chrome Mobile
+- **Progressive Enhancement**: Graceful degradation for older browsers
+
+## External Integrations
+
+### Pipedrive Integration
+- **Purpose**: Contact form handling and lead generation
+- **Configuration**: Content Security Policy allows Pipedrive domains
+- **Implementation**: Form submission to Pipedrive webforms
+- **Security**: CSP headers configured for Pipedrive integration
+
+### Google Fonts
+- **Font Family**: Inter (Google Fonts)
+- **Loading Strategy**: Optimized font loading with Next.js
+- **Fallbacks**: System font fallbacks for performance
+
+### Image Assets
+- **Format**: JPEG, PNG, SVG
+- **Optimization**: Next.js Image component with unoptimized setting
+- **Storage**: Local public directory structure
+- **Organization**: Categorized by content type (brands, news, projects)
+
+## Build & Deployment Configuration
+
+### Next.js Configuration
+```javascript
+// next.config.js
+const nextConfig = {
+  eslint: {
+    ignoreDuringBuilds: true,
+  },
+  typescript: {
+    ignoreBuildErrors: true,
+  },
+  images: {
+    unoptimized: true,
+  },
+  async headers() {
+    return [
+      {
+        source: "/:path*",
+        headers: [
+          {
+            key: "Content-Security-Policy",
+            value: `
+              default-src 'self';
+              script-src 'self' 'unsafe-inline' 'unsafe-eval' https://unpkg.com https://webforms.pipedrive.com;
+              style-src 'self' 'unsafe-inline' https://webforms.pipedrive.com;
+              font-src 'self' data: https://fonts.gstatic.com;
+              img-src 'self' data: https://webforms.pipedrive.com;
+              connect-src 'self' https://fonts.gstatic.com https://webforms.pipedrive.com;
+              frame-src 'self' https://webforms.pipedrive.com;
+            `
+              .replace(/\s{2,}/g, " ")
+              .trim(),
+          },
+        ],
+      },
+    ]
+  },
+}
+```
+
+### Tailwind Configuration
+```typescript
+// tailwind.config.ts
+const config: Config = {
+  darkMode: ["class"],
+  content: [
+    "./pages/**/*.{js,ts,jsx,tsx,mdx}",
+    "./components/**/*.{js,ts,jsx,tsx,mdx}",
+    "./app/**/*.{js,ts,jsx,tsx,mdx}",
+    "*.{js,ts,jsx,tsx,mdx}"
+  ],
+  theme: {
+    extend: {
+      colors: {
+        // Design system colors
+        background: 'hsl(var(--background))',
+        foreground: 'hsl(var(--foreground))',
+        // ... additional color definitions
+      },
+      borderRadius: {
+        lg: 'var(--radius)',
+        md: 'calc(var(--radius) - 2px)',
+        sm: 'calc(var(--radius) - 4px)'
+      },
+      keyframes: {
+        'accordion-down': {
+          from: { height: '0' },
+          to: { height: 'var(--radix-accordion-content-height)' }
+        },
+        'accordion-up': {
+          from: { height: 'var(--radix-accordion-content-height)' },
+          to: { height: '0' }
+        }
+      },
+      animation: {
+        'accordion-down': 'accordion-down 0.2s ease-out',
+        'accordion-up': 'accordion-up 0.2s ease-out'
+      }
+    }
+  },
+  plugins: [require("tailwindcss-animate")],
+}
+```
+
+## Critical Dependencies & Versions
+
+### Production Dependencies
+```json
+{
+  "next": "14.2.16",
+  "react": "^18",
+  "react-dom": "^18",
+  "typescript": "^5",
+  "tailwindcss": "^3.4.17",
+  "gsap": "latest",
+  "@radix-ui/react-*": "latest",
+  "lucide-react": "^0.454.0",
+  "swiper": "latest",
+  "embla-carousel-react": "latest",
+  "react-hook-form": "latest",
+  "zod": "^3.24.1",
+  "sonner": "latest",
+  "date-fns": "4.1.0"
+}
+```
+
+### Development Dependencies
+```json
+{
+  "@types/node": "^22",
+  "@types/react": "^18",
+  "@types/react-dom": "^18",
+  "postcss": "^8.5",
+  "autoprefixer": "^10.4.20"
+}
+```
+
+## Performance Optimization Strategies
+
+### Image Optimization
+- **Next.js Image Component**: Automatic optimization and lazy loading
+- **Unoptimized Setting**: Custom handling for specific requirements
+- **Format Selection**: JPEG for photos, PNG for graphics, SVG for icons
+- **Responsive Images**: Different sizes for different screen sizes
+
+### Code Splitting
+- **Automatic Splitting**: Next.js automatic code splitting
+- **Dynamic Imports**: Lazy loading for heavy components
+- **Bundle Analysis**: Monitor bundle sizes and optimize
+
+### Animation Performance
+- **GSAP Optimization**: Use GSAP for performance-critical animations
+- **ScrollTrigger**: Efficient scroll-based animations
+- **Cleanup**: Proper cleanup of animations on component unmount
+- **Hardware Acceleration**: Use transform and opacity for smooth animations
+
+## Monitoring & Analytics
+
+### Performance Monitoring
+- **Core Web Vitals**: Monitor LCP, FID, CLS
+- **Bundle Analysis**: Regular bundle size monitoring
+- **Lighthouse Scores**: Regular performance audits
+- **Real User Monitoring**: Track actual user performance
+
+### Error Tracking
+- **Error Boundaries**: React error boundaries for graceful error handling
+- **Console Logging**: Development logging for debugging
+- **Production Monitoring**: Error tracking in production environment
+
+## Future Technical Considerations
+
+### Scalability
+- **Content Management**: Consider CMS integration for larger content needs
+- **API Integration**: Prepare for backend API integration
+- **Caching Strategy**: Implement proper caching for static content
+- **CDN Integration**: Consider CDN for global performance
+
+### Maintenance
+- **Dependency Updates**: Regular security and feature updates
+- **Performance Monitoring**: Ongoing performance optimization
+- **Accessibility Audits**: Regular accessibility testing
+- **Browser Testing**: Continuous browser compatibility testing

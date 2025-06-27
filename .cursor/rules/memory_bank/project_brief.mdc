@@ -1,0 +1,57 @@
+---
+description: 
+globs: 
+alwaysApply: true
+---
+# Project Brief: Naqsh Holding Company Website
+
+## Project Overview
+A modern, responsive corporate website for Naqsh Holding Company that showcases the company's diverse portfolio of subsidiaries, latest news, achievements, and projects. The website serves as a comprehensive digital presence for the holding company and its various business units.
+
+## Primary Objectives
+1. **Establish Strong Digital Presence** - Create a professional, modern website that reflects Naqsh's position as an investment leader
+2. **Showcase Portfolio Diversity** - Highlight the 5 subsidiary companies across multiple sectors
+3. **Generate Leads and Partnerships** - Provide clear pathways for business inquiries and collaboration
+4. **Build Trust and Credibility** - Demonstrate expertise through project showcases and client testimonials
+5. **Provide Comprehensive Information** - Serve as the primary source of company information for all stakeholders
+
+## Key Deliverables
+- **Responsive Corporate Website** - Mobile-first design with modern UI/UX
+- **Dynamic Content Management** - News articles and project showcases with individual pages
+- **Interactive Portfolio Showcase** - Horizontal scroll companies section with hover effects
+- **Advanced Theme System** - Scroll-triggered dark/light theme with GSAP animations
+- **SEO-Optimized Structure** - Comprehensive meta tags, Open Graph, and structured data
+- **Contact Integration** - Pipedrive form integration for lead generation
+- **Brand Showcase** - Animated display of 42 major client and partner brands
+
+## Stakeholder Expectations
+- **Investors and Partners** - Clear understanding of company capabilities and portfolio
+- **Industry Professionals** - Professional presentation of services and achievements
+- **Media Representatives** - Easy access to company news and updates
+- **Job Seekers** - Insight into company culture and opportunities
+- **General Public** - Transparent information about company activities and impact
+
+## Absolute Constraints and Boundaries
+- **Technology Stack** - Must use Next.js 14.2.16 with TypeScript and Tailwind CSS
+- **Performance Requirements** - Fast loading times with optimized images and animations
+- **Accessibility Standards** - WCAG compliant components and navigation
+- **Security Requirements** - Content Security Policy implementation
+- **Brand Consistency** - Maintain Naqsh's visual identity across all components
+- **Responsive Design** - Must work seamlessly across all device sizes
+- **Content Structure** - Static content with dynamic routing for news and projects
+
+## Success Criteria
+- **User Experience** - Intuitive navigation with smooth animations and interactions
+- **Performance** - Sub-3 second load times with optimized assets
+- **SEO Performance** - High search engine visibility with proper meta tags
+- **Lead Generation** - Functional contact forms with Pipedrive integration
+- **Brand Representation** - Accurate portrayal of Naqsh's diverse portfolio and capabilities
+- **Technical Excellence** - Clean, maintainable code with proper TypeScript implementation
+
+## Project Scope Boundaries
+- **In Scope**: Corporate website with all specified sections, dynamic content, theme system, and integrations
+- **Out of Scope**: E-commerce functionality, user authentication, admin panels, or backend CMS
+- **Future Considerations**: Potential for content management system integration, additional language support, or advanced analytics
+
+## Project Vision
+To create a digital platform that embodies Naqsh's tagline "To Leave a Trace" by delivering an impactful, memorable user experience that showcases the company's diverse capabilities and establishes lasting connections with stakeholders across all sectors.

@@ -1,0 +1,283 @@
+---
+description: 
+globs: 
+alwaysApply: true
+---
+# System Patterns: Naqsh Holding Company Website
+
+## High-Level System Architecture
+
+```mermaid
+flowchart TD
+    User[User Browser] --> NextJS[Next.js 14.2.16 App Router]
+    NextJS --> Layout[Root Layout]
+    Layout --> ThemeController[Theme Controller]
+    Layout --> Navigation[Navigation Component]
+    Layout --> MainContent[Main Content]
+    
+    MainContent --> Hero[Hero Section]
+    MainContent --> AboutUs[About Us Section]
+    MainContent --> Companies[Companies Portfolio]
+    MainContent --> CeoMessage[CEO Message]
+    MainContent --> Services[Our Services]
+    MainContent --> News[News Section]
+    MainContent --> Projects[Projects Showcase]
+    MainContent --> Brands[Our Brands]
+    MainContent --> Contact[Contact Us]
+    MainContent --> Footer[Footer]
+    
+    News --> NewsPages[Dynamic News Pages]
+    Projects --> ProjectPages[Dynamic Project Pages]
+    
+    ThemeController --> GSAP[GSAP Animations]
+    GSAP --> ScrollTrigger[ScrollTrigger Plugin]
+    
+    Contact --> Pipedrive[Pipedrive Integration]
+    
+    subgraph "Data Layer"
+        StaticData[Static TypeScript Data]
+        StaticData --> NewsData[News Articles]
+        StaticData --> ProjectData[Project Details]
+        StaticData --> CompanyData[Company Information]
+        StaticData --> BrandData[Brand Logos]
+    end
+    
+    subgraph "UI Components"
+        RadixUI[Radix UI Primitives]
+        CustomUI[Custom UI Components]
+        TailwindCSS[Tailwind CSS Styling]
+    end
+```
+
+## Key Technical Decisions and Justifications
+
+### 1. Next.js 14.2.16 with App Router
+**Decision**: Use Next.js 14.2.16 with the new App Router architecture
+**Justification**: 
+- Provides modern React features and improved performance
+- App Router offers better file-based routing and layout system
+- Built-in optimizations for images, fonts, and performance
+- Excellent TypeScript support and developer experience
+
+### 2. GSAP for Animations
+**Decision**: Use GSAP with ScrollTrigger for all animations
+**Justification**:
+- Superior performance compared to CSS animations
+- ScrollTrigger provides precise scroll-based animation control
+- Enables complex theme transitions and scroll-triggered effects
+- Professional-grade animation library with excellent browser support
+
+### 3. Static Data with TypeScript Interfaces
+**Decision**: Use static TypeScript data files instead of CMS
+**Justification**:
+- Faster performance with no database queries
+- Type safety with TypeScript interfaces
+- Easier deployment and maintenance
+- Sufficient for current content volume (5 news articles, 5 projects)
+
+### 4. Tailwind CSS with Custom Design System
+**Decision**: Tailwind CSS with custom typography and color system
+**Justification**:
+- Rapid development with utility-first approach
+- Consistent design system with custom extensions
+- Responsive design built-in
+- Small bundle size with PurgeCSS
+
+### 5. Radix UI Primitives
+**Decision**: Use Radix UI for accessible component primitives
+**Justification**:
+- WCAG compliant components out of the box
+- Unstyled components allow full design control
+- Excellent accessibility features
+- Modern React patterns and hooks
+
+## Prevalent Design Patterns
+
+### 1. Section-Based Architecture
+**Pattern**: Each major page section is a separate React component
+**Implementation**: 
+```typescript
+// Example: Hero section component
+export default function Hero() {
+  // Component logic
+  return (
+    <section className="hero-section">
+      {/* Section content */}
+    </section>
+  )
+}
+```
+**Benefits**: 
+- Clear separation of concerns
+- Easy maintenance and updates
+- Reusable components
+- Better code organization
+
+### 2. Theme-Aware Components
+**Pattern**: Components adapt to light/dark theme using CSS classes and GSAP
+**Implementation**:
+```typescript
+// Theme-aware text elements
+<h2 className="theme-text text-h2">Title</h2>
+
+// GSAP theme transitions
+gsap.to(themeTextElements, { color: "#FFFFFF" }, 0)
+```
+**Benefits**:
+- Consistent theme switching across all components
+- Smooth transitions with GSAP
+- Maintainable theme system
+
+### 3. Scroll-Triggered Animations
+**Pattern**: Animations triggered by scroll position using GSAP ScrollTrigger
+**Implementation**:
+```typescript
+gsap.from(headerRef.current?.children || [], {
+  y: 30,
+  opacity: 0,
+  duration: 1,
+  stagger: 0.2,
+  scrollTrigger: {
+    trigger: sectionRef.current,
+    start: "top center+=100",
+  }
+})
+```
+**Benefits**:
+- Performance optimized animations
+- Precise control over animation timing
+- Enhanced user experience
+
+### 4. TypeScript Interfaces for Data
+**Pattern**: Strong typing for all data structures
+**Implementation**:
+```typescript
+export interface NewsItem {
+  id: number
+  day: string
+  month: string
+  image: string
+  title: string
+  categories: { name: string; link: string }[]
+  slug: string
+  excerpt?: string
+  content?: string
+  author?: string
+  readTime?: string
+}
+```
+**Benefits**:
+- Type safety and IntelliSense
+- Prevents runtime errors
+- Better developer experience
+- Self-documenting code
+
+### 5. Responsive Design with Tailwind
+**Pattern**: Mobile-first responsive design using Tailwind breakpoints
+**Implementation**:
+```typescript
+// Responsive typography
+<h1 className="text-display font-light">
+  TO LEAVE A TRACE
+</h1>
+
+// Responsive spacing
+<section className="py-32 bg-white">
+  <div className="container mx-auto px-4">
+    {/* Content */}
+  </div>
+</section>
+```
+**Benefits**:
+- Consistent responsive behavior
+- Utility-first approach
+- Easy maintenance
+
+## Component Relationships
+
+### Layout Hierarchy
+```
+RootLayout
+├── ThemeController (Global theme management)
+├── Navigation (Site navigation)
+├── Main Content
+│   ├── Hero Section
+│   ├── About Us Section
+│   ├── Companies Portfolio
+│   ├── CEO Message
+│   ├── Our Services
+│   ├── News Section
+│   ├── Projects Showcase
+│   ├── Our Brands
+│   ├── Contact Us
+│   └── Footer
+└── Custom Cursor (Global cursor effects)
+```
+
+### Data Flow
+```
+Static Data Files → TypeScript Interfaces → Components → UI Rendering
+     ↓
+News/Project Pages ← Dynamic Routing ← Next.js App Router
+```
+
+### Animation Flow
+```
+Scroll Events → GSAP ScrollTrigger → Animation Triggers → Component Updates
+     ↓
+Theme Changes → GSAP Timeline → Color/Background Transitions
+```
+
+## Guidelines for Maintaining Architectural Consistency
+
+### 1. Component Structure
+- Use functional components with TypeScript
+- Implement proper prop interfaces
+- Follow consistent naming conventions
+- Include proper accessibility attributes
+
+### 2. Styling Guidelines
+- Use Tailwind CSS utilities primarily
+- Create custom CSS only when necessary
+- Follow the established design system
+- Maintain theme-aware styling
+
+### 3. Animation Guidelines
+- Use GSAP for all animations
+- Implement ScrollTrigger for scroll-based animations
+- Ensure animations enhance rather than distract
+- Maintain performance with proper cleanup
+
+### 4. Data Management
+- Use TypeScript interfaces for all data structures
+- Keep data in dedicated files under `lib/data/`
+- Maintain consistent data formats
+- Document data relationships
+
+### 5. Performance Guidelines
+- Optimize images using Next.js Image component
+- Implement proper loading strategies
+- Use React.memo for expensive components
+- Clean up GSAP animations on unmount
+
+## Future Scalability Considerations
+
+### 1. Content Management
+- Current static data approach works for small content volume
+- Consider CMS integration for larger content needs
+- Maintain TypeScript interfaces for data consistency
+
+### 2. Component Library
+- Build reusable component library for future projects
+- Document component usage and props
+- Implement proper testing strategies
+
+### 3. Performance Optimization
+- Implement code splitting for larger applications
+- Consider server-side rendering for SEO
+- Monitor Core Web Vitals and optimize accordingly
+
+### 4. Feature Extensions
+- Modular architecture allows easy feature additions
+- Maintain consistent patterns for new features
+- Document new patterns as they emerge
