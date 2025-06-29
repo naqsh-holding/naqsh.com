@@ -1,7 +1,6 @@
 "use client"
 
 import * as React from "react"
-import { Suspense } from "react"
 
 import LoadingScreen from "./components/sections/LoadingScreen"
 import Navigation from "./components/layout/Navigation"
@@ -30,31 +29,25 @@ export default function Home() {
   }, [])
 
   return (
-    <Suspense
-      fallback={
-        <div className="flex items-center justify-center h-screen w-screen bg-white text-black">Loading...</div>
-      }
-    >
-      <main id="main-wrapper" className="bg-[#f5f5f5] text-black transition-colors duration-1000">
-        {isLoading ? (
-          <LoadingScreen onLoadingComplete={() => setIsLoading(false)} />
-        ) : (
-          <>
-            <ThemeController />
-            <Navigation forceStyle="black" isFixed={false} />
-            <Hero />
-            <AboutUs />
-            <Companies />
-            <CeoMessage />
-            <OurServices />
-            <NewsSection />
-            <ProjectsSlider />
-            <OurBrands />
-            <ContactUs />
-            <Footer />
-          </>
-        )}
-      </main>
-    </Suspense>
+    <main id="main-wrapper" className="bg-[#f5f5f5] text-black transition-colors duration-1000">
+      {isLoading ? (
+        <LoadingScreen onLoadingComplete={() => setIsLoading(false)} />
+      ) : (
+        <>
+          <ThemeController />
+          <Navigation forceStyle="black" isFixed={false} />
+          <Hero />
+          <AboutUs />
+          <Companies />
+          <CeoMessage />
+          <OurServices />
+          <NewsSection />
+          <ProjectsSlider />
+          <OurBrands />
+          <ContactUs />
+          <Footer />
+        </>
+      )}
+    </main>
   )
 }

@@ -13,31 +13,31 @@ const companies: Company[] = [
     id: 1,
     name: "6 Degrees Technologies",
     description: "Technology & Smart Solutions",
-    image: "/placeholder.svg?height=1000&width=600",
+    image: "/Naqsh.Companies V.2 6Degrees.png",
   },
   {
     id: 2,
     name: "Efficiency Center Business Inc.",
     description: "Business Incubation & Co-working",
-    image: "/placeholder.svg?height=1000&width=600",
+    image: "/Naqsh.Companies. V2 Center.png",
   },
   {
     id: 3,
     name: "Promotion Efficiency for Advertising",
     description: "Marketing & Creative Production",
-    image: "/placeholder.svg?height=1000&width=600",
+    image: "/Naqsh.Companies V2.Promotion.png",
   },
   {
     id: 4,
     name: "Burooj",
     description: "Real Estate Development & Construction",
-    image: "/placeholder.svg?height=1000&width=600",
+    image: "/Naqsh.Companies V2.Burooj.png",
   },
   {
     id: 5,
     name: "Burooj Air",
     description: "Aviation Services & Solutions",
-    image: "/placeholder.svg?height=1000&width=600",
+    image: "/Naqsh.Companies V2. BuroojAir.png",
   },
 ]
 
@@ -57,6 +57,7 @@ export default function Companies() {
   const [cursorPosition, setCursorPosition] = useState({ x: 0, y: 0 })
   const [cursorColors, setCursorColors] = useState<string[]>([])
   const [currentPage, setCurrentPage] = useState(0)
+  const [hoveredArrow, setHoveredArrow] = useState<number | null>(null)
 
   const companiesPerPage = 4
   const totalPages = Math.ceil(companies.length / companiesPerPage)
@@ -113,12 +114,27 @@ export default function Companies() {
       <div className="container mx-auto px-4">
         <div className="flex justify-end items-center mb-8">
           <div className="flex gap-2">
-            <Button variant="outline" size="icon" onClick={handlePrevious} disabled={currentPage === 0}>
-              <ArrowLeft className="h-4 w-4" />
+            <Button 
+              variant="outline" 
+              size="icon" 
+              onClick={handlePrevious} 
+              disabled={currentPage === 0}
+              onMouseEnter={() => setHoveredArrow(0)}
+              onMouseLeave={() => setHoveredArrow(null)}
+              className="rotate-180"
+            >
+              <ArrowLeft className={`w-6 h-6 ${hoveredArrow === 0 ? 'text-blue-500' : 'text-gray-500'}`} />
               <span className="sr-only">Scroll Left</span>
             </Button>
-            <Button variant="outline" size="icon" onClick={handleNext} disabled={currentPage === totalPages - 1}>
-              <ArrowRight className="h-4 w-4" />
+            <Button 
+              variant="outline" 
+              size="icon" 
+              onClick={handleNext} 
+              disabled={currentPage === totalPages - 1}
+              onMouseEnter={() => setHoveredArrow(1)}
+              onMouseLeave={() => setHoveredArrow(null)}
+            >
+              <ArrowRight className={`w-6 h-6 ${hoveredArrow === 1 ? 'text-blue-500' : 'text-gray-500'}`} />
               <span className="sr-only">Scroll Right</span>
             </Button>
           </div>
@@ -128,7 +144,7 @@ export default function Companies() {
             <div
               key={company.id}
               ref={(el) => (cardsRef.current[index] = el)}
-              className="w-full"
+              className="w-full group"
               onMouseEnter={() => setHoveredImage(index)}
               onMouseLeave={() => setHoveredImage(null)}
               onMouseMove={(e) => handleMouseMove(e, index)}
@@ -138,7 +154,7 @@ export default function Companies() {
                   src={company.image || "/placeholder.svg"}
                   alt={company.name}
                   fill
-                  className="object-cover"
+                  className="object-cover transition-all duration-500 ease-in-out filter grayscale group-hover:grayscale-0"
                   priority
                 />
                 {hoveredImage === index && (
