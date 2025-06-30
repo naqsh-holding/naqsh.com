@@ -12,14 +12,21 @@ export default function LoadingScreen({ onLoadingComplete }: LoadingScreenProps)
   const percentageRef = useRef<HTMLSpanElement>(null)
 
   useEffect(() => {
+    if (!percentageRef.current || !containerRef.current) return
+
     const tl = gsap.timeline({
-      onComplete: onLoadingComplete,
+      onComplete: () => {
+        // Ensure the callback is called
+        setTimeout(() => {
+          onLoadingComplete()
+        }, 100)
+      },
     })
 
     // Start percentage animation
     tl.to(percentageRef.current, {
       innerText: "100",
-      duration: 4,
+      duration: 3,
       ease: "power2.out",
       snap: { innerText: 1 },
       onUpdate: function () {
@@ -31,8 +38,8 @@ export default function LoadingScreen({ onLoadingComplete }: LoadingScreenProps)
     })
       .to({}, { duration: 0.5 }) // Hold at 100%
       .to(containerRef.current, {
-        x: "100%",
-        duration: 1.2,
+        opacity: 0,
+        duration: 0.8,
         ease: "power2.inOut",
       })
 
@@ -42,7 +49,19 @@ export default function LoadingScreen({ onLoadingComplete }: LoadingScreenProps)
   }, [onLoadingComplete])
 
   return (
-    <div ref={containerRef} className="fixed inset-0 z-50 bg-black">
+    <div 
+      ref={containerRef} 
+      className="fixed inset-0 z-[9999] bg-black flex items-center justify-center"
+      style={{ 
+        position: 'fixed',
+        top: 0,
+        left: 0,
+        right: 0,
+        bottom: 0,
+        zIndex: 9999,
+        backgroundColor: '#000000'
+      }}
+    >
       {/* Percentage counter in bottom right */}
       <div className="absolute bottom-8 right-8">
         <span ref={percentageRef} className="text-white text-6xl md:text-8xl font-light">

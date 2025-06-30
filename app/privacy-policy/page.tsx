@@ -178,10 +178,10 @@ export default function PrivacyPolicyPage() {
                 </p>
                 <div className="bg-neutral-800 p-6 rounded-lg mb-4">
                   <p className="text-neutral-300 mb-2">
-                    <strong>Email:</strong> info@naqsh.com.sa
+                    <strong>Email:</strong> contact@naqsh.com.sa
                   </p>
                   <p className="text-neutral-300 mb-2">
-                    <strong>Phone:</strong> +966 11 200 0000
+                    <strong>Phone:</strong> 0535558889
                   </p>
                   <p className="text-neutral-300">
                     <strong>Address:</strong> Naqsh Holding Company, Riyadh, Kingdom of Saudi Arabia

@@ -1,10 +1,8 @@
 import type React from "react"
 import type { Metadata } from "next"
 import "./globals.css"
-import { Inter } from "next/font/google"
+import { montserrat } from "./lib/fonts"
 import Cursor from "./components/ui/Cursor"
-
-const inter = Inter({ subsets: ["latin"] })
 
 export const metadata: Metadata = {
   title: "Naqsh Holding Company | Investment Leader | To Leave a Trace",
@@ -129,7 +127,7 @@ export default function RootLayout({
                 "@type": "ContactPoint",
                 "contactType": "customer service",
                 "email": "contact@naqsh.com.sa",
-                "telephone": "+966-11-200-0000",
+                "telephone": "0535558889",
                 "availableLanguage": ["English", "Arabic"]
               },
               "sameAs": [
@@ -219,7 +217,7 @@ export default function RootLayout({
           }}
         />
       </head>
-      <body className={`${inter.className} cursor-none`}>
+      <body className={`${montserrat.className} cursor-none`}>
         {children}
         <Cursor />
       </body>

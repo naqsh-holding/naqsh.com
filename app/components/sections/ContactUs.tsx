@@ -107,12 +107,22 @@ export default function ContactUs() {
                 icon={<MapPin className="w-5 h-5 theme-text" />}
                 title="Visit Our Office"
                 lines={["6919 Prince Turki Bin Abdulaziz Street", "Alkhobar, Eastern Province", "Saudi Arabia"]}
+                link="https://maps.google.com/?q=6919+Prince+Turki+Bin+Abdulaziz+Street+Alkhobar+Eastern+Province+Saudi+Arabia"
+                isAddress={true}
               />
-              <InfoRow icon={<Phone className="w-5 h-5 theme-text" />} title="Call Us" lines={["+966 53 555 8889"]} />
+              <InfoRow 
+                icon={<Phone className="w-5 h-5 theme-text" />} 
+                title="Call Us" 
+                lines={["0535558889"]}
+                link="tel:0535558889"
+                isPhone={true}
+              />
               <InfoRow
                 icon={<Mail className="w-5 h-5 theme-text" />}
                 title="Email Us"
-                lines={["Contact@Naqsh.com.sa"]}
+                lines={["contact@naqsh.com.sa"]}
+                link="mailto:contact@naqsh.com.sa"
+                isEmail={true}
               />
             </div>
           </div>
@@ -191,21 +201,44 @@ function InfoRow({
   icon,
   title,
   lines,
+  link,
+  isAddress,
+  isPhone,
+  isEmail,
 }: {
   icon: React.ReactNode
   title: string
   lines: string[]
+  link?: string
+  isAddress?: boolean
+  isPhone?: boolean
+  isEmail?: boolean
 }) {
   return (
     <div className="flex items-start space-x-4">
       <div className="w-12 h-12 bg-black/10 rounded-full flex items-center justify-center flex-shrink-0">{icon}</div>
       <div>
         <h4 className="theme-text text-label mb-1">{title}</h4>
-        {lines.map((l) => (
-          <p key={l} className="theme-text text-body-small opacity-70">
-            {l}
-          </p>
-        ))}
+        {link ? (
+          <a 
+            href={link} 
+            className="block"
+            target={link.startsWith('http') ? '_blank' : undefined}
+            rel={link.startsWith('http') ? 'noopener noreferrer' : undefined}
+          >
+            {lines.map((l) => (
+              <p key={l} className="theme-text text-body-small opacity-70 hover:opacity-100 transition-opacity duration-200 cursor-pointer">
+                {l}
+              </p>
+            ))}
+          </a>
+        ) : (
+          lines.map((l) => (
+            <p key={l} className="theme-text text-body-small opacity-70">
+              {l}
+            </p>
+          ))
+        )}
       </div>
     </div>
   )

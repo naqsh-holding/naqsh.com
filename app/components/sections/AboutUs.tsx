@@ -57,23 +57,22 @@ export default function AboutUs() {
 
           {/* Main Title */}
           <h2 ref={titleRef} className="text-black text-h1 mb-16">
-            Shaping the Future,
-            <br />
-            One Sector at a Time
+          THE ESSENCE 
+            OF NAQSH
           </h2>
 
           {/* Content */}
           <div ref={contentRef} className="space-y-8 max-w-3xl">
             <p className="text-body-large opacity-80 text-black">
-              Naqsh Holding is a forward-thinking investment group built on a foundation of innovation, strategic
-              vision, and diversified expertise. We lead a portfolio of specialized companies across technology,
-              construction, advertising, coworking, and drone services — each one aligned with our mission to drive
-              sustainable growth and long-term value.
+            At Naqsh Holding, we don't just aim to succeed — we aim to leave a mark.
+            We believe that every project is an opportunity to etch a lasting impact, and every investment is a signature on the future of the industries we serve.
             </p>
 
             <p className="text-body opacity-70 text-black">
-              With a unified commitment to quality and excellence, our subsidiaries operate independently yet
-              collaborate under a shared vision: to redefine industry standards and leave a lasting mark on the market.
+            Naqsh was founded with a vision that goes beyond conventional business models. As a diversified holding group, we strive to create meaningful value across technology, media, and real estate development.
+We don't merely participate — we shape, we establish, and we influence.
+With every venture, we redefine presence, craft opportunity, and ensure that our contributions resonate long after the work is done.
+Our motto, “To Leave a Mark,” is more than just a slogan — it's a promise we bring to life through innovation, sustainability, and long-term impact.
             </p>
           </div>
         </div>

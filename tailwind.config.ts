@@ -10,6 +10,16 @@ const config: Config = {
   ],
   theme: {
   	extend: {
+      fontFamily: {
+        'montserrat': ['var(--font-montserrat)', 'sans-serif'],
+      },
+      fontWeight: {
+        'light': '300',
+        'normal': '400',
+        'medium': '500',
+        'semibold': '600',
+        'bold': '700',
+      },
   		colors: {
   			background: 'hsl(var(--background))',
   			foreground: 'hsl(var(--foreground))',

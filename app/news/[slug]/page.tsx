@@ -5,7 +5,7 @@ import { useParams, useRouter } from "next/navigation"
 import Image from "next/image"
 import { gsap } from "gsap"
 import { ScrollTrigger } from "gsap/ScrollTrigger"
-import { Calendar } from "lucide-react"
+import { Calendar, Phone } from "lucide-react"
 import Navigation from "@/app/components/layout/Navigation"
 import Footer from "@/app/components/sections/Footer"
 import Link from "next/link"
@@ -494,14 +494,17 @@ export default function NewsArticle() {
                   <h3 className="text-lg font-medium mb-4 text-white">Connect</h3>
                   <ul className="space-y-2.5 mb-6">
                     <li>
-                      <a href="mailto:info@naqsh.com" className="text-white/70 hover:text-white transition-colors duration-300 text-sm hover:underline">
-                        info@naqsh.com
+                      <a href="mailto:contact@naqsh.com.sa" className="text-white/70 hover:text-white transition-colors duration-300 text-sm hover:underline">
+                        contact@naqsh.com.sa
                       </a>
                     </li>
                     <li>
-                      <a href="tel:+966000000000" className="text-white/70 hover:text-white transition-colors duration-300 text-sm hover:underline">
-                        +966 XX XXX XXXX
-                      </a>
+                      <div className="flex items-center space-x-2">
+                        <Phone className="w-4 h-4 text-white/70" />
+                        <a href="tel:0535558889" className="text-white/70 hover:text-white transition-colors duration-300 text-sm hover:underline">
+                          0535558889
+                        </a>
+                      </div>
                     </li>
                   </ul>
                 </div>

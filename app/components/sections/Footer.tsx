@@ -5,7 +5,7 @@ import Link from "next/link"
 import Image from "next/image"
 import { gsap } from "gsap"
 import { ScrollTrigger } from "gsap/ScrollTrigger"
-import { Linkedin, Twitter, Instagram } from "lucide-react"
+import { Linkedin, Twitter, Instagram, Phone } from "lucide-react"
 
 if (typeof window !== "undefined") {
   gsap.registerPlugin(ScrollTrigger)
@@ -121,24 +121,23 @@ export default function Footer() {
             {/* Connect */}
             <div className="footer-col">
               <h3 className="text-lg font-medium mb-4 text-white">Connect</h3>
-              <ul className="space-y-2.5 mb-6">
-                <li>
+              <div className="space-y-2.5 mb-6">
+                <a
+                  href="mailto:contact@naqsh.com.sa"
+                  className="text-white/70 hover:text-white transition-colors duration-300 text-sm hover:underline"
+                >
+                  contact@naqsh.com.sa
+                </a>
+                <div className="flex items-center space-x-2">
+                  <Phone className="w-4 h-4 text-white/70" />
                   <a
-                    href="mailto:info@naqsh.com.sa"
+                    href="tel:0535558889"
                     className="text-white/70 hover:text-white transition-colors duration-300 text-sm hover:underline"
                   >
-                    info@naqsh.com.sa
+                    0535558889
                   </a>
-                </li>
-                <li>
-                  <a
-                    href="tel:+966112000000"
-                    className="text-white/70 hover:text-white transition-colors duration-300 text-sm hover:underline"
-                  >
-                    +966 11 200 0000
-                  </a>
-                </li>
-              </ul>
+                </div>
+              </div>
               <div className="flex space-x-3">
                 {socialLinks.map((social) => (
                   <Link
