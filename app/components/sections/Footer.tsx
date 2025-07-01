@@ -55,11 +55,10 @@ export default function Footer() {
   const socialLinks = [
     {
       name: "LinkedIn",
-      href: "https://linkedin.com/company/naqsh-holding-company",
+      href: "https://www.linkedin.com/company/naqshco/",
       icon: Linkedin,
       ariaLabel: "Naqsh Holding Company on LinkedIn",
     },
-    { name: "Instagram", href: "https://instagram.com/naqsh_holding", icon: Instagram, ariaLabel: "Naqsh Holding Company on Instagram" },
   ]
 
   return (
@@ -145,6 +144,7 @@ export default function Footer() {
                     aria-label={social.ariaLabel}
                   >
                     <social.icon className="w-4 h-4 text-white/80 group-hover:text-white" />
+                    <span className="sr-only">{social.name}</span>
                   </Link>
                 ))}
               </div>

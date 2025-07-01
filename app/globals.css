@@ -260,10 +260,6 @@ body {
   font-family: var(--font-montserrat), sans-serif;
 }
 
-.font-monument {
-  font-family: 'Monument Extended', sans-serif;
-}
-
 .nav-link {
   position: relative;
   transition: color 0.3s ease;
@@ -323,20 +319,6 @@ body {
   [role="button"] {
     -webkit-tap-highlight-color: transparent;
   }
-}
-
-/* Global PP Gatwick font application for headings and UI elements */
-h1, h2, h3, h4, h5, h6,
-.text-display, .text-h1, .text-h2, .text-h3, .text-h4,
-.text-caption, .text-label, .text-button, .text-button-large,
-.font-pp-gatwick {
-  font-family: var(--font-pp-gatwick), serif;
-}
-
-/* Navigation and UI elements */
-.nav-link, button, [role="button"],
-.font-light, .font-medium, .font-semibold, .font-bold {
-  font-family: var(--font-pp-gatwick), serif;
 }
 
 /* Responsive typography */
