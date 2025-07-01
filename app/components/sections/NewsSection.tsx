@@ -132,7 +132,7 @@ export default function NewsSection() {
         {/* News Grid */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
           {newsItems.map((item, index) => (
-            <div key={item.id} ref={(el) => (itemsRef.current[index] = el)} className="group">
+            <div key={item.id} ref={(el) => { itemsRef.current[index] = el }} className="group">
               <Link href={`/news/${item.slug}`} aria-label={`Read more about ${item.title}`}>
                 {/* Image Container */}
                 <div className="relative overflow-hidden mb-6">

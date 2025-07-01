@@ -161,7 +161,7 @@ export default function Navigation({ forceTheme, forceStyle, isFixed = true }: N
           </Link>
 
           <div className="hidden lg:flex items-center space-x-8" role="navigation" aria-label="Primary navigation menu">
-            {["ABOUT", "SERVICES", "PROJECTS", "NEWS"].map((link) => (
+            {["ABOUT", "SERVICES", "NEWS", "PROJECTS"].map((link) => (
               <Link
                 key={link}
                 href={`#${link.toLowerCase()}`}
@@ -181,7 +181,7 @@ export default function Navigation({ forceTheme, forceStyle, isFixed = true }: N
               </Link>
             ))}
             <PillButton
-              href="#contact"
+              href="/contact"
               variant={styling.textColor === "text-white" ? "light" : "dark"}
               ariaLabel="Contact us - Get in touch"
             >
@@ -212,7 +212,7 @@ export default function Navigation({ forceTheme, forceStyle, isFixed = true }: N
           aria-hidden={!isMenuOpen}
         >
           <div className="flex flex-col items-center justify-center h-full space-y-8">
-            {["ABOUT", "SERVICES", "PROJECTS", "NEWS"].map((link) => (
+            {["ABOUT", "SERVICES", "NEWS", "PROJECTS"].map((link) => (
               <Link
                 key={link}
                 href={`#${link.toLowerCase()}`}
@@ -223,7 +223,7 @@ export default function Navigation({ forceTheme, forceStyle, isFixed = true }: N
               </Link>
             ))}
             <PillButton
-              href="#contact"
+              href="/contact"
               variant={styling.menuText === "text-white" ? "light" : "dark"}
               onClick={() => setIsMenuOpen(false)}
               ariaLabel="Get in touch"

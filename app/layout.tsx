@@ -132,7 +132,6 @@ export default function RootLayout({
               },
               "sameAs": [
                 "https://linkedin.com/company/naqsh-holding-company",
-                "https://x.com/naqsh_holding",
                 "https://instagram.com/naqsh_holding"
               ],
               "hasOfferCatalog": {

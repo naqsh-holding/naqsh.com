@@ -26,7 +26,7 @@ export function PillButton({ href, children, variant = "light", onClick, ariaLab
   }
 
   return (
-    <Link href={safeHref} className={`${baseClasses} ${variantClasses[variant]} ${className || ""}`} onClick={onClick} aria-label={ariaLabel}>
+    <Link href={safeHref} className={`${baseClasses} ${variantClasses[variant]} pill-button-${variant} ${className || ""}`} onClick={onClick} aria-label={ariaLabel}>
       <span>{children}</span>
       <ArrowRight className="w-4 h-4 transition-transform duration-300 group-hover:translate-x-1" />
     </Link>

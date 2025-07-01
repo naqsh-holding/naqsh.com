@@ -508,3 +508,85 @@ main[data-page="projects"] .project-card p {
 main[data-page="projects"] .project-card p:hover {
   color: #fff !important;
 }
+
+/* Override for news page read more button */
+main[data-page="news"] .news-read-more-btn {
+  color: #000 !important;
+}
+
+/* Override for PillButton to maintain correct text colors */
+main[class*="bg-black"] .bg-white {
+  color: #000 !important;
+}
+
+main[class*="bg-black"] .bg-black {
+  color: #fff !important;
+}
+
+/* More specific override for PillButton text colors */
+main[class*="bg-black"] a[href="#contact"] {
+  color: #000 !important;
+}
+
+main[class*="bg-black"] a[href="#contact"] span {
+  color: #000 !important;
+}
+
+main[class*="bg-black"] a[href="#contact"] svg {
+  color: #000 !important;
+}
+
+/* Specific PillButton color overrides */
+main[class*="bg-black"] .pill-button-light,
+main[class*="bg-black"] .pill-button-light span,
+main[class*="bg-black"] .pill-button-light svg {
+  color: #000 !important;
+}
+
+main[class*="bg-black"] .pill-button-dark,
+main[class*="bg-black"] .pill-button-dark span,
+main[class*="bg-black"] .pill-button-dark svg {
+  color: #fff !important;
+}
+
+/* Additional arrow icon color overrides */
+main[class*="bg-black"] .pill-button-light .w-4.h-4 {
+  color: #000 !important;
+  fill: #000 !important;
+  stroke: #000 !important;
+}
+
+main[class*="bg-black"] .pill-button-dark .w-4.h-4 {
+  color: #fff !important;
+  fill: #fff !important;
+  stroke: #fff !important;
+}
+
+/* Target ArrowRight icon specifically */
+main[class*="bg-black"] .pill-button-light svg[class*="w-4"] {
+  color: #000 !important;
+  fill: #000 !important;
+  stroke: #000 !important;
+}
+
+main[class*="bg-black"] .pill-button-dark svg[class*="w-4"] {
+  color: #fff !important;
+  fill: #fff !important;
+  stroke: #fff !important;
+}
+
+/* Contact page specific overrides */
+main[data-page="contact"] a[href^="tel:"],
+main[data-page="contact"] a[href^="mailto:"] {
+  color: #fff !important;
+}
+
+main[data-page="contact"] a[href^="tel:"] span,
+main[data-page="contact"] a[href^="mailto:"] span {
+  color: #fff !important;
+}
+
+main[data-page="contact"] a[href^="tel:"] svg,
+main[data-page="contact"] a[href^="mailto:"] svg {
+  color: #fff !important;
+}

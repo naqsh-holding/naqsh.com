@@ -5,7 +5,7 @@ import Link from "next/link"
 import Image from "next/image"
 import { gsap } from "gsap"
 import { ScrollTrigger } from "gsap/ScrollTrigger"
-import { Linkedin, Twitter, Instagram, Phone } from "lucide-react"
+import { Linkedin, Instagram, Phone } from "lucide-react"
 
 if (typeof window !== "undefined") {
   gsap.registerPlugin(ScrollTrigger)
@@ -44,7 +44,7 @@ export default function Footer() {
     { name: "Projects", href: "/#projects" },
     { name: "News", href: "/#news" },
     { name: "Brands", href: "/#brands" },
-    { name: "Contact", href: "/#contact" },
+    { name: "Contact", href: "/contact" },
   ]
 
   const legalLinks = [
@@ -59,7 +59,6 @@ export default function Footer() {
       icon: Linkedin,
       ariaLabel: "Naqsh Holding Company on LinkedIn",
     },
-    { name: "X (Twitter)", href: "https://x.com/naqsh_holding", icon: Twitter, ariaLabel: "Naqsh Holding Company on X" },
     { name: "Instagram", href: "https://instagram.com/naqsh_holding", icon: Instagram, ariaLabel: "Naqsh Holding Company on Instagram" },
   ]
 
@@ -124,19 +123,16 @@ export default function Footer() {
               <div className="space-y-2.5 mb-6">
                 <a
                   href="mailto:contact@naqsh.com.sa"
-                  className="text-white/70 hover:text-white transition-colors duration-300 text-sm hover:underline"
+                  className="text-white/70 hover:text-white transition-colors duration-300 text-sm hover:underline block"
                 >
                   contact@naqsh.com.sa
                 </a>
-                <div className="flex items-center space-x-2">
-                  <Phone className="w-4 h-4 text-white/70" />
-                  <a
-                    href="tel:0535558889"
-                    className="text-white/70 hover:text-white transition-colors duration-300 text-sm hover:underline"
-                  >
-                    0535558889
-                  </a>
-                </div>
+                <a
+                  href="tel:0535558889"
+                  className="text-white/70 hover:text-white transition-colors duration-300 text-sm hover:underline block"
+                >
+                  0535558889
+                </a>
               </div>
               <div className="flex space-x-3">
                 {socialLinks.map((social) => (
