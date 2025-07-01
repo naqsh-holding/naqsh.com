@@ -5,7 +5,7 @@ import { useEffect, useRef, useState, useCallback } from "react"
 import Image from "next/image"
 import { gsap } from "gsap"
 import { ArrowLeft, ArrowRight, ArrowUpRight } from "lucide-react"
-import type { Company } from "@/types"
+import type { Company } from "@/app/types"
 import { Button } from "@/components/ui/button"
 
 const companies: Company[] = [
@@ -112,6 +112,16 @@ export default function Companies() {
   return (
     <section id="companies" className="companies-section py-32 bg-[#f5f5f5]" ref={containerRef} data-bg="gray">
       <div className="container mx-auto px-4">
+        {/* Section Label */}
+        <div className="mb-12">
+          <span className="text-caption opacity-60 text-black">OUR COMPANIES</span>
+        </div>
+
+        {/* Main Title */}
+        <h2 className="text-black text-h1 mb-16">
+          A diverse portfolio of innovative companies spanning technology, real estate, aviation, and marketing.
+        </h2>
+
         <div className="flex justify-end items-center mb-8">
           <div className="flex gap-2">
             <Button 
@@ -143,7 +153,9 @@ export default function Companies() {
           {visibleCompanies.map((company, index) => (
             <div
               key={company.id}
-              ref={(el) => (cardsRef.current[index] = el)}
+              ref={(el) => {
+                cardsRef.current[index] = el
+              }}
               className="w-full group"
               onMouseEnter={() => setHoveredImage(index)}
               onMouseLeave={() => setHoveredImage(null)}
