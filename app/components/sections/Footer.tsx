@@ -77,10 +77,10 @@ export default function Footer() {
   ]
 
   return (
-    <footer ref={footerRef} className="bg-black text-white py-16 lg:py-24 relative z-10" style={{ backgroundColor: 'black', color: 'white' }}>
+    <footer ref={footerRef} className="bg-black text-white py-12 md:py-16 lg:py-24 relative z-10" style={{ backgroundColor: 'black', color: 'white' }}>
       <div className="container mx-auto px-4">
-        <div className="border-t border-white/10 pt-12 lg:pt-16 mb-12 lg:mb-16">
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10 lg:gap-16">
+        <div className="border-t border-white/10 pt-8 md:pt-12 lg:pt-16 mb-8 md:mb-12 lg:mb-16">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 md:gap-10 lg:gap-16">
             {/* Company Info */}
             <div className="lg:col-span-1 footer-col">
               <Link href="/" className="inline-block mb-4" aria-label="Naqsh Home">
@@ -160,7 +160,7 @@ export default function Footer() {
         </div>
 
         {/* Bottom Section */}
-        <div className="border-t border-white/10 pt-8 lg:pt-10">
+        <div className="border-t border-white/10 pt-6 md:pt-8 lg:pt-10">
           <div className="flex flex-col md:flex-row items-center justify-between space-y-4 md:space-y-0">
             <div className="text-center md:text-left">
       

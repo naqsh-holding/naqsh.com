@@ -97,22 +97,22 @@ export default function Companies() {
   }
 
   return (
-    <section id="companies" className="companies-section py-32 bg-[#f5f5f5] overflow-hidden" ref={containerRef} data-bg="gray">
+    <section id="companies" className="companies-section py-16 md:py-24 lg:py-32 bg-[#f5f5f5] overflow-hidden" ref={containerRef} data-bg="gray">
       <div className="container mx-auto px-4">
         {/* Section Label */}
-        <div className="mb-12">
+        <div className="mb-8 md:mb-12">
           <span className="text-caption opacity-60 text-black">OUR COMPANIES</span>
         </div>
 
         {/* Main Title */}
-        <h2 className="text-black text-h1 mb-16">
+        <h2 className="text-black text-h2 md:text-h1 mb-8 md:mb-12 lg:mb-16">
           A diverse portfolio of innovative companies spanning technology, real estate, aviation, and marketing.
         </h2>
 
         {/* Companies Slider */}
         <div 
           ref={sliderRef}
-          className="flex gap-8 overflow-x-auto overflow-y-hidden pb-8 scrollbar-hide"
+          className="flex gap-4 md:gap-8 overflow-x-auto overflow-y-hidden pb-8 scrollbar-hide"
           style={{
             scrollbarWidth: 'none',
             msOverflowStyle: 'none'
@@ -124,7 +124,7 @@ export default function Companies() {
               ref={(el) => {
                 cardsRef.current[index] = el
               }}
-              className="w-80 flex-shrink-0 group"
+              className="w-64 sm:w-72 md:w-80 flex-shrink-0 group"
               onMouseEnter={() => setHoveredImage(index)}
               onMouseLeave={() => setHoveredImage(null)}
               onMouseMove={(e) => handleMouseMove(e, index)}
@@ -159,9 +159,9 @@ export default function Companies() {
                   </div>
                 )}
               </a>
-              <div className="mt-6 transition-opacity duration-300">
-                <h3 className="text-black text-2xl font-bold mb-2 leading-tight">{company.name}</h3>
-                <p className="text-black text-body-small opacity-80">{company.description}</p>
+              <div className="mt-4 md:mt-6 transition-opacity duration-300">
+                <h3 className="text-black text-lg sm:text-xl md:text-2xl font-bold mb-2 leading-tight">{company.name}</h3>
+                <p className="text-black text-sm sm:text-body-small opacity-80">{company.description}</p>
               </div>
             </div>
           ))}

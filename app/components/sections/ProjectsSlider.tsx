@@ -82,14 +82,14 @@ export default function ProjectsSlider() {
   }, [])
 
   return (
-    <section ref={sectionRef} id="projects" className="py-32 bg-transparent relative z-10">
+    <section ref={sectionRef} id="projects" className="py-16 md:py-24 lg:py-32 bg-transparent relative z-10">
       <div className="container mx-auto px-4">
         {/* Header Section */}
-        <div ref={headerRef} className="mb-16">
-          <div className="flex flex-col md:flex-row md:items-end md:justify-between gap-6 mb-6">
+        <div ref={headerRef} className="mb-8 md:mb-12 lg:mb-16">
+          <div className="flex flex-col md:flex-row md:items-end md:justify-between gap-4 md:gap-6 mb-4 md:mb-6">
             <div>
-              <h2 className="text-caption font-medium theme-text opacity-60 tracking-wider mb-6">FEATURED PROJECTS</h2>
-              <h3 className="text-h3 font-medium theme-text max-w-4xl leading-tight">
+              <h2 className="text-caption font-medium theme-text opacity-60 tracking-wider mb-4 md:mb-6">FEATURED PROJECTS</h2>
+              <h3 className="text-h4 md:text-h3 font-medium theme-text max-w-4xl leading-tight">
                 Discover impactful projects and innovative solutions across all our business sectors.
               </h3>
             </div>
@@ -103,12 +103,12 @@ export default function ProjectsSlider() {
         </div>
 
         {/* Projects Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 md:gap-8">
           {featuredProjects.map((project, index) => (
             <div key={project.id} ref={(el) => { itemsRef.current[index] = el }} className="group">
               <Link href={`/projects/${project.slug}`} aria-label={`View project: ${project.title}`}>
                 {/* Image Container */}
-                <div className="relative overflow-hidden mb-6">
+                <div className="relative overflow-hidden mb-4 md:mb-6">
                   {/* Image */}
                   <div className="relative aspect-[3/4] overflow-hidden">
                     <Image
@@ -125,12 +125,12 @@ export default function ProjectsSlider() {
                 </div>
 
                 {/* Content */}
-                <h3 className="theme-text text-h4 mb-4 font-medium group-hover:opacity-70 transition-opacity duration-300">
+                <h3 className="theme-text text-h4 md:text-h4 mb-3 md:mb-4 font-medium group-hover:opacity-70 transition-opacity duration-300">
                   {project.title}
                 </h3>
               </Link>
 
-              <div className="text-caption mb-6 leading-relaxed">
+              <div className="text-caption mb-4 md:mb-6 leading-relaxed">
                 {project.categories.map((category, idx) => (
                   <span key={idx}>
                     <Link

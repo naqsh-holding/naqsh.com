@@ -139,6 +139,48 @@ html.dark-theme .theme-cta-text {
   }
 }
 
+/* Additional responsive improvements */
+@media (max-width: 768px) {
+  .text-display {
+    font-size: clamp(2rem, 8vw, 3rem);
+    line-height: 1.1;
+  }
+  
+  .text-h1 {
+    font-size: clamp(1.75rem, 6vw, 2.5rem);
+    line-height: 1.2;
+  }
+  
+  .text-h2 {
+    font-size: clamp(1.5rem, 5vw, 2rem);
+    line-height: 1.3;
+  }
+  
+  .text-h3 {
+    font-size: clamp(1.25rem, 4vw, 1.75rem);
+    line-height: 1.4;
+  }
+  
+  .text-h4 {
+    font-size: clamp(1.125rem, 3.5vw, 1.5rem);
+    line-height: 1.4;
+  }
+}
+
+/* Improve touch targets on mobile */
+@media (max-width: 768px) {
+  button, 
+  a, 
+  [role="button"] {
+    min-height: 44px;
+    min-width: 44px;
+  }
+  
+  .pill-button {
+    padding: 12px 24px;
+  }
+}
+
 /* Responsive section padding */
 @media (max-width: 767px) {
   section {

@@ -87,15 +87,15 @@ export default function OurServices() {
   }, [activeService])
 
   return (
-    <section ref={sectionRef} id="services" className="py-32 bg-transparent relative z-10">
+    <section ref={sectionRef} id="services" className="py-16 md:py-24 lg:py-32 bg-transparent relative z-10">
       <div className="container mx-auto px-4">
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-x-16 gap-y-12">
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-x-8 md:gap-x-12 lg:gap-x-16 gap-y-8 md:gap-y-12">
           {/* Title */}
           <div className="lg:col-span-5 lg:sticky lg:top-32">
             <div ref={titleRef}>
-              <h2 className="theme-text text-5xl lg:text-6xl leading-tight">
+              <h2 className="theme-text text-h2 md:text-h1 lg:text-5xl xl:text-6xl leading-tight">
               Naqsh Investment Sectors    </h2>
-              <p className="theme-text text-h4 font-light leading-relaxed mb-8" style={{ fontWeight: 300 }}>                Naqsh Holding strategically invests in sectors that shape the future and drive long-term growth:
+              <p className="theme-text text-h4 md:text-h4 font-light leading-relaxed mb-6 md:mb-8" style={{ fontWeight: 300 }}>                Naqsh Holding strategically invests in sectors that shape the future and drive long-term growth:
               </p>
           
             </div>
@@ -103,9 +103,9 @@ export default function OurServices() {
 
           {/* Services Table */}
           <div className="lg:col-span-7">
-            <div className="grid grid-cols-12">
+            <div className="grid grid-cols-1 md:grid-cols-12">
               {/* Services Menu */}
-              <div ref={servicesRef} className="col-span-5">
+              <div ref={servicesRef} className="md:col-span-5">
                 {services.map((service) => (
                   <div
                     key={service.id}
@@ -119,7 +119,7 @@ export default function OurServices() {
                       onClick={() => setActiveService(service)}
                       onMouseEnter={() => setHoveredId(service.id)}
                       onMouseLeave={() => setHoveredId(null)}
-                      className="w-full py-8 px-4 pr-8 flex items-start justify-between group"
+                      className="w-full py-4 md:py-6 lg:py-8 px-3 md:px-4 pr-4 md:pr-8 flex items-start justify-between group"
                     >
                       <span className="theme-text text-h7 text-left">{service.title}</span>
                       <ServiceArrow isActive={activeService.id === service.id} isHovered={hoveredId === service.id} />
@@ -129,11 +129,11 @@ export default function OurServices() {
               </div>
 
               {/* Service Content */}
-              <div className="col-span-7">
+              <div className="md:col-span-7">
                 <div
                   ref={contentRef}
                   key={activeService.id}
-                  className="theme-text text-body p-8 opacity-70 leading-relaxed"
+                  className="theme-text text-body p-4 md:p-6 lg:p-8 opacity-70 leading-relaxed"
                 >
                   {activeService.description}
                 </div>

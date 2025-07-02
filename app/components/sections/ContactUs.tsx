@@ -89,20 +89,20 @@ export default function ContactUs() {
   /* JSX ---------------------------------------------------------------- */
   /* ------------------------------------------------------------------ */
   return (
-    <section ref={sectionRef} id="contact" className="py-32 bg-[#f5f5f5]" data-bg="gray">
+    <section ref={sectionRef} id="contact" className="py-16 md:py-24 lg:py-32 bg-[#f5f5f5]" data-bg="gray">
       <div className="container mx-auto px-4">
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-16">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 md:gap-12 lg:gap-16">
           {/* Contact information */}
-          <div ref={textRef} className="space-y-8 flex flex-col justify-center min-h-[600px]">
+          <div ref={textRef} className="space-y-6 md:space-y-8 flex flex-col justify-center min-h-[400px] md:min-h-[500px] lg:min-h-[600px]">
             <div>
-              <h3 className="theme-text text-h3 mb-6">Let's Connect and Collaborate</h3>
-              <p className="theme-text text-body opacity-70 leading-relaxed mb-8">
+              <h3 className="theme-text text-h4 md:text-h3 mb-4 md:mb-6">Let's Connect and Collaborate</h3>
+              <p className="theme-text text-body opacity-70 leading-relaxed mb-6 md:mb-8">
                 Whether you're looking to partner, invest, or simply learn more about our group of companies, we'd love
                 to hear from you.
               </p>
             </div>
 
-            <div className="space-y-6">
+            <div className="space-y-4 md:space-y-6">
               <InfoRow
                 icon={<MapPin className="w-5 h-5 theme-text" />}
                 title="Visit Our Office"
@@ -129,7 +129,7 @@ export default function ContactUs() {
 
           {/* Contact form */}
           <div ref={formRef}>
-            <form onSubmit={handleSubmit} className="space-y-6 bg-black p-8 rounded-lg shadow-sm">
+            <form onSubmit={handleSubmit} className="space-y-4 md:space-y-6 bg-black p-4 md:p-6 lg:p-8 rounded-lg shadow-sm">
               <TextInput id="name" label="Name / الاسم" value={formData.name} onChange={handleInputChange} />
               <TextInput
                 id="email"

@@ -126,25 +126,25 @@ export default function OurBrands() {
   }
 
   return (
-    <section ref={sectionRef} id="brands" className="py-32 bg-white overflow-hidden" data-bg="white">
-      <div className="container mx-auto px-4 mb-20">
+    <section ref={sectionRef} id="brands" className="py-16 md:py-24 lg:py-32 bg-white overflow-hidden" data-bg="white">
+      <div className="container mx-auto px-4 mb-12 md:mb-16 lg:mb-20">
         <div ref={headerRef}>
-          <h2 className="theme-text text-h2 mb-4 font-medium">Trusted by Industry Leaders</h2>
-          <p className="theme-text text-body-large font-light max-w-xl">
+          <h2 className="theme-text text-h3 md:text-h2 mb-3 md:mb-4 font-medium">Trusted by Industry Leaders</h2>
+          <p className="theme-text text-body md:text-body-large font-light max-w-xl">
             Partnerships built on trust, impact, and long-term success.
           </p>
         </div>
       </div>
 
       <div className="w-full">
-        <div className="space-y-12">
+        <div className="space-y-8 md:space-y-12">
           {[1, 2, 3].map((row, index) => (
             <div key={row} ref={(el) => { rowRefs.current[index] = el }} className="w-full">
-              <div className="flex gap-12 w-max">
+              <div className="flex gap-6 md:gap-8 lg:gap-12 w-max">
                 {getDuplicatedRowBrands(row).map((brand, brandIndex) => (
                   <div
                     key={`${brand.id}-${brandIndex}`}
-                    className="relative flex-shrink-0 w-[240px]"
+                    className="relative flex-shrink-0 w-[160px] sm:w-[200px] md:w-[220px] lg:w-[240px]"
                     onMouseEnter={() => setHoveredLogo(brand.id)}
                     onMouseLeave={() => setHoveredLogo(null)}
                   >
@@ -158,7 +158,7 @@ export default function OurBrands() {
   ${hoveredLogo === brand.id ? "scale-110 brightness-100 invert-0" : ""}
   ${hoveredLogo !== null && hoveredLogo !== brand.id ? "opacity-30" : ""}
 `}
-                        sizes="240px"
+                        sizes="(max-width: 640px) 160px, (max-width: 768px) 200px, (max-width: 1024px) 220px, 240px"
                         quality={70}
                         unoptimized={true}
                       />

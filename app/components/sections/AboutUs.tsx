@@ -47,22 +47,22 @@ export default function AboutUs() {
   }, [])
 
   return (
-    <section ref={sectionRef} id="about" className="py-32 bg-[#f5f5f5] text-black relative overflow-hidden" data-bg="gray">
+    <section ref={sectionRef} id="about" className="py-16 md:py-24 lg:py-32 bg-[#f5f5f5] text-black relative overflow-hidden" data-bg="gray">
       <div className="container mx-auto px-4">
         <div className="max-w-4xl">
           {/* Section Label */}
-          <div className="mb-12">
+          <div className="mb-8 md:mb-12">
             <span className="text-caption opacity-60 text-black">ABOUT US</span>
           </div>
 
           {/* Main Title */}
-          <h2 ref={titleRef} className="text-black text-h1 mb-16">
+          <h2 ref={titleRef} className="text-black text-h2 md:text-h1 mb-8 md:mb-12 lg:mb-16">
           THE ESSENCE 
             OF NAQSH
           </h2>
 
           {/* Content */}
-          <div ref={contentRef} className="space-y-8 max-w-3xl">
+          <div ref={contentRef} className="space-y-6 md:space-y-8 max-w-3xl">
             <p className="text-body-large opacity-80 text-black">
             At Naqsh Holding, we don't just aim to succeed — we aim to leave a mark.
             We believe that every project is an opportunity to etch a lasting impact, and every investment is a signature on the future of the industries we serve.

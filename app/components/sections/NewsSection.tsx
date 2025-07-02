@@ -73,14 +73,14 @@ export default function NewsSection() {
   }, [])
 
   return (
-    <section ref={sectionRef} id="news" className="py-32 bg-transparent relative z-10">
+    <section ref={sectionRef} id="news" className="py-16 md:py-24 lg:py-32 bg-transparent relative z-10">
       <div className="container mx-auto px-4">
         {/* Header Section */}
-        <div ref={headerRef} className="mb-16">
-          <div className="flex flex-col md:flex-row md:items-end md:justify-between gap-6 mb-6">
+        <div ref={headerRef} className="mb-8 md:mb-12 lg:mb-16">
+          <div className="flex flex-col md:flex-row md:items-end md:justify-between gap-4 md:gap-6 mb-4 md:mb-6">
             <div>
-              <h2 className="text-caption font-medium theme-text opacity-60 tracking-wider mb-6">LATEST NEWS</h2>
-              <h3 className="text-h3 font-medium theme-text max-w-4xl leading-tight">
+              <h2 className="text-caption font-medium theme-text opacity-60 tracking-wider mb-4 md:mb-6">LATEST NEWS</h2>
+              <h3 className="text-h4 md:text-h3 font-medium theme-text max-w-4xl leading-tight">
                 Discover the latest updates, launches, and milestones from Naqsh Holding and our leading subsidiaries.
               </h3>
             </div>
@@ -94,16 +94,16 @@ export default function NewsSection() {
         </div>
 
         {/* News Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8">
           {newsItems.map((item, index) => (
             <div key={item.id} ref={(el) => { itemsRef.current[index] = el }} className="group">
               <Link href={`/news/${item.slug}`} aria-label={`Read more about ${item.title}`}>
                 {/* Image Container */}
-                <div className="relative overflow-hidden mb-6">
+                <div className="relative overflow-hidden mb-4 md:mb-6">
                   {/* Date Block */}
-                  <div className="absolute top-0 left-0 z-10 bg-white p-4">
-                    <div className="text-2xl font-bold text-black">{item.day}</div>
-                    <div className="text-sm text-black">{item.month}</div>
+                  <div className="absolute top-0 left-0 z-10 bg-white p-3 md:p-4">
+                    <div className="text-lg md:text-xl lg:text-2xl font-bold text-black">{item.day}</div>
+                    <div className="text-xs md:text-sm text-black">{item.month}</div>
                   </div>
 
                   {/* Image */}
@@ -122,12 +122,12 @@ export default function NewsSection() {
                 </div>
 
                 {/* Content */}
-                <h3 className="theme-text text-h4 mb-4 font-medium group-hover:opacity-70 transition-opacity duration-300">
+                <h3 className="theme-text text-h4 md:text-h4 mb-3 md:mb-4 font-medium group-hover:opacity-70 transition-opacity duration-300">
                   {item.title}
                 </h3>
               </Link>
 
-              <div className="text-caption mb-6 leading-relaxed">
+              <div className="text-caption mb-4 md:mb-6 leading-relaxed">
                 {item.categories.map((category, idx) => (
                   <span key={idx}>
                     <Link
