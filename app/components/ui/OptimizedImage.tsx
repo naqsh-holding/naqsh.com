@@ -1,7 +1,7 @@
 "use client"
 
 import Image from "next/image"
-import { useState } from "react"
+import { useState, useEffect } from "react"
 
 interface OptimizedImageProps {
   src: string
@@ -76,6 +76,7 @@ export default function OptimizedImage({
         onLoad={handleLoad}
         onError={handleError}
         loading={priority ? "eager" : "lazy"}
+        unoptimized={true}
       />
       {isLoading && (
         <div className="absolute inset-0 bg-gray-200 animate-pulse flex items-center justify-center">

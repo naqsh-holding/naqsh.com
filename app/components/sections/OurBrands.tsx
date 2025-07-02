@@ -1,7 +1,7 @@
 "use client"
 
 import { useEffect, useRef, useState } from "react"
-import OptimizedImage from "../ui/OptimizedImage"
+import Image from "next/image"
 import { gsap } from "gsap"
 import { ScrollTrigger } from "gsap/ScrollTrigger"
 
@@ -149,7 +149,7 @@ export default function OurBrands() {
                     onMouseLeave={() => setHoveredLogo(null)}
                   >
                     <div className="aspect-[2/1] relative">
-                      <OptimizedImage
+                      <Image
                         src={brand.logo || "https://hel1.your-objectstorage.com/naqsh-pord/placeholder.svg"}
                         alt={brand.name}
                         fill
@@ -160,6 +160,7 @@ export default function OurBrands() {
 `}
                         sizes="240px"
                         quality={70}
+                        unoptimized={true}
                       />
                     </div>
                   </div>

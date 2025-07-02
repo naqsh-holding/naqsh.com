@@ -10,7 +10,7 @@ export default function Cursor() {
 
   return (
     <div
-      className="fixed pointer-events-none z-[9999] mix-blend-difference"
+      className="fixed pointer-events-none z-[9999] mix-blend-difference hidden lg:block"
       style={{
         left: `${position.x}px`,
         top: `${position.y}px`,

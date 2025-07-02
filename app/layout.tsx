@@ -3,7 +3,6 @@ import type { Metadata } from "next"
 import "./globals.css"
 import { montserrat } from "./lib/fonts"
 import Cursor from "./components/ui/Cursor"
-import PerformanceMonitor from "./components/ui/PerformanceMonitor"
 
 export const metadata: Metadata = {
   title: "Naqsh Holding Company | Investment Leader | To Leave a Trace",
@@ -229,7 +228,6 @@ export default function RootLayout({
       <body className={`${montserrat.className} cursor-none`}>
         {children}
         <Cursor />
-        <PerformanceMonitor />
       </body>
     </html>
   )

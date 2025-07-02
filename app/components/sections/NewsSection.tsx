@@ -1,6 +1,6 @@
 "use client"
 
-import OptimizedImage from "../ui/OptimizedImage"
+import Image from "next/image"
 import Link from "next/link"
 import { useEffect, useRef } from "react"
 import { gsap } from "gsap"
@@ -108,7 +108,7 @@ export default function NewsSection() {
 
                   {/* Image */}
                   <div className="relative aspect-[3/4] overflow-hidden">
-                    <OptimizedImage
+                    <Image
                       src={item.image || "https://hel1.your-objectstorage.com/naqsh-pord/placeholder.svg"}
                       alt={item.title}
                       fill
@@ -116,6 +116,7 @@ export default function NewsSection() {
                       priority={index < 2}
                       sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
                       quality={80}
+                      unoptimized={true}
                     />
                   </div>
                 </div>

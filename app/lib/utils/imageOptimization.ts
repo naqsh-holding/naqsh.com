@@ -1,6 +1,8 @@
-// Image optimization utilities
+// Image optimization utilities for static export
 
 export const preloadCriticalImages = () => {
+  if (typeof window === 'undefined') return
+
   const criticalImages = [
     'https://hel1.your-objectstorage.com/naqsh-pord/images/hero-background.png',
     'https://hel1.your-objectstorage.com/naqsh-pord/Naqsh Website-01.png',
@@ -20,13 +22,30 @@ export const preloadCriticalImages = () => {
   })
 }
 
+// Client-side image preloading for critical images
+export const preloadImage = (src: string): Promise<void> => {
+  return new Promise((resolve, reject) => {
+    if (typeof window === 'undefined') {
+      resolve()
+      return
+    }
+
+    const img = new window.Image()
+    img.onload = () => resolve()
+    img.onerror = () => reject(new Error(`Failed to load image: ${src}`))
+    img.src = src
+  })
+}
+
+// Batch preload multiple images
+export const preloadImages = async (imageUrls: string[]): Promise<void> => {
+  const promises = imageUrls.map(url => preloadImage(url))
+  await Promise.allSettled(promises)
+}
+
 export const getOptimizedImageUrl = (originalUrl: string, width: number, quality: number = 75) => {
-  if (!originalUrl.includes('hel1.your-objectstorage.com')) {
-    return originalUrl
-  }
-  
-  // For external CDN images, we'll use Next.js optimization
-  // The actual optimization will be handled by Next.js Image component
+  // For static export, we return the original URL
+  // The CDN should handle optimization
   return originalUrl
 }
 
@@ -57,5 +76,33 @@ export const getImageQuality = (imageType: 'hero' | 'content' | 'thumbnail' | 'l
       return 70
     default:
       return 75
+  }
+}
+
+// Intersection Observer for lazy loading
+export const createLazyLoadObserver = (callback: (entry: IntersectionObserverEntry) => void) => {
+  if (typeof window === 'undefined') return null
+
+  return new IntersectionObserver((entries) => {
+    entries.forEach((entry) => {
+      if (entry.isIntersecting) {
+        callback(entry)
+      }
+    })
+  }, {
+    rootMargin: '50px 0px',
+    threshold: 0.1
+  })
+}
+
+// Debounce function for performance optimization
+export const debounce = <T extends (...args: any[]) => any>(
+  func: T,
+  wait: number
+): ((...args: Parameters<T>) => void) => {
+  let timeout: NodeJS.Timeout
+  return (...args: Parameters<T>) => {
+    clearTimeout(timeout)
+    timeout = setTimeout(() => func(...args), wait)
   }
 } 

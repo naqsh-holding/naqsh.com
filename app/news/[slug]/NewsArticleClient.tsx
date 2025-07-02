@@ -381,7 +381,7 @@ export default function NewsArticleClient({ article, slug }: NewsArticleClientPr
             <div className="border-t border-white/10 pt-8 lg:pt-10">
               <div className="flex flex-col md:flex-row items-center justify-between space-y-4 md:space-y-0">
                 <div className="text-center md:text-left">
-                  <p className="text-xs text-white/60">© {new Date().getFullYear()} Naqsh FZ LLC. All Rights Reserved.</p>
+          
                 </div>
               </div>
             </div>

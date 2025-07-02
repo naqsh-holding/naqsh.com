@@ -39,7 +39,9 @@ export default function PerformanceMonitor() {
             slowImages.push(entry.name)
           }
           
-          if (entry.transferSize > 0) {
+          // For static export, we can't rely on transferSize
+          // Instead, check if the resource loaded successfully
+          if (entry.duration > 0 && entry.duration < 30000) { // Less than 30 seconds
             loadedImages++
           } else {
             failedImages++
