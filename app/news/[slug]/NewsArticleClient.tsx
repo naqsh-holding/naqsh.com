@@ -22,6 +22,7 @@ interface NewsArticleClientProps {
     date: string
     readTime: string
     heroImage: string
+    imageUrl?: string
     content: Array<{
       type: string
       text?: string
@@ -222,14 +223,10 @@ export default function NewsArticleClient({ article, slug }: NewsArticleClientPr
                 <div className="absolute inset-0 bg-black/20"></div>
               </div>
 
-              {/* Article metadata */}
-              <div className="flex justify-end mb-8">
-                <div className="text-sm text-gray-500">{article.readTime.toUpperCase()}</div>
-              </div>
-
-              {/* Category */}
-              <div className="mb-8">
+              {/* Category and Read Duration - aligned horizontally */}
+              <div className="flex items-center justify-between mb-8">
                 <span className="text-caption text-gray-500 tracking-wider">({article.category})</span>
+                <span className="text-sm text-gray-500">{article.readTime.toUpperCase()}</span>
               </div>
 
               {/* Main Title */}
@@ -240,6 +237,42 @@ export default function NewsArticleClient({ article, slug }: NewsArticleClientPr
               {/* Subtitle */}
               <p className="text-body leading-relaxed text-gray-700 mb-12">{article.subtitle}</p>
 
+              {/* Social Share Buttons */}
+              <div className="flex items-center space-x-4 mb-8">
+                <span className="text-gray-500 font-medium mr-2">Share:</span>
+                {/* LinkedIn */}
+                <a
+                  href={`https://www.linkedin.com/shareArticle?mini=true&url=${encodeURIComponent(typeof window !== 'undefined' ? window.location.href : `https://naqsh.com.sa/news/${slug}`)}&title=${encodeURIComponent(article.title)}&summary=${encodeURIComponent(article.subtitle)}&source=${encodeURIComponent('Naqsh Holding Company')}${article.heroImage ? `&image=${encodeURIComponent(article.heroImage.startsWith('http') ? article.heroImage : `https://naqsh.com.sa${article.heroImage}`)}` : ''}`}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  aria-label="Share on LinkedIn"
+                  className="hover:text-blue-800 text-gray-500 transition-colors"
+                >
+                  <svg width="20" height="20" fill="currentColor" viewBox="0 0 24 24"><path d="M19 0h-14c-2.76 0-5 2.24-5 5v14c0 2.76 2.24 5 5 5h14c2.76 0 5-2.24 5-5v-14c0-2.76-2.24-5-5-5zm-11.75 20h-3v-10h3v10zm-1.5-11.27c-.97 0-1.75-.79-1.75-1.76s.78-1.76 1.75-1.76c.97 0 1.75.79 1.75 1.76s-.78 1.76-1.75 1.76zm15.25 11.27h-3v-5.6c0-1.34-.03-3.07-1.87-3.07-1.87 0-2.16 1.46-2.16 2.97v5.7h-3v-10h2.88v1.36h.04c.4-.75 1.38-1.54 2.84-1.54 3.04 0 3.6 2 3.6 4.59v5.59z"/></svg>
+                </a>
+                {/* WhatsApp */}
+                <a
+                  href={`https://api.whatsapp.com/send?text=${encodeURIComponent(`📰 *${article.title}*\n\n${article.subtitle}\n\n🏢 Naqsh Holding Company\n\nRead the full article: ${typeof window !== 'undefined' ? window.location.href : `https://naqsh.com.sa/news/${slug}`}`)}`}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  aria-label="Share on WhatsApp"
+                  className="hover:text-green-600 text-gray-500 transition-colors"
+                >
+                  <svg width="20" height="20" fill="currentColor" viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.149-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.151-.174.2-.298.3-.497.099-.198.05-.372-.025-.521-.075-.148-.669-1.611-.916-2.207-.242-.579-.487-.501-.669-.51-.173-.008-.372-.01-.571-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.1 3.2 5.077 4.363.709.306 1.262.489 1.694.626.712.227 1.36.195 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.617h-.001a9.87 9.87 0 0 1-5.031-1.378l-.361-.214-3.741.982.999-3.648-.235-.374a9.86 9.86 0 0 1-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 0 1 2.893 6.987c-.003 5.451-4.437 9.885-9.88 9.885m8.413-18.297a11.815 11.815 0 0 0-8.413-3.488c-6.627 0-12 5.373-12 12 0 2.121.555 4.199 1.607 6.032l-1.693 6.179a1 1 0 0 0 1.212 1.212l6.068-1.654a11.93 11.93 0 0 0 5.806 1.477h.005c6.627 0 12-5.373 12-12 0-3.182-1.243-6.174-3.488-8.558z"/></svg>
+                </a>
+                {/* Copy Link */}
+                <button
+                  onClick={() => {
+                    const url = typeof window !== 'undefined' ? window.location.href : `https://naqsh.com.sa/news/${slug}`;
+                    navigator.clipboard.writeText(url)
+                  }}
+                  aria-label="Copy link"
+                  className="hover:text-black text-gray-500 transition-colors"
+                >
+                  <svg width="20" height="20" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24"><path d="M10 14L21 3m-4 0h4v4m-5 5v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V7a2 2 0 0 1 2-2h6"/></svg>
+                </button>
+              </div>
+
               {/* Date */}
               <div className="flex items-center space-x-2 text-sm text-gray-500">
                 <Calendar className="w-4 h-4" />
@@ -249,7 +282,7 @@ export default function NewsArticleClient({ article, slug }: NewsArticleClientPr
           </div>
 
           {/* Scrollable Content Sections */}
-          <div className="content-sections lg:pl-12 lg:pr-4 px-4 pb-16">
+          <div className="content-sections lg:pl-12 lg:pr-4 px-4 pb-0">
             {article.content.map((block, index) => (
               <div key={index} className="content-section mb-16">
                 {block.type === "heading" && (

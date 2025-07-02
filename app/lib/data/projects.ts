@@ -24,83 +24,86 @@ export interface Project {
 export const allProjects: Project[] = [
   {
     id: 1,
-    title: "Keeta - Khobar Launch Event",
-    category: "EFFICIENCY CENTER",
-    image: "/images/keeta-billboard.jpeg",
-    slug: "keeta-khobar-launch-event",
-    year: 2024,
-    client: "Keeta",
+    title: "Environmental and Circular Economy Forum",
+    category: "PROMOTION EFFICIENCY",
+    image: "/images/Abqaq.png",
+    slug: "environmental-circular-economy-forum-2023",
+    year: 2023,
+    client: "Saudi Aramco",
     description:
-      "A comprehensive launch event for Keeta's expansion into the Khobar market, featuring strategic branding and promotional campaigns.",
+      "The 2023 Environmental and Circular Economy Forum at Al-Murjan Hall in Abqaiq brought together professionals from Saudi Aramco and government entities to promote collaboration and share insights on sustainable practices and the circular economy. Hosted by the SA Community Services Department, the forum provided a platform for thought leaders and stakeholders to engage in discussions and highlighted Saudi Aramco's commitment to sustainability and public-private cooperation for a greener future.",
     challenge:
-      "Establishing brand presence in a competitive market while creating memorable launch experiences that resonate with local audiences.",
+      "Deliver a dynamic, large-scale forum that fosters collaboration and knowledge exchange on environmental sustainability and the circular economy, while showcasing Saudi Aramco's leadership and commitment to a greener future.",
     approach:
-      "We developed a multi-channel approach combining outdoor advertising, digital campaigns, and experiential marketing to maximize brand visibility and engagement.",
-    tags: ["Event Marketing", "Brand Launch", "Outdoor Advertising", "Digital Campaigns"],
+      "Promotion Efficiency managed the project end-to-end for over 1,000 visitors across three days, including: developing the full brand identity; designing the event space and booths; producing print materials (certificates, agendas, promotional items); creating a custom web app for registration and navigation; planning and executing marketing, invitations, signage, and livestream support; organizing workshops and hospitality; and coordinating media coverage and crowd management (photography/videography).",
+    tags: ["Event Management", "Brand Identity", "Web Development", "Print Design", "Marketing Strategy", "Workshop Organization", "Media Coverage", "Smart Cards"],
     images: {
-      hero: "/images/keeta-billboard.jpeg",
-      gallery: ["/images/keeta-launch-event.jpeg"],
+      hero: "/images/PEARAMCO.jpeg",
+      gallery: ["/images/environmental-forum-branding.png", "/images/PEARAMCO1.png", "/images/PEARAMCO2.png", "/images/PEARAMCO3.png"],
+    },
+    stats: {
+      area: "Al-Murjan Hall, Abqaiq",
+      duration: "3 days",
     },
   },
   {
     id: 2,
     title: "PWA - AlSharqiya Gets Creative",
     category: "6 DEGREES TECHNOLOGIES",
-    image: "/images/eastern-creative-digital-display.jpeg",
+    image: "/images/6DSGC.png",
     slug: "creative-nexus-digital-platform",
     year: 2024,
-    client: "AlSharqiya Creative",
+    client: "Ithra (King Abdulaziz Center for World Culture)",
     description:
-      "A progressive web application designed to showcase AlSharqiya's creative capabilities and connect with their target audience through innovative digital experiences.",
+      "A cutting-edge Progressive Web Application that revolutionizes how cultural centers connect with their communities. This innovative platform showcases AlSharqiya's creative capabilities while providing seamless access to cultural events, workshops, and artistic programs through an intuitive digital experience. We developed a comprehensive PWA solution using modern web technologies and design principles. The platform features responsive design, offline capabilities, push notifications, and seamless integration with social media platforms. Our approach focused on creating an immersive user experience that reflects the artistic and cultural essence of AlSharqiya while maintaining high performance and accessibility standards.",
     challenge:
-      "Creating a platform that effectively communicates creative services while providing an engaging user experience across all devices.",
-    approach:
-      "We built a responsive PWA with modern design principles, focusing on performance, accessibility, and user engagement through interactive elements.",
-    tags: ["Progressive Web App", "Creative Platform", "Digital Experience", "Responsive Design"],
+      "Creating a digital platform that not only showcases creative works but also fosters community engagement, facilitates event management, and provides an accessible gateway to cultural experiences for diverse audiences across all devices and platforms.",
+    approach: "",
+    tags: ["Progressive Web App", "Cultural Platform", "Digital Innovation", "Community Engagement", "Event Management", "Responsive Design", "Offline Capabilities"],
     images: {
-      hero: "/images/eastern-creative-hero.png",
-      gallery: ["/images/eastern-creative-digital-display.jpeg", "/images/eastern-creative-building.png"],
+      hero: "/images/6DSGC2.png",
+      gallery: ["public/images/SGC Design 2.png", "/images/eastern-creative-building.png", "/images/6DSGC3.png", "/images/6DSGC4.png"],
+    },
+  },
+  {
+    id: 5,
+    title: "Burooj Air — Drone Cleaning of Al-Tamimi Building",
+    category: "BUROOJ AIR",
+    image: "/images/BuroojAir.png",
+    slug: "burooj-air-drone-cleaning-altamimi-building",
+    year: 2024,
+    client: "Al-Tamimi Group",
+    description: "We take pride in delivering real impact with precision and innovation. Through Burooj Air, we successfully completed a specialized drone-cleaning project for Al-Tamimi Building, covering a total area of 1,200 square meters — completed in just 260 minutes.",
+    challenge: "Cleaning hard-to-reach glass facades safely and efficiently, with no need for scaffolding or manual access.",
+    approach: "Using advanced aerial technology, our team was able to clean hard-to-reach glass facades safely and efficiently, with no need for scaffolding or manual access. The before-and-after transformation speaks for itself — a clear testament to the quality and effectiveness of our solutions.",
+    tags: ["Drone Cleaning", "Innovation", "Building Maintenance", "Aerial Technology", "Burooj Air"],
+    images: {
+      hero: "",
+      gallery: [],
+    },
+    stats: {
+      area: "1,200 m²",
+      duration: "260 minutes",
     },
   },
   {
     id: 3,
-    title: "Environmental and Circular Economy Forum 2023",
-    category: "PROMOTION EFFICIENCY",
-    image: "/images/environmental-forum-billboard.jpeg",
-    slug: "environmental-forum-2023",
-    year: 2023,
-    client: "Environmental Forum",
-    description:
-      "Comprehensive branding and promotional campaign for the Environmental and Circular Economy Forum, focusing on sustainability messaging and stakeholder engagement.",
-    challenge:
-      "Communicating complex environmental concepts while engaging diverse stakeholders and promoting sustainable practices.",
-    approach:
-      "We created a cohesive visual identity and multi-platform campaign that simplified environmental messaging while maintaining scientific accuracy and impact.",
-    tags: ["Environmental Branding", "Forum Promotion", "Sustainability", "Stakeholder Engagement"],
-    images: {
-      hero: "/images/environmental-forum-billboard.jpeg",
-      gallery: ["/images/environmental-forum-branding.png"],
-    },
-  },
-  {
-    id: 4,
     title: "GDC Middle East - Comprehensive Fit-Out for Riyadh Office",
     category: "BUROOJ",
-    image: "/images/gdc-middle-east-fitout.jpeg",
+    image: "/images/Burooj-Design.png",
     slug: "gdc-middle-east-fitout",
     year: 2024,
     client: "GDC Middle East",
     description:
-      "Complete office fit-out project for GDC Middle East's new Riyadh headquarters, creating modern workspaces that reflect the company's innovative culture.",
+      "Successfully delivered a high-quality fit-out project for GDC Middle East's new offices in Riyadh, covering 2,437 square meters. The project showcases a refined industrial-modern design, seamlessly blending aesthetics with functionality. Completed in just 16 weeks, it highlights efficient execution, innovative approaches, and meticulous attention to detail.",
     challenge:
       "Designing and executing a comprehensive office environment that balances functionality, aesthetics, and employee wellbeing within tight timelines.",
     approach:
-      "We implemented a phased approach covering space planning, interior design, and project management to deliver a world-class office environment.",
-    tags: ["Office Fit-Out", "Interior Design", "Space Planning", "Project Management"],
+      "In addition to the design and finishing, we provided custom-designed furniture, executed its production, and ensured seamless installation. The scope also included the supply and installation of advanced equipment, implementation of a complete IT infrastructure, full building automation, and state-of-the-art access control systems. This comprehensive approach sets a new benchmark in the market and reflects our dedication to delivering end-to-end solutions tailored to our client's vision.",
+    tags: ["Office Fit-Out", "Interior Design", "Custom Furniture", "IT Infrastructure", "Building Automation", "Access Control"],
     images: {
-      hero: "/images/gdc-middle-east-fitout.jpeg",
+      hero: "/images/gdc-reception-lobby.jpeg",
       gallery: [
-        "/images/gdc-reception-lobby.jpeg",
         "/images/gdc-conference-room.jpeg",
         "/images/gdc-break-room.jpeg",
         "/images/gdc-open-workspace.jpeg",
@@ -109,41 +112,10 @@ export const allProjects: Project[] = [
         "/images/gdc-photography-studio.jpeg",
       ],
     },
-  },
-  {
-    id: 5,
-    title: "Altamimi Group Building Cleaning",
-    category: "BUROOJ AIR",
-    image: "/images/burooj-air-cover.jpeg",
-    slug: "altamimi-group-building-cleaning",
-    year: 2024,
-    client: "Altamimi Group",
-    description:
-      "Advanced drone-powered facade cleaning service for the Altamimi Group building, utilizing cutting-edge technology for efficient and safe building maintenance.",
-    challenge:
-      "Cleaning a complex geometric facade safely and efficiently while maintaining the building's architectural integrity and minimizing disruption to operations.",
-    approach:
-      "We deployed specialized cleaning drones with 3D mapping technology and optimized flight paths to deliver comprehensive facade cleaning with precision and safety.",
-    tags: [
-      "Advanced Drone Operations",
-      "Facade Cleaning Technology",
-      "3D Building Mapping",
-      "Flight Path Optimization",
-      "Quality Control Systems",
-      "Safety Management",
-    ],
-    images: {
-      hero: "/images/burooj-air-cover.jpeg",
-      gallery: [
-        "/images/altamimi-building-exterior.jpeg",
-        "/images/drone-cleaning-operation.jpeg",
-        "/images/drone-cleaning-duration.jpeg",
-      ],
-    },
     stats: {
-      area: "1,200 m²",
-      duration: "260 minutes",
-      drones: 2,
+      area: "2,437 m²",
+      duration: "16 weeks",
     },
   },
+  
 ]

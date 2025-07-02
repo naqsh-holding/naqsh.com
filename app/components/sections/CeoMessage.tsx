@@ -66,13 +66,18 @@ export default function CeoMessage() {
 
           <div ref={contentRef} className="flex flex-col justify-center">
             <div className="max-w-2xl">
-              <blockquote className="theme-text text-h3 font-light leading-relaxed mb-8">
-                "Buraydah combines authenticity and modernity, with its iconic markets, lush palm groves, and
-                unforgettable hospitality."
+              <blockquote className="theme-text text-h4 font-light leading-relaxed mb-8" style={{ fontWeight: 300 }}>
+                "At Naqsh, we don't just invest, we aim to leave a lasting and meaningful impact.
+                <br /><br />
+                Our vision is rooted in a strong belief that innovation drives progress, and that the private sector plays a vital role in shaping the future of our Kingdom.
+                <br /><br />
+                We are committed to smart, value-driven investments that align with Saudi Arabia's Vision 2030, supporting projects that combine creativity, efficiency, and real societal impact.
+                <br /><br />
+                Naqsh, Investing with Purpose."
               </blockquote>
               <div className="space-y-2">
                 <p className="theme-text text-label">Mohammed Bin Faihan</p>
-                <p className="theme-text text-body-small opacity-60">CEO</p>
+                <p className="theme-text text-body-small opacity-60">Chief Executive Officer</p>
               </div>
             </div>
           </div>

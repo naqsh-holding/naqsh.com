@@ -1,43 +1,47 @@
 "use client"
 
 import type React from "react"
-import { useEffect, useRef, useState, useCallback } from "react"
+import { useEffect, useRef, useState } from "react"
 import Image from "next/image"
 import { gsap } from "gsap"
-import { ArrowLeft, ArrowRight, ArrowUpRight } from "lucide-react"
+import { ArrowUpRight } from "lucide-react"
 import type { Company } from "@/app/types"
-import { Button } from "@/components/ui/button"
 
 const companies: Company[] = [
   {
     id: 1,
     name: "6 Degrees Technologies",
     description: "Technology & Smart Solutions",
-    image: "/Naqsh.Companies V.2 6Degrees.png",
+    image: "/Naqsh Website-01.png",
+    website: "https://6degrees.com.sa/en/",
   },
   {
     id: 2,
-    name: "Efficiency Center Business Inc.",
-    description: "Business Incubation & Co-working",
-    image: "/Naqsh.Companies. V2 Center.png",
+    name: "Burooj Air",
+    description: "Aviation Services & Solutions",
+    image: "/Naqsh Website-03.png",
+    website: "https://buroojair.com/",
   },
   {
     id: 3,
     name: "Promotion Efficiency for Advertising",
     description: "Marketing & Creative Production",
-    image: "/Naqsh.Companies V2.Promotion.png",
+    image: "/Naqsh Website-05.png",
+    website: "https://www.promoe.com.sa/",
   },
   {
     id: 4,
     name: "Burooj",
     description: "Real Estate Development & Construction",
-    image: "/Naqsh.Companies V2.Burooj.png",
+    image: "/Naqsh Website-04.png",
+    website: "https://www.burooj.pro/",
   },
   {
     id: 5,
-    name: "Burooj Air",
-    description: "Aviation Services & Solutions",
-    image: "/Naqsh.Companies V2. BuroojAir.png",
+    name: "Efficiency Center Business Inc.",
+    description: "Business Incubation & Co-working",
+    image: "/Naqsh Website-02.png",
+    website: "https://www.efficiencys.com.sa/",
   },
 ]
 
@@ -52,28 +56,11 @@ const getRandomColor = () => {
 
 export default function Companies() {
   const containerRef = useRef<HTMLDivElement>(null)
+  const sliderRef = useRef<HTMLDivElement>(null)
   const cardsRef = useRef<(HTMLDivElement | null)[]>([])
   const [hoveredImage, setHoveredImage] = useState<number | null>(null)
   const [cursorPosition, setCursorPosition] = useState({ x: 0, y: 0 })
   const [cursorColors, setCursorColors] = useState<string[]>([])
-  const [currentPage, setCurrentPage] = useState(0)
-  const [hoveredArrow, setHoveredArrow] = useState<number | null>(null)
-
-  const companiesPerPage = 4
-  const totalPages = Math.ceil(companies.length / companiesPerPage)
-  
-  const visibleCompanies = companies.slice(
-    currentPage * companiesPerPage,
-    (currentPage + 1) * companiesPerPage
-  )
-
-  const handlePrevious = () => {
-    setCurrentPage(prev => Math.max(0, prev - 1))
-  }
-
-  const handleNext = () => {
-    setCurrentPage(prev => Math.min(totalPages - 1, prev + 1))
-  }
 
   useEffect(() => {
     const tl = gsap.timeline()
@@ -110,7 +97,7 @@ export default function Companies() {
   }
 
   return (
-    <section id="companies" className="companies-section py-32 bg-[#f5f5f5]" ref={containerRef} data-bg="gray">
+    <section id="companies" className="companies-section py-32 bg-[#f5f5f5] overflow-hidden" ref={containerRef} data-bg="gray">
       <div className="container mx-auto px-4">
         {/* Section Label */}
         <div className="mb-12">
@@ -122,46 +109,32 @@ export default function Companies() {
           A diverse portfolio of innovative companies spanning technology, real estate, aviation, and marketing.
         </h2>
 
-        <div className="flex justify-end items-center mb-8">
-          <div className="flex gap-2">
-            <Button 
-              variant="outline" 
-              size="icon" 
-              onClick={handlePrevious} 
-              disabled={currentPage === 0}
-              onMouseEnter={() => setHoveredArrow(0)}
-              onMouseLeave={() => setHoveredArrow(null)}
-              className="rotate-180"
-            >
-              <ArrowLeft className={`w-6 h-6 ${hoveredArrow === 0 ? 'text-blue-500' : 'text-gray-500'}`} />
-              <span className="sr-only">Scroll Left</span>
-            </Button>
-            <Button 
-              variant="outline" 
-              size="icon" 
-              onClick={handleNext} 
-              disabled={currentPage === totalPages - 1}
-              onMouseEnter={() => setHoveredArrow(1)}
-              onMouseLeave={() => setHoveredArrow(null)}
-            >
-              <ArrowRight className={`w-6 h-6 ${hoveredArrow === 1 ? 'text-blue-500' : 'text-gray-500'}`} />
-              <span className="sr-only">Scroll Right</span>
-            </Button>
-          </div>
-        </div>
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
-          {visibleCompanies.map((company, index) => (
+        {/* Companies Slider */}
+        <div 
+          ref={sliderRef}
+          className="flex gap-8 overflow-x-auto overflow-y-hidden pb-8 scrollbar-hide"
+          style={{
+            scrollbarWidth: 'none',
+            msOverflowStyle: 'none'
+          }}
+        >
+          {companies.map((company, index) => (
             <div
               key={company.id}
               ref={(el) => {
                 cardsRef.current[index] = el
               }}
-              className="w-full group"
+              className="w-80 flex-shrink-0 group"
               onMouseEnter={() => setHoveredImage(index)}
               onMouseLeave={() => setHoveredImage(null)}
               onMouseMove={(e) => handleMouseMove(e, index)}
             >
-              <div className="image-container relative aspect-[3/5] overflow-hidden">
+              <a 
+                href={company.website} 
+                target="_blank" 
+                rel="noopener noreferrer"
+                className="block image-container relative aspect-[3/5] overflow-hidden cursor-pointer"
+              >
                 <Image
                   src={company.image || "/placeholder.svg"}
                   alt={company.name}
@@ -182,8 +155,8 @@ export default function Companies() {
                     <ArrowUpRight className="w-6 h-6 text-white" />
                   </div>
                 )}
-              </div>
-              <div className="mt-6 mb-8 md:mb-0 transition-opacity duration-300">
+              </a>
+              <div className="mt-6 transition-opacity duration-300">
                 <h3 className="text-black text-2xl font-bold mb-2 leading-tight">{company.name}</h3>
                 <p className="text-black text-body-small opacity-80">{company.description}</p>
               </div>

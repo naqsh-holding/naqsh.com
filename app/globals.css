@@ -572,3 +572,13 @@ main[data-page="contact"] a[href^="tel:"] svg,
 main[data-page="contact"] a[href^="mailto:"] svg {
   color: #fff !important;
 }
+
+/* Hide scrollbar for companies slider */
+.scrollbar-hide {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+.scrollbar-hide::-webkit-scrollbar {
+  display: none;
+}

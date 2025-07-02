@@ -6,6 +6,7 @@ import { gsap } from "gsap"
 import { ScrollTrigger } from "gsap/ScrollTrigger"
 import Link from "next/link"
 import { PillButton } from "../ui/PillButton"
+import { allProjects, type Project as ProjectData } from "../../lib/data/projects"
 
 if (typeof window !== "undefined") {
   gsap.registerPlugin(ScrollTrigger)
@@ -20,58 +21,23 @@ interface Project {
   categories: { name: string; link: string }[]
 }
 
-// Featured projects - only show 4 in the home section
-const featuredProjects: Project[] = [
-  {
-    id: 1,
-    title: "Keeta - Khobar Launch Event",
-    category: "EFFICIENCY CENTER",
-    image: "/images/keeta-billboard.jpeg",
-    slug: "keeta-khobar-launch-event",
-    categories: [
-      { name: "EFFICIENCY CENTER", link: "#efficiency-center" },
-      { name: "LAUNCH EVENT", link: "#launch-event" },
-    ],
-  },
-  {
-    id: 2,
-    title: "PWA - AlSharqiya Gets Creative",
-    category: "6 DEGREES TECHNOLOGIES",
-    image: "/images/eastern-creative-digital-display.jpeg",
-    slug: "creative-nexus-digital-platform",
-    categories: [
-      { name: "6 DEGREES TECHNOLOGIES", link: "#6-degrees" },
-      { name: "DIGITAL PLATFORM", link: "#digital-platform" },
-    ],
-  },
-  {
-    id: 3,
-    title: "Environmental and Circular Economy Forum 2023",
-    category: "PROMOTION EFFICIENCY",
-    image: "/images/environmental-forum-billboard.jpeg",
-    slug: "environmental-forum-2023",
-    categories: [
-      { name: "PROMOTION EFFICIENCY", link: "#promotion-efficiency" },
-      { name: "ENVIRONMENTAL", link: "#environmental" },
-    ],
-  },
-  {
-    id: 4,
-    title: "GDC Middle East - Comprehensive Fit-Out for Riyadh Office",
-    category: "BUROOJ",
-    image: "/images/gdc-middle-east-fitout.jpeg",
-    slug: "gdc-middle-east-fitout",
-    categories: [
-      { name: "BUROOJ", link: "#burooj" },
-      { name: "FIT-OUT", link: "#fit-out" },
-    ],
-  },
-]
-
 export default function ProjectsSlider() {
   const sectionRef = useRef<HTMLElement>(null)
   const itemsRef = useRef<(HTMLDivElement | null)[]>([])
   const headerRef = useRef<HTMLDivElement>(null)
+  
+  // Get first 4 projects and convert to the format needed for the component
+  const featuredProjects: Project[] = allProjects.slice(0, 4).map((project: ProjectData) => ({
+    id: project.id,
+    title: project.title,
+    category: project.category,
+    image: project.image,
+    slug: project.slug,
+    categories: [
+      { name: project.category, link: `#${project.category.toLowerCase().replace(/\s+/g, '-')}` },
+      { name: project.tags[0] || "PROJECT", link: `#${(project.tags[0] || "project").toLowerCase().replace(/\s+/g, '-')}` },
+    ]
+  }))
 
   useEffect(() => {
     const ctx = gsap.context(() => {

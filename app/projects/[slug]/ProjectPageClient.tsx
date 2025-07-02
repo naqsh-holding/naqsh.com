@@ -187,7 +187,7 @@ export default function ProjectPageClient({ project, slug }: ProjectPageClientPr
             "We developed a bold visual identity centered around vibrant yellow branding and local community elements. The campaign featured large-scale outdoor billboards strategically placed in high-traffic areas, incorporating the Dammam city skyline to create local relevance and the 'Keeta together, winners forever' message to build community connection.",
           duration: "6 weeks",
           type: "Outdoor Campaign",
-          industry: "Food Delivery",
+          company: "Efficiency Center",
           tags: [
             "Brand Strategy",
             "Outdoor Advertising",
@@ -205,7 +205,7 @@ export default function ProjectPageClient({ project, slug }: ProjectPageClientPr
             "We developed a comprehensive PWA strategy focusing on Progressive Web App technology to ensure optimal performance across all devices. The platform architecture was designed to handle multimedia content, event management, and community features while reflecting the center's commitment to innovation and creativity through intuitive user experience design. The app features Arabic language support, offline capabilities, and a cohesive purple brand theme.",
           duration: "12 weeks",
           type: "Progressive Web App",
-          industry: "Arts & Culture",
+          company: "6 Degrees Technologies",
           tags: [
             "Progressive Web App",
             "Arabic Language Support",
@@ -214,23 +214,25 @@ export default function ProjectPageClient({ project, slug }: ProjectPageClientPr
             "Performance Optimization",
           ],
         }
-      case "environmental-forum-2023":
+      case "environmental-circular-economy-forum-2023":
         return {
           breadcrumb: "Environmental Forum",
           challenge:
-            "The Environmental and Circular Economy Forum 2023 needed a comprehensive visual identity and brand system that would effectively communicate environmental sustainability across multiple touchpoints. The challenge was to create a cohesive brand experience that would work seamlessly across outdoor advertising, digital displays, promotional materials, and wayfinding signage while maintaining strong environmental messaging.",
+            "Deliver a dynamic, large-scale forum that fosters collaboration and knowledge exchange on environmental sustainability and the circular economy, while showcasing Saudi Aramco's leadership and commitment to a greener future.",
           approach:
-            "We developed a comprehensive brand system centered around environmental iconography and a vibrant green color palette. The design strategy focused on creating a modular visual language that could be applied consistently across all touchpoints - from large-scale billboards to promotional materials and digital kiosks. We incorporated sustainable practices into the promotional materials themselves, including eco-friendly 'Deets' cards, and ensured clear wayfinding through branded entrance signage.",
-          duration: "8 weeks",
-          type: "Event Campaign",
-          industry: "Environmental & Sustainability",
+            "Promotion Efficiency managed the project end-to-end for over 1,000 visitors across three days, including: developing the full brand identity; designing the event space and booths; producing print materials (certificates, agendas, promotional items); creating a custom web app for registration and navigation; planning and executing marketing, invitations, signage, and livestream support; organizing workshops and hospitality; and coordinating media coverage and crowd management (photography/videography).",
+          duration: "3 days",
+          type: "Event Management",
+          company: "Promotion Efficiency",
           tags: [
-            "Brand System",
-            "Visual Identity",
-            "Outdoor Advertising",
-            "Digital Display Design",
-            "Sustainable Materials",
-            "Wayfinding & Signage",
+            "Event Management",
+            "Brand Identity",
+            "Web Development",
+            "Print Design",
+            "Marketing Strategy",
+            "Workshop Organization",
+            "Media Coverage",
+            "Smart Cards"
           ],
         }
       case "gdc-middle-east-fitout":
@@ -242,7 +244,7 @@ export default function ProjectPageClient({ project, slug }: ProjectPageClientPr
             "We implemented a refined industrial-modern design approach that seamlessly blends aesthetics with functionality. Our comprehensive strategy included custom furniture design and production, advanced equipment installation, complete IT infrastructure implementation, full building automation, and state-of-the-art access control systems. The project showcased efficient execution through innovative approaches and meticulous attention to detail, creating diverse functional spaces from reception and conference areas to recreational zones and specialized studios.",
           duration: "16 weeks",
           type: "Commercial Fit-Out",
-          industry: "Corporate Real Estate",
+          company: "Burooj",
           tags: [
             "Interior Design",
             "Custom Furniture",
@@ -252,23 +254,22 @@ export default function ProjectPageClient({ project, slug }: ProjectPageClientPr
             "Access Control",
           ],
         }
-      case "altamimi-group-building-cleaning":
+      case "burooj-air-drone-cleaning-altamimi-building":
         return {
-          breadcrumb: "Altamimi Cleaning",
+          breadcrumb: "Burooj Air",
           challenge:
-            "The Altamimi Group required a safe, efficient, and cost-effective solution for cleaning their modern commercial building's complex geometric facade. Traditional cleaning methods would require extensive scaffolding, rope access, or cherry pickers, creating safety risks, operational disruptions, and significant costs. The challenge was to deliver thorough cleaning of 1,200 square meters of intricate facade design while minimizing downtime and ensuring worker safety.",
+            "Cleaning hard-to-reach glass facades safely and efficiently, with no need for scaffolding or manual access.",
           approach:
-            "Burooj Air deployed advanced drone technology specifically designed for building cleaning operations. Our approach utilized 2 specialized cleaning drones equipped with precision spray systems and high-resolution cameras for quality control. The operation was meticulously planned using 3D building mapping and flight path optimization to ensure complete coverage of the geometric facade patterns. Our team executed the cleaning in a systematic approach, completing the entire 1,200m² area in just 260 minutes while maintaining the highest safety and quality standards.",
+            "Using advanced aerial technology, our team was able to clean hard-to-reach glass facades safely and efficiently, with no need for scaffolding or manual access. The before-and-after transformation speaks for itself — a clear testament to the quality and effectiveness of our solutions.",
           duration: "260 minutes",
           type: "Drone Cleaning Service",
-          industry: "Building Maintenance",
+          company: "Burooj Air",
           tags: [
-            "Advanced Drone Operations",
-            "Facade Cleaning Technology",
-            "3D Building Mapping",
-            "Flight Path Optimization",
-            "Quality Control Systems",
-            "Safety Management",
+            "Drone Cleaning",
+            "Innovation",
+            "Building Maintenance",
+            "Aerial Technology",
+            "Burooj Air",
           ],
         }
       default:
@@ -280,7 +281,7 @@ export default function ProjectPageClient({ project, slug }: ProjectPageClientPr
             "I started this project by mapping out a simple sitemap, then jumped straight into UI and micro-interactions, since this is a concept project I didn't do much research besides what I liked and what I wanted for this project. It's always refreshing to work on something on my own and make all the design decisions along the way and I loved how the lemon mascot, Zesty, turned out.",
           duration: "9 weeks",
           type: "Mobile",
-          industry: "Messaging",
+          company: "6 Degrees Technologies",
           tags: ["Concept", "UI/UX", "Digital Design", "Icon Design", "Motion Prototype"],
         }
     }
@@ -293,10 +294,10 @@ export default function ProjectPageClient({ project, slug }: ProjectPageClientPr
       <Navigation forceStyle="dark-transparent" />
 
       {/* Main Content */}
-      <main className="container mx-auto px-4 pt-32 pb-32">
+      <main className="container mx-auto  pt-24 pb-24">
         {/* Breadcrumb */}
-        <div ref={breadcrumbRef} className="mb-8 opacity-0">
-          <nav className="text-gray-500 text-lg font-light">
+        <div ref={breadcrumbRef} className="mb-6 opacity-0 pt-8">
+          <nav className="text-gray-500 text-sm font-light">
             <Link href="/" className="hover:text-black transition-colors">
               {project.category}
             </Link>
@@ -308,41 +309,54 @@ export default function ProjectPageClient({ project, slug }: ProjectPageClientPr
         {/* Project Title */}
         <h1
           ref={titleRef}
-          className="text-4xl md:text-5xl lg:text-6xl font-light leading-tight mb-16 max-w-4xl opacity-0 text-black"
+          className="text-4xl md:text-5xl lg:text-6xl font-light leading-tight mb-12 max-w-4xl opacity-0 text-black pt-8"
         >
           {project.title}
         </h1>
 
-        {/* Hero Image */}
-        <div ref={heroRef} className="relative mb-32 opacity-0">
-          <div className="w-full">
-            <img
-              src={project.heroImage || "/placeholder.svg?height=800&width=400"}
-              alt={project.sections[0].content.alt}
-              className="w-full h-auto object-cover"
-            />
+        {/* Hero Image or Video */}
+        <div ref={heroRef} className="relative mb-20 opacity-0">
+          <div className="w-full aspect-[16/9] overflow-hidden rounded-lg">
+            {slug === "burooj-air-drone-cleaning-altamimi-building" ? (
+              <video
+                src="/videos/AlTamimi.mp4"
+                controls
+                autoPlay
+                loop
+                muted
+                playsInline
+                className="w-full h-full object-cover rounded-lg"
+                poster={project.heroImage || "/placeholder.svg?height=800&width=400"}
+              />
+            ) : (
+              <img
+                src={project.heroImage || "/placeholder.svg?height=800&width=400"}
+                alt={project.sections[0].content.alt}
+                className="w-full h-full object-cover"
+              />
+            )}
           </div>
         </div>
 
         {/* Project Details Section */}
-        <section ref={detailsRef} className="grid grid-cols-1 lg:grid-cols-2 gap-16 lg:gap-24 mb-32 opacity-0">
+        <section ref={detailsRef} className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 mb-20 opacity-0">
           {/* Left Column - Challenge & Approach */}
-          <div className="space-y-12">
+          <div className="space-y-8">
             {/* Challenge */}
             <div>
               <h2 className="text-lg font-medium text-gray-500 mb-4">Challenge</h2>
-              <p className="text-xl lg:text-2xl font-light leading-relaxed text-black">{content.challenge}</p>
+              <p className="text-lg lg:text-xl font-light leading-relaxed text-black">{content.challenge}</p>
             </div>
 
             {/* Approach */}
             <div>
               <h2 className="text-lg font-medium text-gray-500 mb-4">Approach</h2>
-              <p className="text-xl lg:text-2xl font-light leading-relaxed text-black">{content.approach}</p>
+              <p className="text-lg lg:text-xl font-light leading-relaxed text-black">{content.approach}</p>
             </div>
           </div>
 
           {/* Right Column - Project Details */}
-          <div className="space-y-12">
+          <div className="space-y-8">
             {/* Client */}
             <div>
               <h3 className="text-lg font-medium text-gray-500 mb-2">Client</h3>
@@ -361,15 +375,15 @@ export default function ProjectPageClient({ project, slug }: ProjectPageClientPr
               </div>
             </div>
 
-            {/* Type & Industry Row */}
+            {/* Type & Company Row */}
             <div className="grid grid-cols-2 gap-8">
               <div>
                 <h3 className="text-lg font-medium text-gray-500 mb-2">Type</h3>
                 <p className="text-2xl font-medium text-black">{content.type}</p>
               </div>
               <div>
-                <h3 className="text-lg font-medium text-gray-500 mb-2">Industry</h3>
-                <p className="text-2xl font-medium text-black">{content.industry}</p>
+                <h3 className="text-lg font-medium text-gray-500 mb-2">Company</h3>
+                <p className="text-2xl font-medium text-black">{content.company}</p>
               </div>
             </div>
 
@@ -391,30 +405,30 @@ export default function ProjectPageClient({ project, slug }: ProjectPageClientPr
         </section>
 
         {/* Image Groups with Descriptions - For projects with multiple images */}
-        {project.imageGroups &&
+        {slug !== "burooj-air-drone-cleaning-altamimi-building" && project.imageGroups &&
           project.imageGroups.map((group, groupIndex) => (
-            <div key={groupIndex}>
+            <div key={groupIndex} className={groupIndex < project.imageGroups!.length - 1 ? "mb-12" : ""}>
               {/* Image Group */}
-              <section ref={(el) => { imageGroupsRef.current[groupIndex] = el }} className="mb-12 opacity-0">
-                <div className="space-y-8">
+              <section ref={(el) => { imageGroupsRef.current[groupIndex] = el }} className="mb-4 opacity-0">
+                <div className="space-y-6">
                   {/* First image - full width */}
-                  <div className="w-full">
+                  <div className="w-full aspect-[16/9] overflow-hidden rounded-lg">
                     <img
                       src={group.images[0]?.src || "/placeholder.svg"}
                       alt={group.images[0]?.alt || ""}
-                      className="w-full h-auto object-cover"
+                      className="w-full h-full object-cover"
                     />
                   </div>
 
                   {/* Second and third images - side by side */}
                   {group.images.length > 1 && (
-                    <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+                    <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                       {group.images.slice(1).map((image, imageIndex) => (
-                        <div key={imageIndex + 1} className="w-full">
+                        <div key={imageIndex + 1} className="w-full aspect-[4/3] overflow-hidden rounded-lg">
                           <img
                             src={image.src || "/placeholder.svg"}
                             alt={image.alt}
-                            className="w-full h-auto object-cover"
+                            className="w-full h-full object-cover"
                           />
                         </div>
                       ))}
@@ -424,7 +438,7 @@ export default function ProjectPageClient({ project, slug }: ProjectPageClientPr
               </section>
 
               {/* Description Text */}
-              <section className="mb-32">
+              <section className="mb-4">
                 <div className="w-full">
                   <p className="text-xl lg:text-2xl font-light leading-relaxed text-black">{group.description}</p>
                 </div>
@@ -437,7 +451,7 @@ export default function ProjectPageClient({ project, slug }: ProjectPageClientPr
           project.desktopImage !== "/placeholder.svg?height=600&width=1200" &&
           !project.imageGroups && (
             <section ref={(el) => { imageGroupsRef.current[0] = el }} className="mb-12 opacity-0">
-              <div className="w-full">
+              <div className="w-full aspect-[16/9] overflow-hidden rounded-lg">
                 <img
                   src={project.desktopImage || "/placeholder.svg"}
                   alt={
@@ -445,11 +459,11 @@ export default function ProjectPageClient({ project, slug }: ProjectPageClientPr
                       ? "Keeta Khobar launch event team celebration with branded displays"
                       : slug === "creative-nexus-digital-platform"
                         ? "AlSharqiya Gets Creative PWA interface displayed on mobile device with purple gradient background"
-                        : slug === "environmental-forum-2023"
+                        : slug === "environmental-circular-economy-forum-2023"
                           ? "Environmental Forum 2023 comprehensive brand application including promotional materials, digital kiosk, and wayfinding signage"
                           : "Zesty desktop chat interface showing conversation flow"
                   }
-                  className="w-full h-auto object-cover"
+                  className="w-full h-full object-cover"
                 />
               </div>
             </section>
@@ -457,7 +471,7 @@ export default function ProjectPageClient({ project, slug }: ProjectPageClientPr
 
         {/* Design Rationale Section - Only for projects with rationale */}
         {!project.imageGroups && project.designRationale && (
-          <section ref={rationaleRef} className="mb-20 opacity-0">
+          <section ref={rationaleRef} className="mb-16 opacity-0">
             <div className="w-full">
               <p className="text-xl lg:text-2xl font-light leading-relaxed text-black">{project.designRationale}</p>
             </div>
@@ -466,7 +480,7 @@ export default function ProjectPageClient({ project, slug }: ProjectPageClientPr
 
         {/* Final Design Rationale Section - For projects with image groups and rationale */}
         {project.imageGroups && project.designRationale && (
-          <section ref={rationaleRef} className="mb-20 opacity-0">
+          <section ref={rationaleRef} className="mb-16 opacity-0">
             <div className="w-full">
               <p className="text-xl lg:text-2xl font-light leading-relaxed text-black">{project.designRationale}</p>
             </div>

@@ -18,34 +18,29 @@ interface Service {
 const services: Service[] = [
   {
     id: 1,
-    title: "Information Technology & Smart Solutions",
+    title: "Media Sector",
     description:
-      "Through 6 Degrees Technologies, we deliver advanced IT services, website and app development, IoT integration, and smart automation tailored to modern businesses.",
+      "Our Media Sector delivers comprehensive marketing and creative production solutions. We specialize in advertising campaigns, brand development, digital marketing, and creative content creation. Our expertise spans outdoor advertising, event management, and production services, helping brands establish strong market presence through strategic media planning and creative storytelling.",
   },
   {
     id: 2,
-    title: "Business Incubation & Co-working Spaces",
+    title: "Real Estate Sector",
     description:
-      "Efficiency Center Business Inc. redefines office spaces with smart, flexible environments designed to empower startups and enterprises.",
+      "Our Real Estate Sector develops value-driven, sustainable, and future-ready spaces. We specialize in commercial fit-out projects, interior design, custom furniture, and comprehensive building solutions. Our expertise includes office environments, retail spaces, and specialized facilities, delivering end-to-end solutions with advanced IT infrastructure and building automation systems.",
   },
   {
     id: 3,
-    title: "Marketing & Advertising",
+    title: "Business Services Sector",
     description:
-      "Promotion Efficiency offers creative and strategic marketing services, from brand building to media production, helping businesses connect with their audiences effectively.",
+      "Our Business Services Sector enables entrepreneurship and business growth through smart services and inspiring workspaces. We provide business incubation services, co-working spaces, and entrepreneurial support programs. Our facilities offer modern work environments designed to foster collaboration, innovation, and productivity for startups and established businesses.",
   },
   {
     id: 4,
-    title: "Architecture, Design & Construction",
+    title: "Information Technology Sector",
     description:
-      "Burooj for Design, Architecture & Construction provides end-to-end solutions in real estate development, from planning and design to construction and finishing.",
+      "Our Information Technology Sector innovates with tech-driven solutions that enable digital transformation. We specialize in software development, UI/UX design, progressive web applications, and IoT solutions. Our expertise spans custom software development, digital platforms, and enterprise technology solutions that streamline operations and enhance user experiences.",
   },
-  {
-    id: 5,
-    title: "Drone Technology & Aerial Services",
-    description:
-      "Burooj Aid for Drone Cleaning pioneers aerial drone-based maintenance and cleaning services, offering safe, eco-friendly alternatives for building care.",
-  },
+
 ]
 
 export default function OurServices() {
@@ -99,12 +94,10 @@ export default function OurServices() {
           <div className="lg:col-span-5 lg:sticky lg:top-32">
             <div ref={titleRef}>
               <h2 className="theme-text text-5xl lg:text-6xl leading-tight">
-                Naqsh Holding
-                <br />
-                drives innovation
-                <br />
-                across key sectors.
-              </h2>
+              Naqsh Investment Sectors    </h2>
+              <p className="theme-text text-h4 font-light leading-relaxed mb-8" style={{ fontWeight: 300 }}>                Naqsh Holding strategically invests in sectors that shape the future and drive long-term growth:
+              </p>
+          
             </div>
           </div>
 

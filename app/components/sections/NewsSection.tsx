@@ -7,6 +7,7 @@ import { gsap } from "gsap"
 import { ScrollTrigger } from "gsap/ScrollTrigger"
 
 import { PillButton } from "../ui/PillButton" // Ensure this import is correct
+import { getFeaturedNews } from "../../lib/data/news"
 
 if (typeof window !== "undefined") {
   gsap.registerPlugin(ScrollTrigger)
@@ -22,49 +23,12 @@ interface NewsItem {
   slug: string
 }
 
-const newsItems: NewsItem[] = [
-  {
-    id: 1,
-    day: "15",
-    month: "DEC",
-    image: "/images/keeta-billboard.jpeg",
-    title: "Naqsh Holding Expands Portfolio with New Tech Acquisition",
-    categories: [
-      { name: "BUSINESS", link: "#business" },
-      { name: "TECHNOLOGY", link: "#technology" },
-    ],
-    slug: "naqsh-holding-expands-portfolio-tech-acquisition",
-  },
-  {
-    id: 2,
-    day: "12",
-    month: "DEC",
-    image: "/images/news/beautiful-places.png",
-    title: "Innovative Coworking Spaces Redefine Modern Workplace",
-    categories: [
-      { name: "WORKSPACE", link: "#workspace" },
-      { name: "INNOVATION", link: "#innovation" },
-    ],
-    slug: "innovative-coworking-spaces-redefine-workplace",
-  },
-  {
-    id: 3,
-    day: "08",
-    month: "DEC",
-    image: "/images/news/visual-design-branding.jpeg",
-    title: "Sustainable Construction Practices Lead Industry Change",
-    categories: [
-      { name: "CONSTRUCTION", link: "#construction" },
-      { name: "SUSTAINABILITY", link: "#sustainability" },
-    ],
-    slug: "sustainable-construction-practices-industry-change",
-  },
-]
-
 export default function NewsSection() {
   const sectionRef = useRef<HTMLElement>(null)
   const itemsRef = useRef<(HTMLDivElement | null)[]>([])
   const headerRef = useRef<HTMLDivElement>(null)
+  
+  const newsItems = getFeaturedNews()
 
   useEffect(() => {
     const ctx = gsap.context(() => {

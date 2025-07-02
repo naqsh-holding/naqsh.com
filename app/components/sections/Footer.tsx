@@ -5,7 +5,7 @@ import Link from "next/link"
 import Image from "next/image"
 import { gsap } from "gsap"
 import { ScrollTrigger } from "gsap/ScrollTrigger"
-import { Linkedin, Instagram, Phone } from "lucide-react"
+import { Linkedin, Instagram, Phone, Mail } from "lucide-react"
 
 if (typeof window !== "undefined") {
   gsap.registerPlugin(ScrollTrigger)
@@ -58,6 +58,18 @@ export default function Footer() {
       href: "https://www.linkedin.com/company/naqshco/",
       icon: Linkedin,
       ariaLabel: "Naqsh Holding Company on LinkedIn",
+    },
+    {
+      name: "Email",
+      href: "mailto:contact@naqsh.com.sa",
+      icon: Mail,
+      ariaLabel: "Contact Naqsh Holding Company via email",
+    },
+    {
+      name: "Phone",
+      href: "tel:0535558889",
+      icon: Phone,
+      ariaLabel: "Call Naqsh Holding Company",
     },
   ]
 
@@ -119,27 +131,13 @@ export default function Footer() {
             {/* Connect */}
             <div className="footer-col">
               <h3 className="text-lg font-medium mb-4 text-white">Connect</h3>
-              <div className="space-y-2.5 mb-6">
-                <a
-                  href="mailto:contact@naqsh.com.sa"
-                  className="text-white/70 hover:text-white transition-colors duration-300 text-sm hover:underline block"
-                >
-                  contact@naqsh.com.sa
-                </a>
-                <a
-                  href="tel:0535558889"
-                  className="text-white/70 hover:text-white transition-colors duration-300 text-sm hover:underline block"
-                >
-                  0535558889
-                </a>
-              </div>
               <div className="flex space-x-3">
                 {socialLinks.map((social) => (
                   <Link
                     key={social.name}
                     href={social.href}
-                    target="_blank"
-                    rel="noopener noreferrer"
+                    target={social.name === "LinkedIn" ? "_blank" : undefined}
+                    rel={social.name === "LinkedIn" ? "noopener noreferrer" : undefined}
                     className="w-9 h-9 bg-white/10 rounded-full flex items-center justify-center hover:bg-white/20 transition-colors duration-300 group"
                     aria-label={social.ariaLabel}
                   >
@@ -156,7 +154,7 @@ export default function Footer() {
         <div className="border-t border-white/10 pt-8 lg:pt-10">
           <div className="flex flex-col md:flex-row items-center justify-between space-y-4 md:space-y-0">
             <div className="text-center md:text-left">
-              <p className="text-xs text-white/60">© {currentYear} Naqsh FZ LLC. All Rights Reserved.</p>
+              <p className="text-xs text-white/60">© {currentYear} Naqsh. All Rights Reserved.</p>
             </div>
           </div>
         </div>

@@ -78,7 +78,7 @@ export default function ProjectsPageClient({ allProjects }: ProjectsPageClientPr
                         src={project.image || "/placeholder.svg"}
                         alt={project.title}
                         fill
-                        className="object-cover transition-all duration-700 grayscale group-hover:grayscale-0 group-hover:scale-105 group-hover:translate-x-2"
+                        className="object-cover transition-all duration-700 group-hover:scale-105 group-hover:translate-x-2"
                       />
                     </div>
                     <h3 className="text-white text-h4 font-medium mb-2 transition-colors duration-300 group-hover:text-white/70" style={{ color: 'white' }}>
