@@ -3,6 +3,7 @@ import type { Metadata } from "next"
 import "./globals.css"
 import { montserrat } from "./lib/fonts"
 import Cursor from "./components/ui/Cursor"
+import PerformanceMonitor from "./components/ui/PerformanceMonitor"
 
 export const metadata: Metadata = {
   title: "Naqsh Holding Company | Investment Leader | To Leave a Trace",
@@ -103,6 +104,15 @@ export default function RootLayout({
     <html lang="en">
       <head>
         <link rel="icon" href="/favicon.ico" sizes="any" />
+        
+        {/* Preload critical images for better performance */}
+        <link rel="preload" as="image" href="https://hel1.your-objectstorage.com/naqsh-pord/images/hero-background.png" />
+        <link rel="preload" as="image" href="https://hel1.your-objectstorage.com/naqsh-pord/Naqsh Website-01.png" />
+        <link rel="preload" as="image" href="https://hel1.your-objectstorage.com/naqsh-pord/Naqsh Website-02.png" />
+        <link rel="preload" as="image" href="https://hel1.your-objectstorage.com/naqsh-pord/Naqsh Website-03.png" />
+        <link rel="preload" as="image" href="https://hel1.your-objectstorage.com/naqsh-pord/Naqsh Website-04.png" />
+        <link rel="preload" as="image" href="https://hel1.your-objectstorage.com/naqsh-pord/Naqsh Website-05.png" />
+        <link rel="preload" as="image" href="https://hel1.your-objectstorage.com/naqsh-pord/images/ceo.png" />
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{
@@ -219,6 +229,7 @@ export default function RootLayout({
       <body className={`${montserrat.className} cursor-none`}>
         {children}
         <Cursor />
+        <PerformanceMonitor />
       </body>
     </html>
   )

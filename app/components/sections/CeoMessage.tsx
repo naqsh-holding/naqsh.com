@@ -1,7 +1,7 @@
 "use client"
 
 import { useEffect, useRef } from "react"
-import Image from "next/image"
+import OptimizedImage from "../ui/OptimizedImage"
 import { gsap } from "gsap"
 import { ScrollTrigger } from "gsap/ScrollTrigger"
 
@@ -53,13 +53,14 @@ export default function CeoMessage() {
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-16">
           <div className="relative flex">
             <div ref={imageRef} className="relative w-full aspect-[3/4]">
-              <Image
+              <OptimizedImage
                 src="https://hel1.your-objectstorage.com/naqsh-pord/images/ceo.png"
                 alt="CEO Portrait - Mohammed Bin Faihan"
                 fill
                 className="object-cover grayscale hover:grayscale-0 transition-all duration-500 ease-in-out"
                 priority
                 sizes="(max-width: 768px) 100vw, 50vw"
+                quality={85}
               />
             </div>
           </div>

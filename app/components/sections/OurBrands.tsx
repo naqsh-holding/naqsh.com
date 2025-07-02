@@ -1,7 +1,7 @@
 "use client"
 
 import { useEffect, useRef, useState } from "react"
-import Image from "next/image"
+import OptimizedImage from "../ui/OptimizedImage"
 import { gsap } from "gsap"
 import { ScrollTrigger } from "gsap/ScrollTrigger"
 
@@ -149,7 +149,7 @@ export default function OurBrands() {
                     onMouseLeave={() => setHoveredLogo(null)}
                   >
                     <div className="aspect-[2/1] relative">
-                      <Image
+                      <OptimizedImage
                         src={brand.logo || "https://hel1.your-objectstorage.com/naqsh-pord/placeholder.svg"}
                         alt={brand.name}
                         fill
@@ -158,6 +158,8 @@ export default function OurBrands() {
   ${hoveredLogo === brand.id ? "scale-110 brightness-100 invert-0" : ""}
   ${hoveredLogo !== null && hoveredLogo !== brand.id ? "opacity-30" : ""}
 `}
+                        sizes="240px"
+                        quality={70}
                       />
                     </div>
                   </div>

@@ -20,7 +20,12 @@ export default function Hero() {
       {/* Responsive background image - fixed on desktop, scroll on mobile */}
       <div
         className="absolute inset-0 z-0 bg-center bg-cover md:bg-fixed"
-        style={{ backgroundImage: 'url(https://hel1.your-objectstorage.com/naqsh-pord/images/hero-background.png)' }}
+        style={{ 
+          backgroundImage: 'url(https://hel1.your-objectstorage.com/naqsh-pord/images/hero-background.png)',
+          backgroundSize: 'cover',
+          backgroundPosition: 'center',
+          backgroundRepeat: 'no-repeat'
+        }}
         aria-hidden="true"
       />
 

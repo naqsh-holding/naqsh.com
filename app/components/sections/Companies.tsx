@@ -2,7 +2,7 @@
 
 import type React from "react"
 import { useEffect, useRef, useState } from "react"
-import Image from "next/image"
+import OptimizedImage from "../ui/OptimizedImage"
 import { gsap } from "gsap"
 import { ArrowUpRight } from "lucide-react"
 import type { Company } from "@/app/types"
@@ -135,12 +135,14 @@ export default function Companies() {
                 rel="noopener noreferrer"
                 className="block image-container relative aspect-[3/5] overflow-hidden cursor-pointer"
               >
-                <Image
+                <OptimizedImage
                   src={company.image || "https://hel1.your-objectstorage.com/naqsh-pord/placeholder.svg"}
                   alt={company.name}
                   fill
                   className="object-cover transition-all duration-500 ease-in-out filter grayscale group-hover:grayscale-0"
-                  priority
+                  priority={index < 2}
+                  sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 25vw"
+                  quality={85}
                 />
                 {hoveredImage === index && (
                   <div

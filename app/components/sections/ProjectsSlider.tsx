@@ -1,7 +1,7 @@
 "use client"
 
 import { useRef, useEffect } from "react"
-import Image from "next/image"
+import OptimizedImage from "../ui/OptimizedImage"
 import { gsap } from "gsap"
 import { ScrollTrigger } from "gsap/ScrollTrigger"
 import Link from "next/link"
@@ -111,11 +111,14 @@ export default function ProjectsSlider() {
                 <div className="relative overflow-hidden mb-6">
                   {/* Image */}
                   <div className="relative aspect-[3/4] overflow-hidden">
-                    <Image
+                    <OptimizedImage
                       src={project.image || "https://hel1.your-objectstorage.com/naqsh-pord/placeholder.svg"}
                       alt={project.title}
                       fill
                       className="object-cover transition-transform duration-700 group-hover:scale-105"
+                      priority={index < 2}
+                      sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 25vw"
+                      quality={80}
                     />
                   </div>
                 </div>
