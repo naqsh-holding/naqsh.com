@@ -54,7 +54,7 @@ export default function CeoMessage() {
           <div className="relative flex">
             <div ref={imageRef} className="relative w-full aspect-[3/4]">
               <Image
-                src="/images/ceo-portrait.png"
+                src="/images/ceo.png"
                 alt="CEO Portrait - Mohammed Bin Faihan"
                 fill
                 className="object-cover grayscale hover:grayscale-0 transition-all duration-500 ease-in-out"

@@ -33,10 +33,11 @@ export default function Hero() {
           <div className="text-left max-w-full">
             <h1
               ref={titleRef}
-              className="text-white font-montserrat font-bold tracking-tight leading-none drop-shadow-lg opacity-100 text-4xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-8xl"
+              className="text-white font-montserrat tracking-tight leading-none drop-shadow-lg opacity-100 text-4xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-8xl"
               style={{ opacity: 1 }}
             >
-              TO LEAVE A TRACE
+              <span className="font-thin">TO LEAVE</span>{" "}
+              <span className="font-bold">A TRACE</span>
             </h1>
           </div>
         </div>
