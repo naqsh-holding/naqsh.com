@@ -63,6 +63,11 @@ export async function generateMetadata({ params }: NewsArticlePageProps): Promis
 
   const articleUrl = `https://naqsh.com.sa/news/${params.slug}`
   const articleImage = article.heroImage.startsWith('http') ? article.heroImage : `https://naqsh.com.sa${article.heroImage}`
+  
+  // Ensure the image URL is absolute and accessible
+  const whatsappImage = articleImage.startsWith('https://hel1.your-objectstorage.com') 
+    ? articleImage 
+    : `https://hel1.your-objectstorage.com/naqsh-pord${article.heroImage}`
 
   return {
     title: `${article.title} | Naqsh Holding Company`,
@@ -86,7 +91,7 @@ export async function generateMetadata({ params }: NewsArticlePageProps): Promis
       siteName: "Naqsh Holding Company",
       images: [
         {
-          url: articleImage,
+          url: whatsappImage,
           width: 1200,
           height: 630,
           alt: article.title,
@@ -102,7 +107,7 @@ export async function generateMetadata({ params }: NewsArticlePageProps): Promis
       card: "summary_large_image",
       title: article.title,
       description: article.subtitle || `Read about ${article.title} - Latest news and updates from Naqsh Holding Company.`,
-      images: [articleImage],
+      images: [whatsappImage],
       creator: "@naqsh_holding",
       site: "@naqsh_holding",
     },
@@ -125,6 +130,22 @@ export async function generateMetadata({ params }: NewsArticlePageProps): Promis
       "article:author": article.author,
       "article:section": article.category,
       "article:tag": article.category,
+      // WhatsApp specific meta tags
+      "og:image:width": "1200",
+      "og:image:height": "630",
+      "og:image:type": "image/png",
+      "og:image:secure_url": whatsappImage,
+      // LinkedIn specific meta tags
+      "og:image:alt": article.title,
+      "og:description": article.subtitle || `Read about ${article.title} - Latest news and updates from Naqsh Holding Company.`,
+      "og:title": article.title,
+      "og:url": articleUrl,
+      "og:site_name": "Naqsh Holding Company",
+      "og:type": "article",
+      "og:locale": "en_US",
+      // Additional LinkedIn optimizations
+      "linkedin:owner": "naqsh-holding",
+      "linkedin:card": "summary_large_image",
     },
   }
 }

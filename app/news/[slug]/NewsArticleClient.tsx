@@ -322,7 +322,7 @@ export default function NewsArticleClient({ article, slug }: NewsArticleClientPr
                 <div className="lg:col-span-1">
                   <Link href="/" className="inline-block mb-4" aria-label="Naqsh Home">
                     <Image
-                      src="https://hel1.your-objectstorage.com/naqsh-pord/images/naqsh-white-logo.png"
+                      src="/naqsh-white.png"
                       alt="Naqsh Logo"
                       width={135}
                       height={45}

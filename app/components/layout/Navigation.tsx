@@ -100,7 +100,7 @@ export default function Navigation({ forceTheme, forceStyle, isFixed = true }: N
     // Handle forced styles first
     if (forceStyle === "dark-transparent") {
       return {
-        logo: "/images/naqsh-dark-logo.png",
+        logo: "/naqsh-black.png",
         textColor: "text-black",
         menuBg: "bg-white",
         menuText: "text-black",
@@ -110,7 +110,7 @@ export default function Navigation({ forceTheme, forceStyle, isFixed = true }: N
 
     if (forceStyle === "black") {
       return {
-        logo: "/images/naqsh-white-logo.png",
+        logo: "/naqsh-white.png",
         textColor: "text-white",
         menuBg: "bg-black",
         menuText: "text-white",
@@ -120,7 +120,7 @@ export default function Navigation({ forceTheme, forceStyle, isFixed = true }: N
 
     if (forceStyle === "white") {
       return {
-        logo: "/images/naqsh-dark-logo.png",
+        logo: "/naqsh-black.png",
         textColor: "text-black",
         menuBg: "bg-white",
         menuText: "text-black",
@@ -130,7 +130,7 @@ export default function Navigation({ forceTheme, forceStyle, isFixed = true }: N
 
     // Default transparent style (for hero sections)
     return {
-      logo: "/images/naqsh-white-logo.png",
+      logo: "/naqsh-white.png",
       textColor: "text-white",
       menuBg: "bg-black",
       menuText: "text-white",
@@ -151,30 +151,41 @@ export default function Navigation({ forceTheme, forceStyle, isFixed = true }: N
         <div className="container mx-auto px-4 flex justify-between items-center">
           <Link href="/" className="relative focus:outline-none focus:ring-2 focus:ring-white/50 focus:ring-offset-2 focus:ring-offset-black rounded" aria-label="Naqsh Holding Company Home">
             <Image
-              src={styling.logo || "https://hel1.your-objectstorage.com/naqsh-pord/placeholder.svg"}
+              src={styling.logo || "/naqsh-white.png"}
               alt="Naqsh Holding Company Logo"
-              width={120}
-              height={40}
-              className="h-8 w-auto transition-opacity duration-300 opacity-100"
+              width={140}
+              height={50}
+              className="h-10 w-auto transition-opacity duration-300 opacity-100"
               priority
+              onError={(e) => {
+                const target = e.target as HTMLImageElement;
+                target.style.display = 'none';
+                target.nextElementSibling?.classList.remove('hidden');
+              }}
             />
+            <div className="hidden text-white font-bold text-xl">NAQSH</div>
           </Link>
 
           <div className="hidden lg:flex items-center space-x-8" role="navigation" aria-label="Primary navigation menu">
-            {["ABOUT", "SERVICES", "NEWS", "PROJECTS"].map((link) => (
+            {[
+              { label: "ABOUT", href: "/#about" },
+              { label: "SERVICES", href: "/#services" },
+              { label: "NEWS", href: "/news" },
+              { label: "PROJECTS", href: "/#projects" }
+            ].map((link) => (
               <Link
-                key={link}
-                href={`#${link.toLowerCase()}`}
+                key={link.label}
+                href={link.href}
                 className={`text-sm font-light ${styling.textColor} hover:opacity-70 focus:opacity-70 focus:outline-none focus:ring-2 focus:ring-white/50 focus:ring-offset-2 focus:ring-offset-black rounded transition-all duration-300 relative opacity-100`}
-                onMouseEnter={() => handleLinkHover(link)}
+                onMouseEnter={() => handleLinkHover(link.label)}
                 onMouseLeave={handleLinkLeave}
-                aria-label={`Navigate to ${link.toLowerCase()} section`}
+                aria-label={`Navigate to ${link.label.toLowerCase()} section`}
                 tabIndex={0}
               >
-                {link}
+                {link.label}
                 <span
                   className={`absolute left-0 bottom-0 w-full h-0.5 bg-current transform origin-left transition-transform duration-300 ${
-                    hoveredLink === link ? "scale-x-100" : "scale-x-0"
+                    hoveredLink === link.label ? "scale-x-100" : "scale-x-0"
                   }`}
                   aria-hidden="true"
                 ></span>
@@ -212,14 +223,19 @@ export default function Navigation({ forceTheme, forceStyle, isFixed = true }: N
           aria-hidden={!isMenuOpen}
         >
           <div className="flex flex-col items-center justify-center h-full space-y-8">
-            {["ABOUT", "SERVICES", "NEWS", "PROJECTS"].map((link) => (
+            {[
+              { label: "ABOUT", href: "/#about" },
+              { label: "SERVICES", href: "/#services" },
+              { label: "NEWS", href: "/news" },
+              { label: "PROJECTS", href: "/#projects" }
+            ].map((link) => (
               <Link
-                key={link}
-                href={`#${link.toLowerCase()}`}
+                key={link.label}
+                href={link.href}
                 className={`text-2xl font-light hover:opacity-70 transition-opacity ${styling.menuText}`}
                 onClick={() => setIsMenuOpen(false)}
               >
-                {link}
+                {link.label}
               </Link>
             ))}
             <PillButton

@@ -133,7 +133,7 @@ export default function OurServices() {
                 <div
                   ref={contentRef}
                   key={activeService.id}
-                  className="theme-text text-body p-8 opacity-70 leading-relaxed h-[300px] overflow-y-auto"
+                  className="theme-text text-body p-8 opacity-70 leading-relaxed"
                 >
                   {activeService.description}
                 </div>

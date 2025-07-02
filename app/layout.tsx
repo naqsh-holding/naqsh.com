@@ -111,7 +111,7 @@ export default function RootLayout({
               "@type": "Organization",
               "name": "Naqsh Holding Company",
               "url": "https://naqsh.com.sa",
-              "logo": "https://naqsh.com.sa/images/naqsh-white-logo.png",
+              "logo": "https://naqsh.com.sa/naqsh-white.png",
               "description": "Naqsh Holding Company is an investment leader with 5 diverse subsidiaries across technology, business incubation, marketing, real estate, and aviation sectors.",
               "foundingDate": "2020",
               "slogan": "To Leave a Trace",

@@ -15,24 +15,27 @@ export default function Footer() {
   const footerRef = useRef<HTMLElement>(null)
 
   useEffect(() => {
-    const ctx = gsap.context(() => {
-      const footerCols = footerRef.current?.querySelectorAll(".footer-col")
-      if (footerCols) {
-        gsap.from(footerCols, {
-          y: 30,
-          opacity: 0,
-          duration: 1,
-          stagger: 0.15,
-          ease: "power3.out",
-          scrollTrigger: {
-            trigger: footerRef.current,
-            start: "top 90%",
-          },
-        })
-      }
-    }, footerRef)
+    // Only run GSAP animations in development or if explicitly enabled
+    if (process.env.NODE_ENV === 'development' || process.env.NEXT_PUBLIC_ENABLE_ANIMATIONS === 'true') {
+      const ctx = gsap.context(() => {
+        const footerCols = footerRef.current?.querySelectorAll(".footer-col")
+        if (footerCols) {
+          gsap.from(footerCols, {
+            y: 30,
+            opacity: 0,
+            duration: 1,
+            stagger: 0.15,
+            ease: "power3.out",
+            scrollTrigger: {
+              trigger: footerRef.current,
+              start: "top 90%",
+            },
+          })
+        }
+      }, footerRef)
 
-    return () => ctx.revert()
+      return () => ctx.revert()
+    }
   }, [])
 
   const currentYear = new Date().getFullYear()
@@ -74,7 +77,7 @@ export default function Footer() {
   ]
 
   return (
-    <footer ref={footerRef} className="bg-black text-white py-16 lg:py-24 relative z-10">
+    <footer ref={footerRef} className="bg-black text-white py-16 lg:py-24 relative z-10" style={{ backgroundColor: 'black', color: 'white' }}>
       <div className="container mx-auto px-4">
         <div className="border-t border-white/10 pt-12 lg:pt-16 mb-12 lg:mb-16">
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10 lg:gap-16">
@@ -82,12 +85,18 @@ export default function Footer() {
             <div className="lg:col-span-1 footer-col">
               <Link href="/" className="inline-block mb-4" aria-label="Naqsh Home">
                 <Image
-                  src="https://hel1.your-objectstorage.com/naqsh-pord/images/naqsh-white-logo.png"
+                  src="/naqsh-white.png"
                   alt="Naqsh Logo"
                   width={135}
                   height={45}
                   className="h-9 w-auto"
+                  onError={(e) => {
+                    const target = e.target as HTMLImageElement;
+                    target.style.display = 'none';
+                    target.nextElementSibling?.classList.remove('hidden');
+                  }}
                 />
+                <div className="hidden text-white font-bold text-xl">NAQSH</div>
               </Link>
               <p className="text-white/70 text-sm leading-relaxed">
                 To Leave a Trace - Naqsh Holding Company is an investment leader with diverse subsidiaries across technology, business incubation, marketing, real estate, and aviation sectors.
