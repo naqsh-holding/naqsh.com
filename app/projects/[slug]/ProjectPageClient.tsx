@@ -330,7 +330,7 @@ export default function ProjectPageClient({ project, slug }: ProjectPageClientPr
               />
             ) : (
               <img
-                src={project.heroImage || "/placeholder.svg?height=800&width=400"}
+                                  src={project.heroImage || "https://hel1.your-objectstorage.com/naqsh-pord/placeholder.svg?height=800&width=400"}
                 alt={project.sections[0].content.alt}
                 className="w-full h-full object-cover"
               />
@@ -414,7 +414,7 @@ export default function ProjectPageClient({ project, slug }: ProjectPageClientPr
                   {/* First image - full width */}
                   <div className="w-full aspect-[16/9] overflow-hidden rounded-lg">
                     <img
-                      src={group.images[0]?.src || "/placeholder.svg"}
+                                              src={group.images[0]?.src || "https://hel1.your-objectstorage.com/naqsh-pord/placeholder.svg"}
                       alt={group.images[0]?.alt || ""}
                       className="w-full h-full object-cover"
                     />
@@ -426,7 +426,7 @@ export default function ProjectPageClient({ project, slug }: ProjectPageClientPr
                       {group.images.slice(1).map((image, imageIndex) => (
                         <div key={imageIndex + 1} className="w-full aspect-[4/3] overflow-hidden rounded-lg">
                           <img
-                            src={image.src || "/placeholder.svg"}
+                            src={image.src || "https://hel1.your-objectstorage.com/naqsh-pord/placeholder.svg"}
                             alt={image.alt}
                             className="w-full h-full object-cover"
                           />
@@ -453,7 +453,7 @@ export default function ProjectPageClient({ project, slug }: ProjectPageClientPr
             <section ref={(el) => { imageGroupsRef.current[0] = el }} className="mb-12 opacity-0">
               <div className="w-full aspect-[16/9] overflow-hidden rounded-lg">
                 <img
-                  src={project.desktopImage || "/placeholder.svg"}
+                  src={project.desktopImage || "https://hel1.your-objectstorage.com/naqsh-pord/placeholder.svg"}
                   alt={
                     slug === "keeta-khobar-launch-event"
                       ? "Keeta Khobar launch event team celebration with branded displays"

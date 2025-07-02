@@ -82,7 +82,7 @@ export default function Footer() {
             <div className="lg:col-span-1 footer-col">
               <Link href="/" className="inline-block mb-4" aria-label="Naqsh Home">
                 <Image
-                  src="/images/naqsh-white-logo.png"
+                  src="https://hel1.your-objectstorage.com/naqsh-pord/images/naqsh-white-logo.png"
                   alt="Naqsh Logo"
                   width={135}
                   height={45}

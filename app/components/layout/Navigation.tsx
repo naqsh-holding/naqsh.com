@@ -151,7 +151,7 @@ export default function Navigation({ forceTheme, forceStyle, isFixed = true }: N
         <div className="container mx-auto px-4 flex justify-between items-center">
           <Link href="/" className="relative focus:outline-none focus:ring-2 focus:ring-white/50 focus:ring-offset-2 focus:ring-offset-black rounded" aria-label="Naqsh Holding Company Home">
             <Image
-              src={styling.logo || "/placeholder.svg"}
+              src={styling.logo || "https://hel1.your-objectstorage.com/naqsh-pord/placeholder.svg"}
               alt="Naqsh Holding Company Logo"
               width={120}
               height={40}

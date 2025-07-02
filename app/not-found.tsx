@@ -8,7 +8,7 @@ export default function NotFound() {
         <div className="mb-8">
           <Link href="/" className="inline-block" aria-label="Naqsh Home">
             <Image
-              src="/images/naqsh-logo.png"
+              src="https://hel1.your-objectstorage.com/naqsh-pord/images/naqsh-logo.png"
               alt="Naqsh Logo"
               width={135}
               height={45}

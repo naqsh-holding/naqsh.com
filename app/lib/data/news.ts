@@ -19,7 +19,7 @@ export const allNewsItems: NewsItem[] = [
     id: 6,
     day: "30",
     month: "JUN",
-    image: "/images/news/Investmaent.png",
+    image: "https://hel1.your-objectstorage.com/naqsh-pord/images/news/Investmaent.png",
     title: "Burooj Air Officially Launches Autonomous Drone-Based Cleaning Services",
     categories: [
       { name: "LAUNCH", link: "#launch" },
@@ -38,7 +38,7 @@ export const allNewsItems: NewsItem[] = [
     id: 1,
     day: "15",
     month: "DEC",
-    image: "/images/news/HR.png",
+    image: "https://hel1.your-objectstorage.com/naqsh-pord/images/news/HR.png",
     title: "Promotion Efficiency Signs Strategic CSR Partnership with the Ministry of Human Resources – Eastern Province",
     categories: [
       { name: "CSR", link: "#csr" },
@@ -57,7 +57,7 @@ export const allNewsItems: NewsItem[] = [
     id: 2,
     day: "12",
     month: "DEC",
-    image: "/images/news/Tarahum.jpeg",
+    image: "https://hel1.your-objectstorage.com/naqsh-pord/images/news/Tarahum.jpeg",
     title: "A Recognition We Are Proud Of from His Royal Highness the Prince of the Eastern Province",
     categories: [
       { name: "RECOGNITION", link: "#recognition" },
@@ -75,7 +75,7 @@ export const allNewsItems: NewsItem[] = [
     id: 3,
     day: "08",
     month: "DEC",
-    image: "/images/news/keeta.png",
+    image: "https://hel1.your-objectstorage.com/naqsh-pord/images/news/keeta.png",
     title: "Lunching Keeta Application - Efficiency Center Celebrates the Launch of Keeta Application in Al-Khobar",
     categories: [
       { name: "TECHNOLOGY", link: "#technology" },

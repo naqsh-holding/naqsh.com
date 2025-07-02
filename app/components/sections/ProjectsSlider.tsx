@@ -112,7 +112,7 @@ export default function ProjectsSlider() {
                   {/* Image */}
                   <div className="relative aspect-[3/4] overflow-hidden">
                     <Image
-                      src={project.image || "/placeholder.svg"}
+                      src={project.image || "https://hel1.your-objectstorage.com/naqsh-pord/placeholder.svg"}
                       alt={project.title}
                       fill
                       className="object-cover transition-transform duration-700 group-hover:scale-105"

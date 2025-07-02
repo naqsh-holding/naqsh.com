@@ -26,7 +26,7 @@ export const allProjects: Project[] = [
     id: 1,
     title: "Environmental and Circular Economy Forum",
     category: "PROMOTION EFFICIENCY",
-    image: "/images/projects/environmental/Abqaq.png",
+    image: "https://hel1.your-objectstorage.com/naqsh-pord/images/projects/environmental/Abqaq.png",
     
     slug: "environmental-circular-economy-forum-2023",
     year: 2023,
@@ -39,8 +39,8 @@ export const allProjects: Project[] = [
       "Promotion Efficiency managed the project end-to-end for over 1,000 visitors across three days, including: developing the full brand identity; designing the event space and booths; producing print materials (certificates, agendas, promotional items); creating a custom web app for registration and navigation; planning and executing marketing, invitations, signage, and livestream support; organizing workshops and hospitality; and coordinating media coverage and crowd management (photography/videography).",
     tags: ["Event Management", "Brand Identity", "Web Development", "Print Design", "Marketing Strategy", "Workshop Organization", "Media Coverage", "Smart Cards"],
     images: {
-      hero: "/images/projects/environmental/PEARAMCO.jpeg",
-      gallery: ["/images/projects/environmental/environmental-forum-branding.png", "/images/projects/environmental/PEARAMCO1.png", "/images/projects/environmental/PEARAMCO2.png", "/images/projects/environmental/PEARAMCO3.png"],
+      hero: "https://hel1.your-objectstorage.com/naqsh-pord/images/projects/environmental/PEARAMCO.jpeg",
+      gallery: ["https://hel1.your-objectstorage.com/naqsh-pord/images/projects/environmental/environmental-forum-branding.png", "https://hel1.your-objectstorage.com/naqsh-pord/images/projects/environmental/PEARAMCO1.png", "https://hel1.your-objectstorage.com/naqsh-pord/images/projects/environmental/PEARAMCO2.png", "https://hel1.your-objectstorage.com/naqsh-pord/images/projects/environmental/PEARAMCO3.png"],
     },
     stats: {
       area: "Al-Murjan Hall, Abqaiq",
@@ -51,7 +51,7 @@ export const allProjects: Project[] = [
     id: 2,
     title: "PWA - AlSharqiya Gets Creative",
     category: "6 DEGREES TECHNOLOGIES",
-    image: "/images/projects/pwa/6DSGC.png",
+    image: "https://hel1.your-objectstorage.com/naqsh-pord/images/projects/pwa/6DSGC.png",
     slug: "creative-nexus-digital-platform",
     year: 2024,
     client: "Ithra (King Abdulaziz Center for World Culture)",
@@ -62,15 +62,15 @@ export const allProjects: Project[] = [
     approach: "",
     tags: ["Progressive Web App", "Cultural Platform", "Digital Innovation", "Community Engagement", "Event Management", "Responsive Design", "Offline Capabilities"],
     images: {
-      hero: "/images/projects/pwa/6DSGC2.png",
-      gallery: ["/images/projects/pwa/SGC Design 2.png", "/images/projects/pwa/eastern-creative-building.png", "/images/projects/pwa/6DSGC3.png", "/images/projects/pwa/6DSGC4.png"],
+      hero: "https://hel1.your-objectstorage.com/naqsh-pord/images/projects/pwa/6DSGC2.png",
+      gallery: ["https://hel1.your-objectstorage.com/naqsh-pord/images/projects/pwa/SGC Design 2.png", "https://hel1.your-objectstorage.com/naqsh-pord/images/projects/pwa/eastern-creative-building.png", "https://hel1.your-objectstorage.com/naqsh-pord/images/projects/pwa/6DSGC3.png", "https://hel1.your-objectstorage.com/naqsh-pord/images/projects/pwa/6DSGC4.png"],
     },
   },
   {
     id: 5,
     title: "Burooj Air — Drone Cleaning of Al-Tamimi Building",
     category: "BUROOJ AIR",
-    image: "/images/projects/tamimi/BuroojAir.png",
+    image: "https://hel1.your-objectstorage.com/naqsh-pord/images/projects/tamimi/BuroojAir.png",
     slug: "burooj-air-drone-cleaning-altamimi-building",
     year: 2024,
     client: "Al-Tamimi Group",
@@ -79,7 +79,7 @@ export const allProjects: Project[] = [
     approach: "Using advanced aerial technology, our team was able to clean hard-to-reach glass facades safely and efficiently, with no need for scaffolding or manual access. The before-and-after transformation speaks for itself — a clear testament to the quality and effectiveness of our solutions.",
     tags: ["Drone Cleaning", "Innovation", "Building Maintenance", "Aerial Technology", "Burooj Air"],
     images: {
-      hero: "",
+      hero: "https://hel1.your-objectstorage.com/naqsh-pord/videos/Tamimi.mp4",
       gallery: [],
     },
     stats: {
@@ -91,7 +91,7 @@ export const allProjects: Project[] = [
     id: 3,
     title: "GDC Middle East - Comprehensive Fit-Out for Riyadh Office",
     category: "BUROOJ",
-    image: "/images/projects/gdc/Burooj-Design.png",
+    image: "https://hel1.your-objectstorage.com/naqsh-pord/images/projects/gdc/Burooj-Design.png",
     slug: "gdc-middle-east-fitout",
     year: 2024,
     client: "GDC Middle East",
@@ -103,14 +103,14 @@ export const allProjects: Project[] = [
       "In addition to the design and finishing, we provided custom-designed furniture, executed its production, and ensured seamless installation. The scope also included the supply and installation of advanced equipment, implementation of a complete IT infrastructure, full building automation, and state-of-the-art access control systems. This comprehensive approach sets a new benchmark in the market and reflects our dedication to delivering end-to-end solutions tailored to our client's vision.",
     tags: ["Office Fit-Out", "Interior Design", "Custom Furniture", "IT Infrastructure", "Building Automation", "Access Control"],
     images: {
-      hero: "/images/projects/gdc/gdc-reception-lobby.jpeg",
+      hero: "https://hel1.your-objectstorage.com/naqsh-pord/images/projects/gdc/gdc-reception-lobby.jpeg",
       gallery: [
-        "/images/projects/gdc/gdc-conference-room.jpeg",
-        "/images/projects/gdc/gdc-break-room.jpeg",
-        "/images/projects/gdc/gdc-open-workspace.jpeg",
-        "/images/projects/gdc/gdc-washroom.jpeg",
-        "/images/projects/gdc/gdc-executive-office.jpeg",
-        "/images/projects/gdc/gdc-photography-studio.jpeg",
+        "https://hel1.your-objectstorage.com/naqsh-pord/images/projects/gdc/gdc-conference-room.jpeg",
+        "https://hel1.your-objectstorage.com/naqsh-pord/images/projects/gdc/gdc-break-room.jpeg",
+        "https://hel1.your-objectstorage.com/naqsh-pord/images/projects/gdc/gdc-open-workspace.jpeg",
+        "https://hel1.your-objectstorage.com/naqsh-pord/images/projects/gdc/gdc-washroom.jpeg",
+        "https://hel1.your-objectstorage.com/naqsh-pord/images/projects/gdc/gdc-executive-office.jpeg",
+        "https://hel1.your-objectstorage.com/naqsh-pord/images/projects/gdc/gdc-photography-studio.jpeg",
       ],
     },
     stats: {

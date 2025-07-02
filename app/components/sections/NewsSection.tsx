@@ -109,7 +109,7 @@ export default function NewsSection() {
                   {/* Image */}
                   <div className="relative aspect-[3/4] overflow-hidden">
                     <Image
-                      src={item.image || "/placeholder.svg"}
+                      src={item.image || "https://hel1.your-objectstorage.com/naqsh-pord/placeholder.svg"}
                       alt={item.title}
                       fill
                       className="object-cover transition-transform duration-700 group-hover:scale-105"

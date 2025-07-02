@@ -12,35 +12,35 @@ const companies: Company[] = [
     id: 1,
     name: "6 Degrees Technologies",
     description: "Technology & Smart Solutions",
-    image: "/Naqsh Website-01.png",
+    image: "https://hel1.your-objectstorage.com/naqsh-pord/Naqsh Website-01.png",
     website: "https://6degrees.com.sa/en/",
   },
   {
     id: 2,
     name: "Burooj Air",
     description: "Aviation Services & Solutions",
-    image: "/Naqsh Website-03.png",
+    image: "https://hel1.your-objectstorage.com/naqsh-pord/Naqsh Website-03.png",
     website: "https://buroojair.com/",
   },
   {
     id: 3,
     name: "Promotion Efficiency for Advertising",
     description: "Marketing & Creative Production",
-    image: "/Naqsh Website-05.png",
+    image: "https://hel1.your-objectstorage.com/naqsh-pord/Naqsh Website-05.png",
     website: "https://www.promoe.com.sa/",
   },
   {
     id: 4,
     name: "Burooj",
     description: "Real Estate Development & Construction",
-    image: "/Naqsh Website-04.png",
+    image: "https://hel1.your-objectstorage.com/naqsh-pord/Naqsh Website-04.png",
     website: "https://www.burooj.pro/",
   },
   {
     id: 5,
     name: "Efficiency Center Business Inc.",
     description: "Business Incubation & Co-working",
-    image: "/Naqsh Website-02.png",
+    image: "https://hel1.your-objectstorage.com/naqsh-pord/Naqsh Website-02.png",
     website: "https://www.efficiencys.com.sa/",
   },
 ]
@@ -136,7 +136,7 @@ export default function Companies() {
                 className="block image-container relative aspect-[3/5] overflow-hidden cursor-pointer"
               >
                 <Image
-                  src={company.image || "/placeholder.svg"}
+                  src={company.image || "https://hel1.your-objectstorage.com/naqsh-pord/placeholder.svg"}
                   alt={company.name}
                   fill
                   className="object-cover transition-all duration-500 ease-in-out filter grayscale group-hover:grayscale-0"

@@ -75,7 +75,7 @@ export default function ProjectsPageClient({ allProjects }: ProjectsPageClientPr
                   <div className="relative overflow-hidden">
                     <div className="relative aspect-[3/4] overflow-hidden mb-6">
                       <Image
-                        src={project.image || "/placeholder.svg"}
+                        src={project.image || "https://hel1.your-objectstorage.com/naqsh-pord/placeholder.svg"}
                         alt={project.title}
                         fill
                         className="object-cover transition-all duration-700 group-hover:scale-105 group-hover:translate-x-2"

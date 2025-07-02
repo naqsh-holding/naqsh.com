@@ -30,7 +30,7 @@ export const metadata: Metadata = {
     siteName: "Naqsh Holding Company",
     images: [
       {
-        url: "/images/projects-og.png",
+        url: "https://hel1.your-objectstorage.com/naqsh-pord/images/projects-og.png",
         width: 1200,
         height: 630,
         alt: "Naqsh Holding Company - Diverse Portfolio of Successful Projects Across Multiple Industries",
