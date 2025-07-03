@@ -123,8 +123,9 @@ export default function NewsPageClient({ allNews }: NewsPageClientProps) {
                   <Link 
                     href={`/news/${item.slug}`} 
                     className="inline-flex items-center justify-center px-6 py-3 bg-white text-black text-sm font-medium rounded-full hover:bg-white/90 transition-colors duration-300 mt-2 news-read-more-btn"
+                    aria-label={`Read full article: ${item.title}`}
                   >
-                    Read more
+                    Read full article
                   </Link>
                 </div>
               </div>

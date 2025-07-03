@@ -97,7 +97,7 @@ export default function NewsSection() {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8">
           {newsItems.map((item, index) => (
             <div key={item.id} ref={(el) => { itemsRef.current[index] = el }} className="group">
-              <Link href={`/news/${item.slug}`} aria-label={`Read more about ${item.title}`}>
+              <Link href={`/news/${item.slug}`} aria-label={`Read full article: ${item.title}`}>
                 {/* Image Container */}
                 <div className="relative overflow-hidden mb-4 md:mb-6">
                   {/* Date Block */}
@@ -144,8 +144,8 @@ export default function NewsSection() {
               </div>
 
               {/* Read More Button */}
-              <PillButton href={`/news/${item.slug}`} ariaLabel={`Read more about ${item.title}`}>
-                Read more
+              <PillButton href={`/news/${item.slug}`} ariaLabel={`Read full article: ${item.title}`}>
+                Read full article
               </PillButton>
             </div>
           ))}
