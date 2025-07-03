@@ -64,7 +64,7 @@ export default function AboutUs() {
           {/* Content */}
           <div ref={contentRef} className="space-y-6 md:space-y-8 max-w-3xl">
             <p className="text-body-large opacity-80 text-black">
-            At Naqsh Holding, we don't just aim to succeed — we aim to leave a mark.
+            At Naqsh Holding, we don't just aim to succeed — we aim to leave a trace.
             We believe that every project is an opportunity to etch a lasting impact, and every investment is a signature on the future of the industries we serve.
             </p>
 
@@ -72,7 +72,7 @@ export default function AboutUs() {
             Naqsh was founded with a vision that goes beyond conventional business models. As a diversified holding group, we strive to create meaningful value across technology, media, and real estate development.
 We don't merely participate — we shape, we establish, and we influence.
 With every venture, we redefine presence, craft opportunity, and ensure that our contributions resonate long after the work is done.
-Our motto, “To Leave a Mark,” is more than just a slogan — it's a promise we bring to life through innovation, sustainability, and long-term impact.
+Our motto, “To Leave a Trace,” is more than just a slogan — it's a promise we bring to life through innovation, sustainability, and long-term impact.
             </p>
           </div>
         </div>
