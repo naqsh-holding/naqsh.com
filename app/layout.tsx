@@ -76,7 +76,12 @@ export const metadata: Metadata = {
     },
   },
   icons: {
-    icon: "/favicon.ico",
+    icon: [
+      { url: "/favicon.ico", sizes: "any" },
+      { url: "/favicon.svg", type: "image/svg+xml" },
+      { url: "/favicon-96x96.png", sizes: "96x96", type: "image/png" }
+    ],
+    apple: "/apple-touch-icon.png",
   },
   alternates: {
     canonical: "https://naqsh.com.sa",
@@ -103,7 +108,12 @@ export default function RootLayout({
   return (
     <html lang="en">
       <head>
+        {/* Favicon and icon references for all devices and browsers */}
         <link rel="icon" href="/favicon.ico" sizes="any" />
+        <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+        <link rel="icon" href="/favicon-96x96.png" type="image/png" sizes="96x96" />
+        <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
+        <link rel="manifest" href="/site.webmanifest" />
         
         {/* Critical resource preloading for LCP optimization */}
         <link rel="preload" as="image" href="https://hel1.your-objectstorage.com/naqsh-pord/images/hero-background.png" fetchPriority="high" />
