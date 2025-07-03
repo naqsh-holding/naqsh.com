@@ -1,14 +1,18 @@
 "use client"
 
 import { useEffect, useRef } from "react"
-import { gsap } from "gsap"
+import { loadGSAP } from "@/app/lib/gsap-loader"
+import HeroImage from "@/app/components/ui/HeroImage"
 
 export default function Hero() {
   const containerRef = useRef<HTMLDivElement>(null)
   const titleRef = useRef<HTMLHeadingElement>(null)
 
   useEffect(() => {
-    // GSAP animation placeholder
+    // Dynamically load GSAP for animations
+    loadGSAP().then((gsap) => {
+      // GSAP animation placeholder
+    })
   }, [])
 
   return (
@@ -17,16 +21,10 @@ export default function Hero() {
       className="relative h-[50vh] sm:h-[60vh] md:h-[70vh] lg:h-[80vh] xl:h-[85vh] w-full overflow-hidden flex items-center"
       aria-label="Hero Section"
     >
-      {/* Responsive background image - fixed on desktop, scroll on mobile */}
-      <div
-        className="absolute inset-0 z-0 bg-center bg-cover md:bg-fixed"
-        style={{ 
-          backgroundImage: 'url(https://hel1.your-objectstorage.com/naqsh-pord/images/hero-background.png)',
-          backgroundSize: 'cover',
-          backgroundPosition: 'center',
-          backgroundRepeat: 'no-repeat'
-        }}
-        aria-hidden="true"
+      {/* Optimized hero background image with loading states and fallbacks */}
+      <HeroImage
+        src="https://hel1.your-objectstorage.com/naqsh-pord/images/hero-background.png"
+        alt="Naqsh Holding Company Hero Background"
       />
 
       {/* Dark overlay for better text readability */}

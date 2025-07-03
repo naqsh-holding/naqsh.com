@@ -13,6 +13,7 @@ export default function NotFound() {
               width={135}
               height={45}
               className="h-9 w-auto mx-auto"
+              unoptimized={true}
             />
           </Link>
         </div>

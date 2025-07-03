@@ -13,8 +13,6 @@ interface OptimizedImageProps {
   priority?: boolean
   sizes?: string
   quality?: number
-  placeholder?: "blur" | "empty"
-  blurDataURL?: string
   onLoad?: () => void
   onError?: () => void
 }
@@ -28,14 +26,19 @@ export default function OptimizedImage({
   className = "",
   priority = false,
   sizes,
-  quality = 75,
-  placeholder = "empty",
-  blurDataURL,
+  quality = 85,
   onLoad,
   onError,
 }: OptimizedImageProps) {
+  const [imageSrc, setImageSrc] = useState(src)
   const [isLoading, setIsLoading] = useState(true)
   const [hasError, setHasError] = useState(false)
+
+  useEffect(() => {
+    setImageSrc(src)
+    setIsLoading(true)
+    setHasError(false)
+  }, [src])
 
   const handleLoad = () => {
     setIsLoading(false)
@@ -48,39 +51,32 @@ export default function OptimizedImage({
     onError?.()
   }
 
-  // Fallback image for errors
-  if (hasError) {
-    return (
-      <div className={`${className} bg-gray-200 flex items-center justify-center`}>
-        <span className="text-gray-500 text-sm">Image unavailable</span>
-      </div>
-    )
-  }
-
+  // For static export, we'll use the original image but with loading optimization
   return (
-    <div className={`relative ${className}`}>
+    <div className={`relative ${fill ? 'w-full h-full' : ''} ${className}`}>
+      {isLoading && (
+        <div className="absolute inset-0 bg-gray-200 animate-pulse rounded" />
+      )}
+      
       <Image
-        src={src}
+        src={imageSrc}
         alt={alt}
         fill={fill}
-        width={width}
-        height={height}
-        className={`transition-opacity duration-300 ${
-          isLoading ? "opacity-0" : "opacity-100"
-        }`}
+        width={!fill ? width : undefined}
+        height={!fill ? height : undefined}
+        className={`${isLoading ? 'opacity-0' : 'opacity-100'} transition-opacity duration-300 ${className}`}
         priority={priority}
         sizes={sizes}
         quality={quality}
-        placeholder={placeholder}
-        blurDataURL={blurDataURL}
+        unoptimized={true}
         onLoad={handleLoad}
         onError={handleError}
-        loading={priority ? "eager" : "lazy"}
-        unoptimized={true}
+        loading={priority ? 'eager' : 'lazy'}
       />
-      {isLoading && (
-        <div className="absolute inset-0 bg-gray-200 animate-pulse flex items-center justify-center">
-          <div className="w-8 h-8 border-2 border-gray-300 border-t-gray-600 rounded-full animate-spin"></div>
+      
+      {hasError && (
+        <div className="absolute inset-0 bg-gray-100 flex items-center justify-center text-gray-500 text-sm">
+          Image not available
         </div>
       )}
     </div>

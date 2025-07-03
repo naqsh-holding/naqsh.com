@@ -141,8 +141,9 @@ export default function Companies() {
                   fill
                   className="object-cover transition-all duration-500 ease-in-out filter grayscale group-hover:grayscale-0"
                   priority={index < 2}
-                  sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 25vw"
-                  quality={85}
+                  loading={index < 2 ? "eager" : "lazy"}
+                  sizes="(max-width: 640px) 256px, (max-width: 768px) 288px, (max-width: 1024px) 320px, 320px"
+                  quality={60}
                   unoptimized={true}
                 />
                 {hoveredImage === index && (

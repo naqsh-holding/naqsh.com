@@ -114,8 +114,9 @@ export default function NewsSection() {
                       fill
                       className="object-cover transition-transform duration-700 group-hover:scale-105"
                       priority={index < 2}
-                      sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
-                      quality={80}
+                      loading={index < 2 ? "eager" : "lazy"}
+                      sizes="(max-width: 640px) 100vw, (max-width: 768px) 50vw, (max-width: 1024px) 33vw, 400px"
+                      quality={60}
                       unoptimized={true}
                     />
                   </div>

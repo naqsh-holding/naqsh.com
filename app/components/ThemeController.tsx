@@ -1,11 +1,13 @@
 "use client"
 
 import { useEffect } from "react"
-import { gsap } from "gsap"
 
 export default function ThemeController() {
   useEffect(() => {
     if (typeof window === "undefined") return
+
+    // Dynamically import GSAP to reduce initial bundle size
+    import("gsap").then(({ gsap }) => {
 
     // Page detection functions
     const isHomePage = () => {
@@ -170,22 +172,24 @@ export default function ThemeController() {
       onScroll()
     }
 
-    // Ensure GSAP and ScrollTrigger are ready
-    gsap.delayedCall(0.1, () => {
-      // Small delay to ensure DOM is fully ready
-      initTheme()
-      // Only add scroll listener if we should apply scroll-triggered themes
-      if (shouldApplyScrollTheme()) {
-        window.addEventListener("scroll", onScroll, { passive: true })
-      }
-    })
+          // Ensure GSAP and ScrollTrigger are ready
+      gsap.delayedCall(0.1, () => {
+        // Small delay to ensure DOM is fully ready
+        initTheme()
+        // Only add scroll listener if we should apply scroll-triggered themes
+        if (shouldApplyScrollTheme()) {
+          window.addEventListener("scroll", onScroll, { passive: true })
+        }
+      })
 
-    return () => {
-      // Only remove scroll listener if we added it
-      if (shouldApplyScrollTheme()) {
-        window.removeEventListener("scroll", onScroll)
+      return () => {
+        // Only remove scroll listener if we added it
+        if (shouldApplyScrollTheme()) {
+          window.removeEventListener("scroll", onScroll)
+        }
       }
-    }
+
+    })
   }, [])
 
   return null

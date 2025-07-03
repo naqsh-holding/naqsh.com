@@ -90,6 +90,7 @@ export default function Footer() {
                   width={135}
                   height={45}
                   className="h-9 w-auto"
+                  unoptimized={true}
                   onError={(e) => {
                     const target = e.target as HTMLImageElement;
                     target.style.display = 'none';

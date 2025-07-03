@@ -3,6 +3,7 @@ import type { Metadata } from "next"
 import "./globals.css"
 import { montserrat } from "./lib/fonts"
 import Cursor from "./components/ui/Cursor"
+import { criticalCSS } from "./lib/critical-css"
 
 export const metadata: Metadata = {
   title: "Naqsh Holding Company | Investment Leader | To Leave a Trace",
@@ -104,14 +105,49 @@ export default function RootLayout({
       <head>
         <link rel="icon" href="/favicon.ico" sizes="any" />
         
-        {/* Preload critical images for better performance */}
-        <link rel="preload" as="image" href="https://hel1.your-objectstorage.com/naqsh-pord/images/hero-background.png" />
-        <link rel="preload" as="image" href="https://hel1.your-objectstorage.com/naqsh-pord/Naqsh Website-01.png" />
-        <link rel="preload" as="image" href="https://hel1.your-objectstorage.com/naqsh-pord/Naqsh Website-02.png" />
-        <link rel="preload" as="image" href="https://hel1.your-objectstorage.com/naqsh-pord/Naqsh Website-03.png" />
-        <link rel="preload" as="image" href="https://hel1.your-objectstorage.com/naqsh-pord/Naqsh Website-04.png" />
-        <link rel="preload" as="image" href="https://hel1.your-objectstorage.com/naqsh-pord/Naqsh Website-05.png" />
-        <link rel="preload" as="image" href="https://hel1.your-objectstorage.com/naqsh-pord/images/ceo.png" />
+        {/* Critical resource preloading for LCP optimization */}
+        <link rel="preload" as="image" href="https://hel1.your-objectstorage.com/naqsh-pord/images/hero-background.png" fetchPriority="high" />
+        
+        {/* Preload critical company images */}
+        <link rel="preload" as="image" href="https://hel1.your-objectstorage.com/naqsh-pord/Naqsh%20Website-01.png" fetchPriority="high" />
+        <link rel="preload" as="image" href="https://hel1.your-objectstorage.com/naqsh-pord/Naqsh%20Website-02.png" fetchPriority="high" />
+        
+        {/* Preload critical fonts */}
+        <link rel="preload" href="/fonts/montserrat-var.woff2" as="font" type="font/woff2" crossOrigin="anonymous" />
+        
+
+        
+        {/* DNS prefetch for external domains */}
+        <link rel="dns-prefetch" href="//hel1.your-objectstorage.com" />
+        <link rel="dns-prefetch" href="//app.pipedrive.com" />
+        <link rel="dns-prefetch" href="//maps.googleapis.com" />
+        
+        {/* Preconnect to critical domains with higher priority */}
+        <link rel="preconnect" href="https://hel1.your-objectstorage.com" crossOrigin="anonymous" />
+        <link rel="preconnect" href="https://app.pipedrive.com" crossOrigin="anonymous" />
+        
+        {/* Resource hints for better performance */}
+        <link rel="modulepreload" href="/_next/static/chunks/pages/_app.js" />
+        
+        {/* Additional performance optimizations */}
+        <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+        <meta httpEquiv="x-dns-prefetch-control" content="on" />
+        
+        {/* Critical CSS inline to eliminate render-blocking */}
+        <style dangerouslySetInnerHTML={{ __html: criticalCSS }} />
+        
+        {/* Register service worker */}
+        <script
+          dangerouslySetInnerHTML={{
+            __html: `
+              if ('serviceWorker' in navigator) {
+                window.addEventListener('load', function() {
+                  navigator.serviceWorker.register('/sw.js');
+                });
+              }
+            `,
+          }}
+        />
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{

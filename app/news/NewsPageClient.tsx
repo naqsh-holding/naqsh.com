@@ -92,6 +92,9 @@ export default function NewsPageClient({ allNews }: NewsPageClientProps) {
                         alt={item.title}
                         fill
                         className="object-cover transition-transform duration-700 group-hover:scale-105"
+                        sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 33vw"
+                        quality={70}
+                        unoptimized={true}
                       />
                     </div>
                   </div>

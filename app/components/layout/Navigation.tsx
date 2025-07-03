@@ -157,6 +157,7 @@ export default function Navigation({ forceTheme, forceStyle, isFixed = true }: N
               height={50}
               className="h-10 w-auto transition-opacity duration-300 opacity-100"
               priority
+              unoptimized={true}
               onError={(e) => {
                 const target = e.target as HTMLImageElement;
                 target.style.display = 'none';

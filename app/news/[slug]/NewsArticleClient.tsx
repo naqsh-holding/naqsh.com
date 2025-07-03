@@ -202,6 +202,7 @@ export default function NewsArticleClient({ article, slug }: NewsArticleClientPr
               className="object-cover"
               priority
               sizes="50vw"
+              unoptimized={true}
             />
           </div>
         </div>
@@ -219,6 +220,7 @@ export default function NewsArticleClient({ article, slug }: NewsArticleClientPr
                   fill
                   className="object-cover"
                   priority
+                  unoptimized={true}
                 />
                 <div className="absolute inset-0 bg-black/20"></div>
               </div>
@@ -327,6 +329,7 @@ export default function NewsArticleClient({ article, slug }: NewsArticleClientPr
                       width={135}
                       height={45}
                       className="h-9 w-auto"
+                      unoptimized={true}
                     />
                   </Link>
                   <p className="text-white/70 text-sm leading-relaxed">

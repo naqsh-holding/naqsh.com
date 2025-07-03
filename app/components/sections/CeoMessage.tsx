@@ -59,8 +59,8 @@ export default function CeoMessage() {
                 fill
                 className="object-cover grayscale hover:grayscale-0 transition-all duration-500 ease-in-out"
                 priority
-                sizes="(max-width: 768px) 100vw, 50vw"
-                quality={85}
+                sizes="(max-width: 640px) 100vw, (max-width: 768px) 50vw, 400px"
+                quality={60}
                 unoptimized={true}
               />
             </div>

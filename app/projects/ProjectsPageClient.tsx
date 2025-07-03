@@ -79,6 +79,9 @@ export default function ProjectsPageClient({ allProjects }: ProjectsPageClientPr
                         alt={project.title}
                         fill
                         className="object-cover transition-all duration-700 group-hover:scale-105 group-hover:translate-x-2"
+                        sizes="(max-width: 640px) 100vw, (max-width: 768px) 50vw, (max-width: 1024px) 33vw, 25vw"
+                        quality={70}
+                        unoptimized={true}
                       />
                     </div>
                     <h3 className="text-white text-h4 font-medium mb-2 transition-colors duration-300 group-hover:text-white/70" style={{ color: 'white' }}>
